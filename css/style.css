@@ -1893,7 +1893,7 @@ top: -100px;
 .p-card {
   background: #ffffff;
   border-radius: 16px;
-  padding: 18px 26px;
+  padding: 8px 26px 26px 26px;
   border: 1px solid rgba(90,175,212,.18);
   box-shadow: 0 4px 20px rgba(28,58,74,.07);
   margin-top: 18px;
