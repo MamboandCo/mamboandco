@@ -96,26 +96,37 @@
 <!-- ── SVG DEFS : pattern taches dalmatien ── -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <!-- Motif taches : tuile 987x907, opacité via CSS -->
-    <pattern id="taches-pattern" patternUnits="userSpaceOnUse" width="987" height="907">
+    <!-- Motif taches : tuile 1000x900, taches uniformes ~4px scale -->
+    <pattern id="taches-pattern" patternUnits="userSpaceOnUse" width="1000" height="900">
       <g fill="currentColor">
+        <!-- Tache 1 — haut gauche -->
         <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g>
-        <g transform="matrix(4.77015,0.388351,-0.388351,4.77015,-3499.916374,-6422.322063)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g>
-        <g transform="matrix(5.525972,0.449885,-0.324725,3.988622,-2899.44281,-4364.72494)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z"/></g>
+        <!-- Tache 2 -->
+        <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-3499.916374,-6422.322063) scale(1.195)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g>
+        <!-- Tache 3 -->
+        <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2899.44281,-4364.72494)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z"/></g>
+        <!-- Tache 4 -->
         <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g>
-        <g transform="matrix(5.597153,0.45568,-0.45568,5.597153,-3381.933805,-5482.007731)"><path d="M767.94,957.722C761.349,961.191 758.227,967.782 759.961,974.72C761.696,981.658 765.859,988.596 771.756,988.596C777.653,988.596 785.285,985.474 785.979,980.271C786.673,975.067 791.876,964.313 786.326,959.804C780.775,955.294 774.531,954.253 767.94,957.722Z"/></g>
+        <!-- Tache 5 -->
+        <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-3381.933805,-5482.007731)"><path d="M767.94,957.722C761.349,961.191 758.227,967.782 759.961,974.72C761.696,981.658 765.859,988.596 771.756,988.596C777.653,988.596 785.285,985.474 785.979,980.271C786.673,975.067 791.876,964.313 786.326,959.804C780.775,955.294 774.531,954.253 767.94,957.722Z"/></g>
+        <!-- Tache 6 -->
         <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g>
-        <g transform="matrix(2.023919,3.45229,-3.45229,2.023919,3701.004775,-5618.644297)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g>
-        <g transform="matrix(5.164571,0.420462,-0.324725,3.988622,-3537.045904,-5240.748714)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g>
-        <g transform="matrix(-4.760207,-1.906053,1.487563,-3.715065,2130.753181,6166.681308)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z"/></g>
+        <!-- Tache 7 -->
+        <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2378.938416,-4618.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g>
+        <!-- Tache 8 -->
+        <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-3337.045904,-5240.748714)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g>
+        <!-- Tache 9 -->
+        <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2699.44281,-4064.72494)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z"/></g>
+        <!-- Tache 10 -->
         <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-1914.077524,-3616.752177)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g>
+        <!-- Tache 11 -->
         <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-1914.077524,-3616.752177)"><path d="M767.94,957.722C761.349,961.191 758.227,967.782 759.961,974.72C761.696,981.658 765.859,988.596 771.756,988.596C777.653,988.596 785.285,985.474 785.979,980.271C786.673,975.067 791.876,964.313 786.326,959.804C780.775,955.294 774.531,954.253 767.94,957.722Z"/></g>
+        <!-- Tache 12 -->
         <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2594.847026,-4598.080402)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g>
       </g>
     </pattern>
   </defs>
 </svg>
-
 
 <!-- ── CURSEUR PATTE ──────────────────────────────────── -->
 <div class="cursor" id="cursor">
@@ -204,8 +215,8 @@
 <section class="hero">
 
   <!-- Taches dalmatien hero -->
-  <div class="dalma-deco dalma-hero-tl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g><g transform="matrix(4.77015,0.388351,-0.388351,4.77015,-3499.916374,-6422.322063)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g><g transform="matrix(5.525972,0.449885,-0.324725,3.988622,-2899.44281,-4364.72494)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z"/></g></svg></div>
-  <div class="dalma-deco dalma-hero-tr" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g><g transform="matrix(5.597153,0.45568,-0.45568,5.597153,-3381.933805,-5482.007731)"><path d="M767.94,957.722C761.349,961.191 758.227,967.782 759.961,974.72C761.696,981.658 765.859,988.596 771.756,988.596C777.653,988.596 785.285,985.474 785.979,980.271C786.673,975.067 791.876,964.313 786.326,959.804C780.775,955.294 774.531,954.253 767.94,957.722Z"/></g></svg></div>
+  <div class="dalma-deco dalma-hero-tl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-3499.916374,-6422.322063)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2899.44281,-4364.72494)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z"/></g></svg></div>
+  <div class="dalma-deco dalma-hero-tr" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-1914.077524,-3616.752177)"><path d="M767.94,957.722C761.349,961.191 758.227,967.782 759.961,974.72C761.696,981.658 765.859,988.596 771.756,988.596C777.653,988.596 785.285,985.474 785.979,980.271C786.673,975.067 791.876,964.313 786.326,959.804C780.775,955.294 774.531,954.253 767.94,957.722Z"/></g></svg></div>
 
   <!-- Taches décoratives fond hero -->
   <div class="hero-deco-paws" aria-hidden="true">
@@ -229,15 +240,17 @@
     <div class="hero-photo-wrap">
 
       <!-- Cœur décoratif haut gauche -->
-      <svg class="hero-deco-heart" viewBox="0 0 40 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M20 34C20 34 3 22 3 11.5C3 7.36 6.36 4 10.5 4C13.24 4 15.67 5.48 17.18 7.7L20 11.5L22.82 7.7C24.33 5.48 26.76 4 29.5 4C33.64 4 37 7.36 37 11.5C37 22 20 34 20 34Z" fill="none" stroke="var(--terra)" stroke-width="3" stroke-linejoin="round"/>
+      <svg class="hero-deco-heart" viewBox="0 0 487 436" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+        <g transform="matrix(4.963632,0,0,4.140521,-1850.826338,-4159.450455)">
+          <path d="M375.668,1106.778C430.915,1086.704 479.23,1041.27 466.566,1019.924C453.414,997.754 416.533,1048.783 423.359,1043.874C421.556,992.306 401.241,1007.793 396.948,1014.15C391.752,1021.845 387.65,1040.731 393.322,1057.249C399.855,1076.273 427.052,1103.013 430.574,1106.476" style="fill:none;stroke:rgb(196,96,58);stroke-width:5.94px;"/>
+        </g>
       </svg>
 
       <!-- Traits obliques haut droite -->
       <svg class="hero-deco-lines" viewBox="0 0 52 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <line x1="2"  y1="40" x2="10" y2="14"  stroke="var(--blue)" stroke-width="4" stroke-linecap="round"/>
-        <line x1="22" y1="34" x2="32" y2="0"  stroke="var(--blue)" stroke-width="4" stroke-linecap="round"/>
-        <line x1="38" y1="40" x2="46" y2="14"  stroke="var(--blue)" stroke-width="4" stroke-linecap="round"/>
+        <line x1="2"  y1="40" x2="10" y2="14"  stroke="var(--blue)" stroke-width="3" stroke-linecap="round"/>
+        <line x1="22" y1="34" x2="32" y2="0"  stroke="var(--blue)" stroke-width="3" stroke-linecap="round"/>
+        <line x1="38" y1="40" x2="46" y2="14"  stroke="var(--blue)" stroke-width="3" stroke-linecap="round"/>
       </svg>
 
       <svg class="hero-blob-svg" viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -276,12 +289,20 @@
 
 <!-- ── QUI SUIS-JE ────────────────────────────────────── -->
 <section id="about">
-  <div class="dalma-deco dalma-about-br" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g><g transform="matrix(2.023919,3.45229,-3.45229,2.023919,3701.004775,-5618.644297)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g></svg></div>
+  <div class="dalma-deco dalma-about-tr" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z" fill="white"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-1914.077524,-3616.752177)"><path d="M767.94,957.722C761.349,961.191 758.227,967.782 759.961,974.72C761.696,981.658 765.859,988.596 771.756,988.596C777.653,988.596 785.285,985.474 785.979,980.271C786.673,975.067 791.876,964.313 786.326,959.804C780.775,955.294 774.531,954.253 767.94,957.722Z" fill="white"/></g></svg></div>
   <div class="about-inner">
     <div class="about-presentation reveal">
       <div class="about-photo-bg">
         <div class="about-photo-placeholder">
-          <img src="./img/01-images/ophelie.jpeg" alt="Ophélie et Mambo" class="about-photo">
+          <div class="polaroid-frame">
+            <svg class="polaroid-heart" viewBox="0 0 487 436" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+              <g transform="matrix(4.963632,0,0,4.140521,-1850.826338,-4159.450455)">
+                <path d="M375.668,1106.778C430.915,1086.704 479.23,1041.27 466.566,1019.924C453.414,997.754 416.533,1048.783 423.359,1043.874C421.556,992.306 401.241,1007.793 396.948,1014.15C391.752,1021.845 387.65,1040.731 393.322,1057.249C399.855,1076.273 427.052,1103.013 430.574,1106.476" style="fill:none;stroke:rgb(196,96,58);stroke-width:5.94px;"/>
+              </g>
+            </svg>
+            <img src="./img/01-images/ophelie.jpeg" alt="Ophélie et Mambo" class="about-photo">
+            <div class="polaroid-caption">Ophélie &amp; Mambo ♡</div>
+          </div>
         </div>
         <div class="about-badge-float">
           <div class="about-badge-icon">📍</div>
@@ -334,7 +355,9 @@
 
 <!-- ── L'HISTOIRE ─────────────────────────────────────── -->
 <section id="histoire">
-  <div class="dalma-deco dalma-histoire-tl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(5.164571,0.420462,-0.324725,3.988622,-3537.045904,-5240.748714)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g><g transform="matrix(-4.760207,-1.906053,1.487563,-3.715065,2130.753181,6166.681308)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z"/></g></svg></div>
+  <div class="dalma-deco dalma-histoire-tl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2899.44281,-4364.72494)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g></svg></div>
+  <div class="dalma-deco dalma-histoire-tr" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-1914.077524,-3616.752177)"><path d="M767.94,957.722C761.349,961.191 758.227,967.782 759.961,974.72C761.696,981.658 765.859,988.596 771.756,988.596C777.653,988.596 785.285,985.474 785.979,980.271C786.673,975.067 791.876,964.313 786.326,959.804C780.775,955.294 774.531,954.253 767.94,957.722Z"/></g></svg></div>
+  <div class="dalma-deco dalma-histoire-bl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g></svg></div>
   <div class="hero-wave" aria-hidden="true">
     <svg viewBox="0 0 3698 658" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <g transform="matrix(-1,0,0,-1,3698,657.5)">
@@ -359,14 +382,30 @@
           <em class="about-animal-tribute">Pour Lyno, qui veillera toujours sur nous ♡</em>
         </div>
         <div class="about-histoire-photo-wrap">
-          <img src="./img/01-images/lyno.jpg" alt="Lyno, le chat roux d'Ophélie" class="about-histoire-photo" />
+          <div class="polaroid-frame polaroid-frame--histoire">
+            <svg class="polaroid-heart polaroid-heart--bl" viewBox="0 0 487 436" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+              <g transform="matrix(4.963632,0,0,4.140521,-1850.826338,-4159.450455)">
+                <path d="M375.668,1106.778C430.915,1086.704 479.23,1041.27 466.566,1019.924C453.414,997.754 416.533,1048.783 423.359,1043.874C421.556,992.306 401.241,1007.793 396.948,1014.15C391.752,1021.845 387.65,1040.731 393.322,1057.249C399.855,1076.273 427.052,1103.013 430.574,1106.476" style="fill:none;stroke:rgb(196,96,58);stroke-width:5.94px;"/>
+              </g>
+            </svg>
+            <img src="./img/01-images/lyno.jpg" alt="Lyno, le chat roux d'Ophélie" class="about-histoire-photo" />
+            <div class="polaroid-caption">Lyno, pour toujours ♡</div>
+          </div>
         </div>
       </div>
 
       <!-- Row 2 : Mambo gauche, texte droite -->
       <div class="about-histoire-row">
         <div class="about-histoire-photo-wrap2">
-          <img src="./img/01-images/mambo.jpeg" alt="Mambo, le dalmatien d'Ophélie" class="about-histoire-photo2" />
+          <div class="polaroid-frame polaroid-frame--histoire">
+            <svg class="polaroid-heart" viewBox="0 0 487 436" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+              <g transform="matrix(4.963632,0,0,4.140521,-1850.826338,-4159.450455)">
+                <path d="M375.668,1106.778C430.915,1086.704 479.23,1041.27 466.566,1019.924C453.414,997.754 416.533,1048.783 423.359,1043.874C421.556,992.306 401.241,1007.793 396.948,1014.15C391.752,1021.845 387.65,1040.731 393.322,1057.249C399.855,1076.273 427.052,1103.013 430.574,1106.476" style="fill:none;stroke:rgb(196,96,58);stroke-width:5.94px;"/>
+              </g>
+            </svg>
+            <img src="./img/01-images/mambo.jpeg" alt="Mambo, le dalmatien d'Ophélie" class="about-histoire-photo2" />
+            <div class="polaroid-caption">Mambo, mon pot de colle ♡</div>
+          </div>
         </div>
         <div class="about-histoire-text">
           <h2 class="section-title">🐕 Mambo</h2>
@@ -390,203 +429,17 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
   </div>
 </section>
 
+<!-- ── TACHES DALMATIEN : CSS global ── -->
+
 <!-- ══ PARCOURS ══ -->
-<style>
-#parcours {
-  position: relative;
-}
-#parcours::before {
-  content: '';
-  position: absolute; inset: 0;
-  pointer-events: none;
-}
-.parcours-inner { max-width: 1100px; margin: 0 auto; }
-.parcours-header {
-  padding-bottom: 48px;
-}
-
-/* ── Scroll horizontal ── */
-.parcours-scroll {
-  overflow-x: auto;
-  overflow-y: visible;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, var(--blue) 30%, transparent) transparent;
-  padding: 24px 0 40px;
-  cursor: grab;
-  user-select: none;
-}
-.parcours-scroll:active { cursor: grabbing; }
-.parcours-scroll::-webkit-scrollbar { height: 4px; }
-.parcours-scroll::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--blue) 30%, transparent); border-radius: 4px; }
-
-.parcours-track {
-  display: flex;
-  align-items: flex-start;
-  gap: 0;
-  width: 100%;
-  padding-bottom: 16px;
-}
-
-/* ── Step ── */
-.p-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1 1 0;
-  min-width: 0;
-  position: relative;
-}
-
-/* ── Connecteur courbe ── */
-.p-conn {
-  flex: 0 1 12%;
-  min-width: 80px;
-  position: relative;
-  margin-top: 98px;
-}
-.p-conn svg { width: 100%; overflow: visible; display: block; }
-
-/* ── Nœud ── */
-.p-node {
-  width: 64px; height: 64px;
-  background: var(--white);
-  border: 2.5px solid var(--blue);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.6rem;
-  box-shadow: 0 0 0 10px color-mix(in srgb, var(--blue) 10%, transparent), 0 8px 28px rgba(28,58,74,.1);
-  flex-shrink: 0;
-  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-  position: relative; z-index: 3;
-}
-.p-step:hover .p-node {
-  transform: scale(1.1) translateY(-4px);
-  box-shadow: 0 0 0 14px color-mix(in srgb, var(--blue) 15%, transparent), 0 16px 40px rgba(28,58,74,.14);
-}
-
-/* ── Carte ── */
-.p-card {
-  background: var(--white);
-  border-radius: 20px;
-  padding: 22px;
-  border: 1.5px solid rgba(28,58,74,.07);
-  box-shadow: 0 4px 20px rgba(28,58,74,.06);
-  margin-top: 18px;
-  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-  position: relative; z-index: 2;
-}
-.p-step:hover .p-card {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 44px rgba(28,58,74,.12);
-}
-
-/* Étapes paires décalées vers le bas */
-.p-step:nth-child(even) .p-node { margin-top: 54px; }
-.p-step:nth-child(even) .p-card { margin-top: 18px; }
-
-.p-card-year {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
-  color: var(--navy); background: color-mix(in srgb, var(--blue) 15%, transparent);
-  border: 1px solid color-mix(in srgb, var(--blue) 30%, transparent);
-  padding: 3px 10px; border-radius: 100px; margin-bottom: 11px;
-}
-.p-card-year svg { width: 9px; height: 9px; color: var(--blue); }
-.p-card-title { font-family: var(--font-title); font-size: .95rem; color: var(--navy); margin-bottom: 4px; line-height: 1.25; }
-.p-card-org   { font-size: .72rem; font-weight: 700; color: var(--blue); margin-bottom: 8px; }
-.p-card-desc  { font-size: .78rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px; }
-.p-card-tags  { display: flex; flex-wrap: wrap; gap: 4px; }
-.p-card-tag   { font-size: .66rem; font-weight: 600; color: var(--text-muted); background: var(--blue-pale); border-radius: 100px; padding: 2px 9px; }
-
-/* ── Animation tiret ── */
-@keyframes p-dash { to { stroke-dashoffset: -36; } }
-.p-dash { stroke-dasharray: 8 6; animation: p-dash 2.2s linear infinite; }
-
-/* ── Hint ── */
-.parcours-hint {
-  display: flex; align-items: center; gap: 6px;
-  padding: 0 48px; margin-top: 4px;
-  font-size: .75rem; color: var(--text-muted); opacity: .7;
-}
-
-/* ── Responsive ── */
-@media (max-width: 900px) {
-  #parcours { padding: 70px 5% 80px; }
-  .parcours-header { padding-bottom: 36px; text-align: center; }
-  .parcours-hint { display: none; }
-
-  /* Désactiver le scroll horizontal */
-  .parcours-scroll {
-    overflow-x: visible;
-    overflow-y: visible;
-    cursor: default;
-    padding: 0;
-  }
-
-  /* Track en colonne */
-  .parcours-track {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    width: 100%;
-    padding-bottom: 0;
-    position: relative;
-  }
-
-  /* Ligne verticale centrale */
-  .parcours-track::before {
-    content: '';
-    position: absolute;
-    left: 31px;
-    top: 32px;
-    bottom: 32px;
-    width: 2px;
-    background: color-mix(in srgb, var(--blue) 25%, transparent);
-    border-radius: 2px;
-  }
-
-  /* Masquer les connecteurs SVG horizontaux */
-  .p-conn { display: none; }
-
-  /* Step en ligne : nœud à gauche, carte à droite */
-  .p-step {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 0 0 24px;
-    flex: none;
-    min-width: 0;
-  }
-
-  /* Supprimer le décalage des étapes paires */
-  .p-step:nth-child(even) .p-node { margin-top: 0; }
-  .p-step:nth-child(even) .p-card { margin-top: 0; }
-
-  /* Nœud plus petit, collé à gauche */
-  .p-node {
-    width: 48px; height: 48px;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    margin-top: 8px;
-    box-shadow: 0 0 0 7px color-mix(in srgb, var(--blue) 10%, transparent), 0 4px 16px rgba(28,58,74,.1);
-  }
-
-  /* Carte prend le reste de la largeur */
-  .p-card {
-    flex: 1;
-    min-width: 0;
-    margin-top: 0;
-  }
-}
-
-@media (max-width: 640px) {
-  #parcours { padding: 70px 5% 80px; }
-  .parcours-header { padding-bottom: 36px; }
-}
-</style>
 
 <section id="parcours">
+
+  <!-- Taches dalmatien parcours -->
+  <div class="dalma-deco dalma-parcours-tl dalma-deco--light" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-3499.916374,-6422.322063)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2899.44281,-4364.72494)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z"/></g></svg></div>
+  <div class="dalma-deco dalma-parcours-tr dalma-deco--light" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-1914.077524,-3616.752177)"><path d="M767.94,957.722C761.349,961.191 758.227,967.782 759.961,974.72C761.696,981.658 765.859,988.596 771.756,988.596C777.653,988.596 785.285,985.474 785.979,980.271C786.673,975.067 791.876,964.313 786.326,959.804C780.775,955.294 774.531,954.253 767.94,957.722Z"/></g></svg></div>
+  <div class="dalma-deco dalma-parcours-bl dalma-deco--light" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g></svg></div>
+
   <div class="parcours-inner">
     <div class="parcours-header">
       <span class="section-label reveal"><img src="./img/00_site_content/patte.svg" class="label-paw-icon-terra" alt=""> Mon parcours</span>
@@ -600,10 +453,13 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
       <!-- 1 — ACACED -->
       <div class="p-step">
         <div class="p-node">📜</div>
-        <div class="p-card">
-          <div class="p-card-year">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            2026
+        <div class="p-card"><div class="p-card-bg"><svg viewBox="0 0 300 440" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;"><path d="M 55,8 C 130,-4 200,-4 248,8 C 285,18 298,55 298,110 C 298,170 302,240 298,310 C 294,370 298,420 280,445 C 262,460 210,462 150,462 C 90,462 38,460 20,445 C 2,430 2,380 2,320 C 2,255 -2,180 2,115 C 6,55 15,18 55,8 Z" fill="white"/></svg></div>
+          <div class="p-card-header">
+            <div class="p-card-year">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              2026
+            </div>
+            <div class="p-card-logo"><img src="./img/00_site_content/nature.svg" alt="Nature de Chien"></div>
           </div>
           <div class="p-card-title">ACACED — Toutes catégories</div>
           <div class="p-card-org">Attestation de Connaissances pour les Animaux de Compagnie d'Espèces Domestiques</div>
@@ -631,10 +487,13 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
       <!-- 2 — Premiers secours -->
       <div class="p-step">
         <div class="p-node">🩺</div>
-        <div class="p-card">
-          <div class="p-card-year">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            2026
+        <div class="p-card"><div class="p-card-bg"><svg viewBox="0 0 300 435" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;"><path d="M 55,8 C 130,-4 200,-4 248,8 C 285,18 298,55 298,110 C 298,170 302,240 298,310 C 294,370 298,420 280,445 C 262,460 210,462 150,462 C 90,462 38,460 20,445 C 2,430 2,380 2,320 C 2,255 -2,180 2,115 C 6,55 15,18 55,8 Z" fill="white"/></svg></div>
+          <div class="p-card-header">
+            <div class="p-card-year">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              2026
+            </div>
+            <div class="p-card-logo"><img src="./img/00_site_content/logo-zoopro.svg" alt="ZooPro"></div>
           </div>
           <div class="p-card-title">Premiers secours canins & félins</div>
           <div class="p-card-org">Formation secourisme animal</div>
@@ -661,10 +520,13 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
       <!-- 3 — Esprit Dog -->
       <div class="p-step">
         <div class="p-node">🎓</div>
-        <div class="p-card">
-          <div class="p-card-year">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            2026
+        <div class="p-card"><div class="p-card-bg"><svg viewBox="0 0 300 440" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;"><path d="M 55,8 C 130,-4 200,-4 248,8 C 285,18 298,55 298,110 C 298,170 302,240 298,310 C 294,370 298,420 280,445 C 262,460 210,462 150,462 C 90,462 38,460 20,445 C 2,430 2,380 2,320 C 2,255 -2,180 2,115 C 6,55 15,18 55,8 Z" fill="white"/></svg></div>
+          <div class="p-card-header">
+            <div class="p-card-year">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              2026
+            </div>
+            <div class="p-card-logo"><img src="./img/00_site_content/esprit.png" alt="Esprit Dog"></div>
           </div>
           <div class="p-card-title">Esprit Dog</div>
           <div class="p-card-org">Formation éducation canine</div>
@@ -691,27 +553,11 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
   </div>
 </section>
 
-<script>
-(function () {
-  var wrap = document.getElementById('parcoursScroll');
-  if (!wrap) return;
-  var isDown = false, startX, scrollLeft;
-  wrap.addEventListener('mousedown', function (e) {
-    isDown = true; startX = e.pageX - wrap.offsetLeft; scrollLeft = wrap.scrollLeft;
-  });
-  wrap.addEventListener('mouseleave', function () { isDown = false; });
-  wrap.addEventListener('mouseup',    function () { isDown = false; });
-  wrap.addEventListener('mousemove',  function (e) {
-    if (!isDown) return;
-    e.preventDefault();
-    wrap.scrollLeft = scrollLeft - (e.pageX - wrap.offsetLeft - startX);
-  });
-})();
-</script>
-
 <!-- ══ PROCESSUS ══ -->
 <section id="process">
-  <div class="dalma-deco dalma-process-tl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2594.847026,-4598.080402)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g></svg></div>
+  <div class="dalma-deco dalma-process-tl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g></svg></div>
+  <!-- Nouvelles taches process -->
+   <div class="dalma-deco dalma-process-tr" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-3499.916374,-6422.322063)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g></svg></div>
   <div class="process-inner">
     <span class="section-label reveal"><img src="./img/00_site_content/patte.svg" class="label-paw-icon" alt=""> Comment ça se passe</span>
     <h2 class="section-title reveal">Simple, rapide,<br>bienveillant.</h2>
@@ -754,61 +600,12 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
 </section>
 
 <!-- ══ TARIFS ══ -->
-<style>
-/* ── Tarifs v2 — cartes simplifiées ── */
-.tarif-price-big {
-  font-family: var(--font-title); font-size: 2.8rem; font-weight: 800;
-  color: var(--navy); line-height: 1; margin-bottom: 6px;
-}
-.tarif-card.featured .tarif-price-big { color: var(--white); }
-
-.tarif-price-label {
-  font-size: .78rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0;
-}
-.tarif-card.featured .tarif-price-label { color: rgba(255,255,255,.55); }
-
-.tarif-price-schedule {
-  font-size: .74rem; font-weight: 500; color: var(--text-muted);
-  margin-top: 3px; font-style: italic; opacity: .75;
-}
-.tarif-card.featured .tarif-price-schedule { color: rgba(255,255,255,.45); }
-
-.tarif-divider {
-  height: 1px; background: rgba(28,58,74,.08); margin: 18px 0;
-}
-.tarif-card.featured .tarif-divider { background: rgba(255,255,255,.12); }
-
-.tarif-includes {
-  display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px;
-}
-
-.tarif-desc-block {
-  font-size: .82rem; line-height: 1.6; color: var(--text-muted);
-  margin-bottom: 20px; flex-grow: 1;
-}
-.tarif-card.featured .tarif-desc-block { color: rgba(255,255,255,.65); }
-
-.tarif-devis-global {
-  font-size: .76rem; color: var(--text-muted); text-align: center;
-  margin-top: 20px; font-style: italic; opacity: .8;
-}
-
-.tarif-cta {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 100%; gap: 8px;
-  background: var(--navy); color: var(--white);
-  padding: 13px 20px; border-radius: 100px;
-  font-family: var(--font-body); font-weight: 700; font-size: .88rem;
-  border: none; transition: background .2s, transform .2s; cursor: none;
-  text-decoration: none;
-}
-.tarif-cta:hover { background: var(--blue); transform: translateY(-2px); }
-.tarif-card.featured .tarif-cta { background: var(--white); color: var(--navy); }
-.tarif-card.featured .tarif-cta:hover { background: var(--blue); color: var(--white); }
-</style>
 
 <section id="tarifs">
-  <div class="dalma-deco dalma-tarifs-tr" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z" fill="white"/></g><g transform="matrix(5.525972,0.449885,-0.324725,3.988622,-2899.44281,-4364.72494)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z" fill="white"/></g></svg></div>
+  <div class="dalma-deco dalma-tarifs-tr" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2899.44281,-4364.72494)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z"/></g></svg></div>
+  <!-- Nouvelles taches tarifs -->
+  <div class="dalma-deco dalma-tarifs-tl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-3499.916374,-6422.322063)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-3499.916374,-6422.322063)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g></svg></div>
+  <div class="dalma-deco dalma-tarifs-bl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g></svg></div>
   <div class="tarifs-inner">
     <span class="section-label reveal"><img src="./img/00_site_content/patte.svg" class="label-paw-icon-terra" alt=""> Services & Tarifs</span>
     <h2 class="section-title reveal">Des prix clairs,<br>sans surprise.</h2>
@@ -891,7 +688,9 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
 
 <!-- ── FAQ ─────────────────────────────────────────────── -->
 <section id="faq">
-  <div class="dalma-deco dalma-faq-tr" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(4.77015,0.388351,-0.388351,4.77015,-3499.916374,-6422.322063)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2594.847026,-4598.080402)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g></svg></div>
+  <div class="dalma-deco dalma-faq-tl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2899.44281,-4364.72494)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g></svg></div>
+  <div class="dalma-deco dalma-faq-bl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g></svg></div>
+  <div class="dalma-deco dalma-faq-tr" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g></svg></div>
   <div class="faq-inner">
     <div class="section-label reveal"><img src="./img/00_site_content/patte.svg" class="label-paw-icon-terra" alt=""> Questions fréquentes</div>
     <h2 class="section-title reveal">Tout ce que vous<br>voulez savoir</h2>
@@ -1112,12 +911,10 @@ transport sécurisé pour les NAC (nouveaux animaux de compagnie). À défaut de
   </div>
 </section>
 
-
-
 <!-- ── Contact ────────────────────────────────────────────── -->
 <section id="cta">
-  <div class="dalma-deco dalma-cta-tl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z" fill="white"/></g><g transform="matrix(5.525972,0.449885,-0.324725,3.988622,-2899.44281,-4364.72494)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z" fill="white"/></g></svg></div>
-  <div class="dalma-deco dalma-cta-br" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(2.023919,3.45229,-3.45229,2.023919,3701.004775,-5618.644297)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z" fill="white"/></g></svg></div>
+  <div class="dalma-deco dalma-cta-tl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z" fill="white"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2899.44281,-4364.72494)"><path d="M656.213,1123.133C656.213,1123.133 649.275,1117.432 648.408,1129.606C647.54,1141.779 651.877,1145.682 646.673,1151.752C641.47,1157.823 643.204,1162.159 648.408,1161.726C653.611,1161.292 659.09,1164.761 662.638,1156.089C666.186,1147.416 662.125,1141.779 662.638,1136.142C663.151,1130.505 660.983,1128.77 656.213,1123.133Z" fill="white"/></g></svg></div>
+  <div class="dalma-deco dalma-cta-br" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z" fill="white"/></g></svg></div>
 
   <div class="contact-section-inner">
 
@@ -1245,302 +1042,8 @@ transport sécurisé pour les NAC (nouveaux animaux de compagnie). À défaut de
   </div>
 </section>
 
-<style>
-/* ── Section contact ── */
-#cta { padding: 72px 5% 0; }
-
-.contact-section-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 64px;
-  align-items: start;
-  padding-bottom: 80px;
-}
-
-/* ── Colonne gauche ── */
-.contact-left h2 {
-  font-family: var(--font-title);
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
-  line-height: 1.3;
-  color: var(--white);
-  margin: 16px 0 12px;
-}
-.contact-lead {
-  font-size: .95rem;
-  line-height: 1.6;
-  color: var(--blue-light);
-  margin-bottom: 32px;
-}
-.contact-info-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 32px;
-}
-.contact-info-list li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: .92rem;
-  color: var(--blue-light);
-}
-.contact-info-list a {
-  color: var(--blue-light);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color .2s;
-}
-.contact-info-list a:hover { color: var(--white); }
-.contact-info-icon { font-size: 1.1rem; flex-shrink: 0; }
-
-.contact-socials {
-  display: flex;
-  gap: 12px;
-}
-.contact-social {
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(255,255,255,.2);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--blue-light);
-  transition: border-color .3s, color .3s, background .3s;
-}
-.contact-social svg { width: 17px; height: 17px; }
-.contact-social:hover {
-  border-color: var(--blue);
-  color: var(--white);
-  background: rgba(90,175,212,.1);
-}
-
-/* ── Formulaire ── */
-.contact-form-wrap {
-  background: var(--white);
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 24px 60px rgba(28,58,74,.15);
-}
-.contact-form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-.contact-field {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin-bottom: 18px;
-}
-.contact-label {
-  font-family: var(--font-body);
-  font-size: .72rem;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--navy);
-}
-.contact-label span { color: var(--terra); }
-.contact-input {
-  width: 100%;
-  padding: .85rem 1.1rem;
-  border: 1.5px solid var(--blue-pale);
-  border-radius: 10px;
-  background: var(--blue-pale);
-  color: var(--navy);
-  font-family: var(--font-body);
-  font-size: .95rem;
-  outline: none;
-  cursor: none;
-  transition: border-color .25s, background .25s, box-shadow .25s;
-  appearance: none;
-}
-.contact-input::placeholder { color: rgba(28,58,74,.35); }
-.contact-input:focus {
-  border-color: var(--blue);
-  background: var(--white);
-  box-shadow: 0 0 0 3px rgba(90,175,212,.18);
-}
-.contact-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%231C3A4A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-}
-.contact-select option { background: var(--white); color: var(--navy); }
-.contact-textarea {
-  resize: vertical;
-  min-height: 110px;
-}
-.cf-error-box {
-  background: rgba(196,96,58,.1);
-  border: 1px solid rgba(196,96,58,.3);
-  border-radius: 10px;
-  padding: 12px 16px;
-  font-size: .88rem;
-  color: var(--terra);
-  margin-bottom: 16px;
-}
-.contact-submit {
-  width: 100%;
-  justify-content: center;
-  font-size: 1rem;
-}
-.contact-form-title {
-  font-family: var(--font-title);
-  font-size: 1.3rem;
-  color: var(--navy);
-  margin-bottom: 22px;
-}
-.cf-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.cf-chip {
-  padding: 8px 16px;
-  border-radius: 100px;
-  border: 1.5px solid var(--blue-pale);
-  background: var(--blue-pale);
-  font-family: var(--font-body);
-  font-size: .88rem;
-  font-weight: 700;
-  color: var(--navy);
-  cursor: pointer !important;
-  transition: all .25s;
-}
-.cf-chip:hover {
-  border-color: var(--blue);
-  background: rgba(90,175,212,.12);
-}
-.cf-chip.selected {
-  border-color: var(--blue);
-  background: rgba(90,175,212,.2);
-  color: var(--navy);
-}
-.contact-submit.loading {
-  opacity: .7;
-  pointer-events: none;
-}
-
-/* ── RGPD ── */
-.cf-rgpd {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 18px;
-  padding: 18px 20px;
-  background: var(--blue-pale);
-  border-radius: 12px;
-  border-left: 3px solid rgba(90,175,212,.5);
-}
-.cf-check-label {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  cursor: pointer;
-  font-size: .85rem;
-  color: var(--text);
-  line-height: 1.5;
-  text-transform: none;
-  letter-spacing: 0;
-  font-weight: 400;
-}
-.cf-check-input { position: absolute; opacity: 0; width: 0; height: 0; }
-.cf-check-box {
-  flex-shrink: 0;
-  width: 18px; height: 18px;
-  border: 1.5px solid rgba(90,175,212,.6);
-  border-radius: 5px;
-  background: var(--white);
-  margin-top: 2px;
-  transition: background .2s, border-color .2s;
-  display: flex; align-items: center; justify-content: center;
-}
-.cf-check-input:checked + .cf-check-box {
-  background: var(--navy);
-  border-color: var(--navy);
-}
-.cf-check-input:checked + .cf-check-box::after {
-  content: '';
-  width: 10px; height: 6px;
-  border-left: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  transform: rotate(-45deg) translateY(-1px);
-  display: block;
-}
-.cf-req { color: var(--terra); font-weight: 700; }
-.cf-rgpd-note {
-  font-size: .78rem;
-  color: var(--text-muted);
-  line-height: 1.55;
-  margin-top: 4px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(90,175,212,.25);
-}
-.cf-rgpd-note a { color: var(--blue); text-decoration: underline; }
-.cf-required-hint {
-  font-size: .75rem;
-  color: var(--text-muted);
-  margin-top: 2px;
-}
-
-/* ── Confirmation ── */
-.contact-success {
-  text-align: center;
-  padding: 32px 20px;
-}
-.contact-success-icon {
-  width: 64px; height: 64px;
-  margin: 0 auto 20px;
-  background: rgba(90,175,212,.12);
-  border: 1.5px solid rgba(90,175,212,.35);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--blue);
-}
-.contact-success-icon svg { width: 28px; height: 28px; }
-.contact-success h3 {
-  font-family: var(--font-title);
-  font-size: 1.5rem;
-  color: var(--navy);
-  margin-bottom: 10px;
-}
-.contact-success p { font-size: .92rem; color: var(--text-muted); line-height: 1.6; }
-
-/* ── Responsive ── */
-@media (max-width: 900px) {
-  #cta { padding: 60px 5% 0; }
-  .contact-section-inner {
-    grid-template-columns: 1fr;
-    gap: 80px;
-  }
-  .contact-form-wrap { padding: 28px 20px; }
-  .contact-form-row { grid-template-columns: 1fr; }
-}
-</style>
-
+<script src="./js/rgpd-patch.js"></script>
 <script src="./js/contact-form.js"></script>
-<script>
-/* ── Patch RGPD validation sur le formulaire contact ── */
-(function () {
-  var btn = document.getElementById('cf-submit');
-  if (!btn) return;
-  /* On intercepte le clic avant contact-form.js en phase capture */
-  btn.addEventListener('click', function (e) {
-    var r1 = document.getElementById('cf-rgpd1');
-    var r2 = document.getElementById('cf-rgpd2');
-    if (!r1 || !r1.checked || !r2 || !r2.checked) {
-      e.stopImmediatePropagation();
-      var errBox = document.getElementById('cf-error');
-      if (errBox) {
-        errBox.textContent = 'Veuillez cocher les deux cases de consentement RGPD pour continuer.';
-        errBox.style.display = 'block';
-      }
-    }
-  }, true /* capture = avant contact-form.js */);
-})();
-</script>
 
 <!-- ── FOOTER ─────────────────────────────────────────── -->
 <footer id="footer">
@@ -1583,14 +1086,15 @@ transport sécurisé pour les NAC (nouveaux animaux de compagnie). À défaut de
   <div class="footer-bottom">
     <span>© 2026 Mambo & Co </span>
     <div class="footer-bottom-links">
-      <a href="/mentions-legales/">Mentions légales</a>
-      <a href="/cgv/">CGV</a>
-      <a href="/confidentialite/">Politique de confidentialité</a>
+      <a href="./mentions-legales.html">Mentions légales</a>
+      <a href="./cgv.html">CGV</a>
+      <a href="./confidentialité.html">Politique de confidentialité</a>
     </div>
   </div>
 </footer>
 
 <script src="./js/main.js"></script>
+<script src="./js/parcours.js"></script>
 <script src="./js/scrollbar.js"></script>
 </body>
 </html>
