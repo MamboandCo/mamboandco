@@ -993,12 +993,12 @@ section { padding: 72px 5%; }
 /* ── FAQ ── */
 #faq {
   padding: 100px 40px;
-  background: var(--beige);
+  background: var(--white);
 }
 .faq-inner { max-width: 1100px; margin: 0 auto; }
 .faq-list { display: flex; flex-direction: column; gap: 12px; margin-top: 48px; }
 .faq-item {
-  background: var(--white); border-radius: 14px;
+  background: var(--beige); border-radius: 14px;
   border: 1px solid rgba(28,58,74,.08); overflow: hidden;
 }
 .faq-question {
