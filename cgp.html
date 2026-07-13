@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Mambo & Co · Conditions générales de prestations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/styleold.css" />
+  <link rel="stylesheet" href="css/discovery.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/legal.css" />
+  <link rel="icon" type="image/png" href="./img/00_site_content/FAVICON2.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+  .legal-nav{
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    position: sticky;
+    top: 100px;
+    scrollbar-width: thin;
+  }
+
+  .legal-nav::-webkit-scrollbar{
+    width: 6px;
+  }
+
+  .legal-nav::-webkit-scrollbar-thumb{
+    background: rgba(0,0,0,0.25);
+    border-radius: 10px;
+  }
+
+  @media (max-width: 980px){
+    .legal-nav{
+      max-height: none;
+      overflow: visible;
+      position: relative;
+      top: auto;
+    }
+  }
+
+  /* ── Taches dalmatien décoratives ── */
+  .legal-dalma {
+    position: fixed;
+    pointer-events: none;
+    fill: var(--navy, #1C3A4A);
+    opacity: .06;
+    z-index: 0;
+  }
+  .legal-dalma-tl { top: 80px; left: -20px; width: 240px; transform: rotate(-8deg); }
+  .legal-dalma-br { bottom: 60px; right: -15px; width: 190px; transform: rotate(140deg); }
+  .legal-dalma-tr { top: 200px; right: 30px; width: 160px; transform: rotate(25deg); }
+  .legal-dalma-bl { bottom: 200px; left: 20px; width: 200px; transform: rotate(-150deg); }
+</style>
+
+</head>
+<body>
+<script src="js/loader.js"></script>
+
+  <!-- ── TACHES DALMATIEN ─────────────────────────────── -->
+  <svg class="legal-dalma legal-dalma-tl" viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g>
+    <g transform="matrix(4.77015,0.388351,-0.388351,4.77015,-3499.916374,-6422.322063)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g>
+  </svg>
+  <svg class="legal-dalma legal-dalma-br" viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g>
+  </svg>
+  <svg class="legal-dalma legal-dalma-tr" viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g>
+  </svg>
+  <svg class="legal-dalma legal-dalma-bl" viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g>
+  </svg>
+
+  <!-- ── CURSEUR PATTE ──────────────────────────────────── -->
+<div class="cursor" id="cursor">
+  <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 2px 5px rgba(26,50,73,.3))">
+    <g transform="matrix(1.204453,0.237063,-0.22363,1.136206,-85.666284,-427.174696)">
+      <path d="M354.62,846.029C301.597,863.055 241.728,824.268 220.914,759.407C193.883,675.204 212.01,583.98 265.044,566.965C318.067,549.939 387.869,619.689 412.934,697.768C433.748,762.629 407.654,829.003 354.62,846.029Z" class="paw-pad"/>
+    </g>
+    <g transform="matrix(1.204453,0.237063,-0.22363,1.136206,-85.666284,-427.174696)">
+      <path d="M835.854,1045.89C758.167,1059.01 722.077,1030.15 672.255,1038.55C622.423,1046.96 597.81,1086.06 520.123,1099.16C418.421,1116.31 321.66,1002.79 399.8,903.756C496.911,780.694 507.513,644.724 603.091,628.604C698.679,612.484 753.298,737.44 885.408,821.838C991.711,889.757 937.546,1028.74 835.854,1045.89Z" class="paw-main"/>
+    </g>
+    <g transform="matrix(1.204453,0.237063,-0.22363,1.136206,-85.666284,-427.174696)">
+      <path d="M599.488,455.277C592.797,373.555 630.637,282.414 686.131,277.864C741.645,273.325 793.268,350.683 800.484,438.818C806.043,506.715 765.557,565.441 710.053,569.981C654.55,574.531 605.047,523.175 599.488,455.277Z" class="paw-pad"/>
+    </g>
+    <g transform="matrix(1.204453,0.237063,-0.22363,1.136206,-85.666284,-427.174696)">
+      <path d="M354.363,514.075C332.272,428.452 355.66,338.433 409.589,324.526C463.508,310.609 529.151,384.292 549.636,463.687C566.661,529.65 536.748,594.398 482.829,608.315C428.9,622.232 371.389,580.038 354.363,514.075Z" class="paw-pad"/>
+    </g>
+    <g transform="matrix(1.204453,0.237063,-0.22363,1.136206,-85.666284,-427.174696)">
+      <path d="M909.145,752.479C853.466,753.797 807.031,699.651 805.415,631.548C803.48,549.579 846.549,460.785 902.217,459.477C957.896,458.16 1004.95,538.379 1007.04,626.782C1008.64,694.885 964.814,751.161 909.145,752.479Z" class="paw-pad"/>
+    </g>
+  </svg>
+</div>
+
+<!-- ── HEADER ─────────────────────────────────────────── -->
+<header id="header">
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo" aria-label="Mambo &amp; Co · Accueil">
+      <img src="./img/00_site_content/Mambo & Co logo_1.svg" alt="Mambo &amp; Co" class="nav-logo-img" />
+    </a>
+    <div class="nav-links">
+      <a href="index.html#about">Qui suis-je ?</a>
+       <a href="index.html#histoire">Histoire</a>
+      <a href="index.html#tarifs">Services &amp; Tarifs</a>
+      <a href="index.html#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="index.html#cta" class="btn-nav">Prendre rendez-vous <img src="./img/00_site_content/patte.svg" class="btn-paw-icon" alt=""></a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+        <g transform="matrix(1.204453,0.237063,-0.22363,1.136206,-85.666284,-427.174696)">
+          <path d="M354.62,846.029C301.597,863.055 241.728,824.268 220.914,759.407C193.883,675.204 212.01,583.98 265.044,566.965C318.067,549.939 387.869,619.689 412.934,697.768C433.748,762.629 407.654,829.003 354.62,846.029Z" fill="#1C3A4A"/>
+        </g>
+        <g transform="matrix(1.204453,0.237063,-0.22363,1.136206,-85.666284,-427.174696)">
+          <path d="M835.854,1045.89C758.167,1059.01 722.077,1030.15 672.255,1038.55C622.423,1046.96 597.81,1086.06 520.123,1099.16C418.421,1116.31 321.66,1002.79 399.8,903.756C496.911,780.694 507.513,644.724 603.091,628.604C698.679,612.484 753.298,737.44 885.408,821.838C991.711,889.757 937.546,1028.74 835.854,1045.89Z" fill="#1C3A4A"/>
+        </g>
+        <g transform="matrix(1.204453,0.237063,-0.22363,1.136206,-85.666284,-427.174696)">
+          <path d="M599.488,455.277C592.797,373.555 630.637,282.414 686.131,277.864C741.645,273.325 793.268,350.683 800.484,438.818C806.043,506.715 765.557,565.441 710.053,569.981C654.55,574.531 605.047,523.175 599.488,455.277Z" fill="#1C3A4A"/>
+        </g>
+        <g transform="matrix(1.204453,0.237063,-0.22363,1.136206,-85.666284,-427.174696)">
+          <path d="M354.363,514.075C332.272,428.452 355.66,338.433 409.589,324.526C463.508,310.609 529.151,384.292 549.636,463.687C566.661,529.65 536.748,594.398 482.829,608.315C428.9,622.232 371.389,580.038 354.363,514.075Z" fill="#1C3A4A"/>
+        </g>
+        <g transform="matrix(1.204453,0.237063,-0.22363,1.136206,-85.666284,-427.174696)">
+          <path d="M909.145,752.479C853.466,753.797 807.031,699.651 805.415,631.548C803.48,549.579 846.549,460.785 902.217,459.477C957.896,458.16 1004.95,538.379 1007.04,626.782C1008.64,694.885 964.814,751.161 909.145,752.479Z" fill="#1C3A4A"/>
+        </g>
+      </svg>
+    </button>
+    <div class="menu-dropdown">
+      <nav class="mobile-nav-links">
+        <a href="index.html#about"    class="mobile-link"><span class="mobile-link-num">01</span>Qui suis-je ?</a>
+        <a href="index.html#histoire" class="mobile-link"><span class="mobile-link-num">02</span>Histoire</a>
+        <a href="index.html#tarifs"   class="mobile-link"><span class="mobile-link-num">03</span>Services & Tarifs</a>
+        <a href="index.html#faq"      class="mobile-link"><span class="mobile-link-num">04</span>FAQ</a>
+      </nav>
+      <a href="#cta" class="mobile-cta">Prendre rendez-vous <img src="./img/00_site_content/patte.svg" class="btn-paw-icon" alt=""></a>
+
+      <div class="mobile-menu-footer">
+            <span class="mobile-footer-copy">© 2026 Mambo & Co</span>
+             <div class="social-row">
+        <a class="social-btn2" href="https://www.instagram.com/mambo.and.co/" aria-label="Instagram" target="_blank">
+          <img class="social-img" src="./img/assets/instagram.png" alt="Instagram" />
+        </a>
+        <a class="social-btn2" href="https://www.tiktok.com/@mambo.and.co/" aria-label="Tiktok" target="_blank"> 
+          <img class="social-img" src="./img/assets/tik-tok.png" alt="Tiktok" />
+        </a>
+         <a class="social-btn2" href="https://www.linkedin.com/company/mamboandco" aria-label="LinkedIn" target="_blank"> 
+        <img class="social-img" src="./img/assets/linkedin.png" alt="LinkedIn" />
+         </a>
+      </div>
+        </div>
+
+    </div>
+  </nav>
+</header>
+
+<div class="legal-hero">
+  <div class="section-label reveal"><img src="./img/00_site_content/patte.svg" class="label-paw-icon-terra" alt=""> Informations légales</div>
+  <h2 class="section-title reveal">Conditions générales de prestations</h2>
+  <p class="section-script reveal">Dernière mise à jour : Juillet 2026</p>
+</div>
+
+<div class="legal-body">
+
+  
+  <nav class="legal-nav">
+    <div class="legal-nav-title">Sommaire</div>
+    <a href="#article1">Objet</a>
+    <a href="#article2">Agréments &amp; assurance</a>
+    <a href="#article3">Prestations proposées</a>
+    <a href="#article4">Zone d’intervention</a>
+    <a href="#article5">Réservation, devis et paiement</a>
+    <a href="#article6">Pré-visite</a>
+    <a href="#article7">Remise et restitution des clés</a>
+    <a href="#article8">Annulation, refus et rétractation</a>
+    <a href="#article9">Éducation canine</a>
+    <a href="#article10">Obligations et responsabilités des parties</a>
+    <a href="#article11">Santé animale et conditions sanitaires</a>
+    <a href="#article12">Confidentialité</a>
+    <a href="#article13">Propriété intellectuelle</a>
+    <a href="#article14">Modification des CGP</a>
+    <a href="#article15">Médiation et litiges</a>
+    <a href="#article16">Données personnelles et droit à l’image</a>
+    <a href="#article17">Contact</a>
+  </nav>
+
+  <div class="legal-content">
+
+    <div class="legal-section" id="article1">
+      <span class="legal-section-num">01</span>
+      <h2>Objet</h2>
+      <p>Prestataire : GALIEGUE Ophélie<br>
+Nom commercial : Mambo & Co<br>
+Adresse : 144 rue de Noisy-le-Sec, 93170 Bagnolet<br>
+SIRET : 10508235800018</p>
+      <p>Ces Conditions Générales de Prestations expliquent, simplement, comment se passe la collaboration : elles définissent le cadre entre Mambo &amp; Co (Ophélie Galiegue) et toute personne (ci-après « le Client ») qui lui confie son chien, son chat ou son NAC (nouvel animal de compagnie).</p>
+      <p>En réservant une prestation, vous acceptez ces conditions. Elles sont là pour que tout soit clair entre nous.</p>
+    </div>
+
+    <div class="legal-section" id="article2">
+      <span class="legal-section-num">02</span>
+      <h2>Agréments &amp; assurance</h2>
+      <p>Je suis titulaire de l’ACACED (Attestation de Connaissances pour les Animaux de Compagnie d’Espèces Domestiques) toutes catégories, Chien, Chat, NAC, conformément à la réglementation en vigueur. Une assurance responsabilité civile professionnelle couvre également mon activité, pour que chacun soit protégé en toute tranquillité.</p>
+    </div>
+
+    <div class="legal-section" id="article3">
+      <span class="legal-section-num">03</span>
+      <h2>Prestations proposées</h2>
+      <p>Voici, concrètement, ce que Mambo &amp; Co propose :</p>
+      <div class="legal-info-block">
+        <p>• des visites à domicile pour chiens, chats et NAC</p>
+        <p>• des promenades individuelles pour chiens ; plusieurs chiens d’un même foyer peuvent sortir ensemble si leur comportement le permet, après évaluation lors de la pré-visite. Le nombre d’animaux, la durée ou l’itinéraire peuvent être adaptés selon ce qui est observé sur le terrain, pour la sécurité de tous</p>
+        <p>• des visites ou promenades avec option éducative pour chien, incluant :</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;◦ l’apprentissage d’ordres de base</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;◦ le renforcement des bonnes habitudes du quotidien</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;◦ des exercices éducatifs adaptés au rythme et aux capacités de l’animal</p>
+      </div>
+      <p>Chaque prestation est pensée autour de vos besoins, du bien-être de l’animal et de ce que Mambo &amp; Co peut raisonnablement assurer. Si les conditions de sécurité, de santé ou de comportement de l’animal ne permettent pas une prise en charge adaptée, la prestation pourra être refusée.</p>
+      <p><strong>Deux exclusions à connaître :</strong></p>
+      <div class="legal-info-block">
+        <p>• les animaux nécessitant un traitement par injection (régulier ou ponctuel) ne peuvent pas être pris en charge.</p>
+        <p>• les chiens de catégorie 1 et 2 (chiens d’attaque, de garde et de défense) ne sont pas acceptés, en raison des obligations légales et de sécurité qui leur sont propres.</p>
+      </div>
+    </div>
+
+    <div class="legal-section" id="article4">
+      <span class="legal-section-num">04</span>
+      <h2>Zone d’intervention</h2>
+      <p>Je me déplace en Île-de-France, dans les départements 75, 92, 93 et 95, principalement en transports en commun.</p>
+      <p>Les éventuels frais liés à la pré-visite ou à un déplacement supplémentaire pour la remise des clés sont indiqués clairement dans le devis contractuel (voir articles 5, 6 et 7).</p>
+    </div>
+
+    <div class="legal-section" id="article5">
+      <span class="legal-section-num">05</span>
+      <h2>Réservation, devis et paiement</h2>
+      <p>Les tarifs sont indiqués sur le site « www.mamboandco.fr », ainsi que sur le devis contractuel.</p>
+      <p><strong>TVA non applicable, article 293 B du CGI.</strong></p>
+
+      <h3>Étape 1 : On se contacte</h3>
+      <p>Vous pouvez joindre Mambo &amp; Co via le formulaire de contact du site mamboandco.fr, par téléphone, ou sur les réseaux sociaux.</p>
+
+      <h3>Étape 2 : On fait connaissance au téléphone</h3>
+      <p>Un premier échange téléphonique permet de comprendre votre demande et de voir ensemble si la prestation est réalisable.</p>
+
+      <h3>Étape 3 : Vous confirmez et remplissez la fiche animal</h3>
+      <p>Une fois votre décision prise, vous complétez le formulaire de fiche animal en ligne. Si ce n’est pas possible en ligne, une solution sera trouvée ensemble.</p>
+
+      <h3>Étape 4 : Le devis contractuel</h3>
+      <p>À partir des informations de la fiche animal, Mambo &amp; Co rédige le devis contractuel et vous l’envoie. Il détaille les prestations, les dates, les tarifs, et inclut en annexe les présentes CGP ainsi que les autorisations nécessaires (urgence vétérinaire, droit à l’image).</p>
+      <p><strong>Ce devis contractuel fait office de contrat dès que vous l’acceptez : aucun document contractuel distinct n’est établi.</strong> Il reste valable 24h en période chargée, et 48h en période plus calme.</p>
+
+      <h3>Étape 5 : L’acompte</h3>
+      <p>Un acompte de 50 % du montant total est dû à la signature du devis, sous 24h, hors espèces.</p>
+
+      <h3>Étape 6 : La pré-visite</h3>
+      <p>Elle a lieu environ une semaine avant le début de la prestation.</p>
+
+      <h3>Étape 7 : Le solde</h3>
+      <p>Le solde couvre le montant restant dû (y compris la pré-visite et, le cas échéant, la remise des clés). Il se règle lors de la pré-visite, par virement bancaire ou Wero sous 24h, avec un justificatif de paiement. Un règlement en espèces reste possible à titre exceptionnel, avec accord préalable.</p>
+
+      <h3>Étape 8 : La remise des clés</h3>
+      <p>En confiant vos clés lors de la pré-visite, vous confirmez la prise en charge de la prestation.</p>
+
+      <h3>Étape 9 : La prestation se déroule</h3>
+      <p>Tout se passe selon le planning convenu ensemble.</p>
+
+      <h3>Étape 10 : La fin de la prestation</h3>
+      <p>La prestation se termine à la date convenue ; les clés sont restituées selon les modalités choisies (voir article 7).</p>
+
+      <p>Pour les prestations longue durée (plus d’un mois), les modalités de paiement et d’échéances sont définies au cas par cas avec vous, en dehors du cadre habituel de ces CGP.</p>
+      <p>Le délai de 24h laissé pour régler l’acompte correspond à la période durant laquelle Mambo &amp; Co bloque votre créneau et décline, de ce fait, toute autre demande sur les mêmes dates. Le règlement dans ce délai conditionne donc la réservation effective du créneau : passé ce délai, le créneau peut être réattribué à un autre client.</p>
+    </div>
+
+    <div class="legal-section" id="article6">
+      <span class="legal-section-num">06</span>
+      <h2>Pré-visite</h2>
+      <p>La pré-visite est un passage obligé avant toute première prestation, environ une semaine avant le début de celle-ci.</p>
+      <p>C’est l’occasion de :</p>
+      <div class="legal-info-block">
+        <p>• faire connaissance avec l’animal</p>
+        <p>• observer son comportement</p>
+        <p>• récupérer toutes les consignes utiles</p>
+        <p>• vérifier que tout est sécurisé</p>
+        <p>• organiser ensemble les détails pratiques</p>
+      </div>
+      <p>À l’issue de ce rendez-vous, Mambo &amp; Co confirme la prestation, ou, plus rarement, peut la décliner si le comportement ou l’état de santé de l’animal ne permet pas une prise en charge sereine, dans des conditions de sécurité et de travail raisonnables. Un email de confirmation ou de refus vous est envoyé. Les modalités en cas de refus sont détaillées à l’article 8.</p>
+    </div>
+
+    <div class="legal-section" id="article7">
+      <span class="legal-section-num">07</span>
+      <h2>Remise et restitution des clés</h2>
+      <h3>Remise des clés (pré-visite)</h3>
+      <p>La remise des clés a lieu lors de la pré-visite. Elle est gratuite si elle se fait en main propre ou via une boîte aux lettres sécurisée. Un déplacement spécifique organisé uniquement pour récupérer les clés est en revanche facturé, selon les conditions indiquées dans le devis contractuel.</p>
+      <h3>Restitution des clés (fin de prestation)</h3>
+      <p>La restitution des clés est gratuite si elle se fait en main propre à une personne présente le jour de la dernière visite, via une boîte aux lettres sécurisée, ou remise à une personne tierce que vous aurez désignée. Un déplacement spécifique organisé après la dernière prestation est en revanche facturé.</p>
+      <p>En cas d’imprévu, un arrangement sera recherché ensemble en priorité. À défaut, des frais de 5 € pourront s’appliquer.</p>
+      <p>Vous restez responsable des accès confiés (clés, badges, digicode).</p>
+    </div>
+
+    <div class="legal-section" id="article8">
+      <span class="legal-section-num">08</span>
+      <h2>Annulation, refus et rétractation</h2>
+      <p>Vous disposez d’un délai légal de rétractation de 14 jours (article L221-18 du Code de la consommation). Ce droit tombe si vous demandez que la prestation démarre immédiatement.</p>
+      <p>Tant que ce délai n’est pas écoulé (ou que vous n’y avez pas renoncé expressément), la réservation reste provisoire : le créneau peut être attribué à un autre client qui s’engage fermement.</p>
+      <h3>Avant la pré-visite</h3>
+      <div class="legal-info-block">
+        <p>• si l’acompte n’a pas encore été versé, vous pouvez annuler sans frais</p>
+        <p>• si l’acompte a été versé, il n’est pas remboursé en cas d’annulation de votre part</p>
+        <p>• en cas d’absence au rendez-vous, l’acompte reste dû, et 5 € de frais supplémentaires s’ajoutent si un nouveau déplacement est nécessaire</p>
+      </div>
+
+      <h3>Au moment de la pré-visite</h3>
+      <div class="legal-info-block">
+        <p>• si Mambo &amp; Co décline la prestation pour raison de sécurité ou d’incompatibilité, alors que les informations transmises étaient exactes : 5 € sont retenus, le reste vous est remboursé</p>
+        <p>• si ce refus fait suite à une information fausse ou dissimulée : l’acompte n’est pas remboursé</p>
+        <p>• si le solde n’est pas réglé dans les conditions prévues : la prestation ne démarre pas, l’acompte reste acquis</p>
+      </div>
+
+      <h3>Après la pré-visite (solde réglé)</h3>
+      <div class="legal-info-block">
+        <p>• toute annulation de votre part, quel qu’en soit le motif, n’ouvre droit à aucun remboursement</p>
+      </div>
+
+      <h3>Cas particuliers</h3>
+      <div class="legal-info-block">
+        <p>• décès de l’animal en cours de contrat : remboursement au prorata, sur présentation d’un justificatif vétérinaire</p>
+        <p>• force majeure ou motif grave (hospitalisation, décès d’un proche…) : remboursement laissé à l’appréciation de Mambo &amp; Co</p>
+        <p>• annulation à l’initiative de Mambo &amp; Co : remboursement intégral des prestations non réalisées</p>
+      </div>
+
+      <p>Pour toute situation non prévue ici, Mambo &amp; Co s’engage à chercher, au cas par cas et de bonne foi, la solution la plus juste, en discutant avec vous.</p>
+    </div>
+
+    <div class="legal-section" id="article9">
+      <span class="legal-section-num">09</span>
+      <h2>Éducation canine</h2>
+      <p>Les prestations éducatives, ce sont :</p>
+      <div class="legal-info-block">
+        <p>• des apprentissages du quotidien</p>
+        <p>• du renforcement éducatif</p>
+        <p>• des exercices de stimulation et de comportement</p>
+        <p>• des conseils de base</p>
+      </div>
+      <p>Ce n’est pas du dressage professionnel certifié, et aucun résultat n’est garanti. Les progrès dépendent de plusieurs facteurs :</p>
+      <div class="legal-info-block">
+        <p>• la régularité du travail</p>
+        <p>• le comportement de l’animal</p>
+        <p>• votre implication</p>
+      </div>
+      <p>Ces prestations ne couvrent pas la rééducation comportementale (agressivité, anxiété sévère, troubles du comportement). Si le comportement de l’animal relève de ce type de prise en charge, Mambo &amp; Co pourra refuser ou interrompre la prestation, cela sortant du cadre de l’option éducative proposée.</p>
+    </div>
+
+    <div class="legal-section" id="article10">
+      <span class="legal-section-num">10</span>
+      <h2>Obligations et responsabilités des parties</h2>
+
+      <h3>De son côté, Mambo &amp; Co s’engage à :</h3>
+      <div class="legal-info-block">
+        <p>• assurer les prestations convenues</p>
+        <p>• veiller au bien-être de l’animal</p>
+        <p>• respecter la confidentialité</p>
+        <p>• vous informer en cas d’incident</p>
+        <p>• vous prévenir en cas de retard</p>
+      </div>
+      <p>Mambo &amp; Co garde l’animal dans le cadre d’une obligation de moyens et de surveillance pendant la prestation. Sa responsabilité ne pourra être engagée qu’en cas de faute prouvée. Elle ne saurait être tenue responsable :</p>
+      <div class="legal-info-block">
+        <p>• des maladies préexistantes ou pathologies non détectables pendant la prestation</p>
+        <p>• des accidents imprévisibles et extérieurs à sa volonté</p>
+        <p>• des fugues liées à un défaut ou une défaillance des installations fournies par le Client</p>
+        <p>• des dommages causés par un cas de force majeure au sens de l’article 1218 du Code civil</p>
+      </div>
+
+      <h3>De votre côté, vous vous engagez à :</h3>
+      <div class="legal-info-block">
+        <p>• être majeur et propriétaire de l’animal</p>
+        <p>• fournir des informations complètes et exactes sur lui (comportement, santé, antécédents)</p>
+        <p>• présenter, lors de la pré-visite, pour les chiens, chats et furets : la carte d’identification (I-CAD) ou le numéro d’identification, ainsi que le carnet de santé à jour</p>
+        <p>• pour les NAC : fournir tout document vétérinaire disponible (ordonnances, bilans, comptes-rendus) en l’absence de carnet de santé</p>
+        <p>• transmettre les coordonnées de votre vétérinaire</p>
+        <p>• maintenir l’animal vacciné et suivi</p>
+        <p>• pour les chiens, chats et furets : le maintenir identifié conformément à la réglementation (puce électronique ou tatouage)</p>
+        <p>• disposer d’une assurance Responsabilité Civile couvrant les dommages que votre animal pourrait causer à des tiers (personnes, animaux, biens) pendant la prestation</p>
+      </div>
+      <p>Si les informations transmises sont erronées, incomplètes, ou si des documents manquent, Mambo &amp; Co pourra refuser ou interrompre la prestation, sans obligation de remboursement.</p>
+      <p>Vous restez responsable :</p>
+      <div class="legal-info-block">
+        <p>• des dommages causés par votre animal en dehors des périodes de garde</p>
+        <p>• des incidents liés à un comportement non signalé ou insuffisamment communiqué</p>
+        <p>• des frais vétérinaires liés à une pathologie préexistante ou non communiquée</p>
+        <p>• des dommages liés à des informations incomplètes concernant l’animal (santé, comportement, particularités)</p>
+      </div>
+      <p>Pendant la prestation, la responsabilité est régie par l’article 1243 du Code civil, selon la qualité de gardien.</p>
+    </div>
+
+    <div class="legal-section" id="article11">
+      <span class="legal-section-num">11</span>
+      <h2>Santé animale et conditions sanitaires</h2>
+
+      <h3>Traitements et ordonnances</h3>
+      <p>Merci de fournir une copie de toute ordonnance vétérinaire en cours de validité pour un traitement à administrer pendant la prestation. L’ordonnance originale est récupérée lors de la pré-visite. Aucun médicament ne sera donné sans avoir vu l’ordonnance correspondante ; cette règle vaut pour tous les animaux.</p>
+
+      <h3>Santé et conditions sanitaires</h3>
+      <p>Vous confirmez que :</p>
+      <div class="legal-info-block">
+        <p>• l’animal est en bonne santé générale</p>
+        <p>• il ne présente pas de maladie contagieuse connue</p>
+        <p>• il bénéficie d’un suivi vétérinaire adapté</p>
+        <p>• son carnet de santé est à jour</p>
+      </div>
+      <p>Merci de signaler tout problème de santé, traitement en cours, fragilité ou antécédent médical. Le carnet de santé est obligatoire pour les chiens, chats et furets. Pour les NAC, tout document vétérinaire disponible (ordonnance, bilan, compte-rendu) suffit en l’absence de carnet de santé. Ces documents sont à présenter lors de la pré-visite.</p>
+      <p>Certains animaux (NAC, animaux âgés ou fragiles) peuvent voir leur état se dégrader rapidement malgré une surveillance attentive ; c’est important d’en avoir conscience ensemble.</p>
+      <p>En cas d’informations erronées, incomplètes ou de documents manquants concernant la santé de l’animal, Mambo &amp; Co pourra refuser ou interrompre la prestation, sans obligation de remboursement.</p>
+
+      <h3>Vaccins obligatoires</h3>
+      <p>Voici les vaccinations à jour selon l’espèce :</p>
+      <div class="legal-info-block">
+        <p>• Chien : CHPPiL (Maladie de Carré, Hépatite de Rubarth, Parvovirose, Parainfluenza, Leptospirose)</p>
+        <p>• Chat d’intérieur : Coryza • Typhus félin</p>
+        <p>• Chat d’extérieur : Coryza • Typhus félin • Leucose féline (FeLV)</p>
+        <p>• Lapin : Myxomatose • VHD 1 & 2 (Maladie Hémorragique Virale)</p>
+        <p>• Furet : Maladie de Carré</p>
+      </div>
+      <p>Pour tout animal adopté ou importé d’un autre pays, ou ayant voyagé hors de France récemment, le vaccin antirabique (rage) est aussi obligatoire.</p>
+      <p>Si les vaccins ne sont pas à jour, Mambo &amp; Co pourra refuser la prestation.</p>
+
+      <h3>Parasites et hygiène</h3>
+      <p>Il est vivement conseillé de traiter régulièrement l’animal contre les parasites internes et externes (antipuces, vermifuge). Mambo &amp; Co ne pourra être tenu responsable d’un problème de santé lié à l’absence de traitement antiparasitaire. Une infestation constatée lors de la pré-visite peut entraîner un report ou un refus de prise en charge, et un animal présentant des parasites visibles pourra être refusé, pour des raisons sanitaires et de sécurité. Si une infestation est détectée en cours de prestation, l’animal pourra être conduit chez le vétérinaire, aux frais du Client.</p>
+
+      <h3>Vétérinaire et urgence</h3>
+      <p>En cas de problème de santé ou d’urgence, vous êtes prévenu immédiatement.</p>
+      <p>Si besoin, Mambo &amp; Co pourra contacter votre vétérinaire ou, si la situation l’exige, tout autre vétérinaire disponible pour un avis professionnel. Un toiletteur professionnel pourra aussi être sollicité si l’état du pelage l’exige (nœuds, bourres de poils, hygiène).</p>
+      <p>Dans la mesure du possible, l’animal sera transporté chez le vétérinaire en transports en commun, conformément à la réglementation applicable.</p>
+      <p>Merci de fournir le matériel adapté :</p>
+      <div class="legal-info-block">
+        <p>• panier, sac ou caisse fermée pour chats et petits chiens ;</p>
+        <p>• laisse et muselière pour chiens de taille moyenne ou grande ;</p>
+        <p>• contenant sécurisé pour NAC.</p>
+      </div>
+      <p>Si les transports en commun ne sont pas envisageables, une solution alternative pourra être organisée avec votre accord préalable.</p>
+      <p>Les frais vétérinaires, de toilettage, de transport ou d’urgence restent entièrement à votre charge. Toute consultation ou intervention en urgence est facturée directement en votre nom. Mambo &amp; Co n’avance aucun frais vétérinaire. En signant le contrat, vous autorisez le vétérinaire consulté à agir et à facturer directement en votre nom.</p>
+
+      <h3>Matériel et conditions d’accueil à domicile</h3>
+      <p>Lors des visites à domicile, l’animal reste dans son propre environnement. Merci de vous assurer que tout ce dont il a besoin est disponible, en bon état et bien approvisionné avant chaque prestation :</p>
+      <div class="legal-info-block">
+        <p>• gamelles propres, eau fraîche et alimentation en quantité suffisante ;</p>
+        <p>• litière propre et approvisionnée pour les chats et NAC ;</p>
+        <p>• jouets, griffoirs, cachettes ou tout enrichissement habituel de l’animal ;</p>
+        <p>• médicaments, compléments ou matériel vétérinaire nécessaires en cas de traitement en cours ;</p>
+        <p>• tout accessoire spécifique à l’espèce (cage, terrarium, lampe chauffante, etc.).</p>
+      </div>
+      <p>Vous restez seul responsable de l’approvisionnement et de l’état du matériel présent chez vous. Mambo &amp; Co ne saurait être tenu responsable des conséquences d’un manque de nourriture, d’eau ou de tout autre élément indispensable au bien-être de l’animal qui n’aurait pas été mis à disposition.</p>
+
+      <h3>Matériel pour les promenades</h3>
+      <p>Pour toute promenade, merci de mettre à disposition le matériel nécessaire :</p>
+      <div class="legal-info-block">
+        <p>• laisse adaptée à la taille et au comportement du chien ;</p>
+        <p>• harnais ou collier en bon état ;</p>
+        <p>• muselière si le chien est susceptible de mordre ou si elle est imposée par la réglementation ;</p>
+        <p>• sacs à déjections en quantité suffisante ;</p>
+        <p>• tout autre accessoire signalé lors de la pré-visite (longe, gilet réfléchissant, etc.).</p>
+      </div>
+      <p>Ce matériel doit être disponible, en bon état et facilement accessible dès l’arrivée du prestataire. Mambo &amp; Co ne fournit pas d’équipement et ne pourra être tenu responsable d’un incident lié à un matériel défectueux, inadapté ou absent.</p>
+
+      <h3>Joignabilité pendant la prestation</h3>
+      <p>Merci de laisser un numéro où vous êtes joignable pendant toute la durée de la prestation. Si vous êtes injoignable (voyage à l’étranger, déplacement itinérant), merci de désigner une personne de confiance à prévenir en cas d’incident ou d’urgence concernant l’animal ou le domicile.</p>
+    </div>
+
+    <div class="legal-section" id="article12">
+      <span class="legal-section-num">12</span>
+      <h2>Confidentialité</h2>
+      <p>Tout ce qui se dit et s’échange dans le cadre des prestations reste entre nous.</p>
+      <p>Cet engagement de confidentialité vaut pendant toute la durée du contrat, et continue après sa fin.</p>
+    </div>
+
+    <div class="legal-section" id="article13">
+      <span class="legal-section-num">13</span>
+      <h2>Propriété intellectuelle</h2>
+      <p>Les textes, images, logos, documents et autres contenus présents sur les supports de communication et le site de Mambo &amp; Co lui appartiennent.</p>
+      <p>Toute reproduction, diffusion ou utilisation sans autorisation écrite préalable n’est pas permise.</p>
+    </div>
+
+    <div class="legal-section" id="article14">
+      <span class="legal-section-num">14</span>
+      <h2>Modification des Conditions Générales de Prestations</h2>
+      <p>Ces Conditions Générales de Prestations et les tarifs peuvent évoluer, avec un préavis raisonnable de 30 jours, sauf si un changement légal ou réglementaire l’impose plus rapidement.</p>
+      <p>Les nouvelles conditions ne s’appliqueront jamais aux prestations déjà réservées et validées avant leur mise à jour.</p>
+    </div>
+
+    <div class="legal-section" id="article15">
+      <span class="legal-section-num">15</span>
+      <h2>Médiation et litiges</h2>
+      <p>En cas de désaccord, une solution amiable sera toujours recherchée en priorité.</p>
+      <p>Vous pouvez adresser une réclamation écrite pour tenter de résoudre la situation directement avec Mambo &amp; Co.</p>
+      <p>Si aucun accord n’est trouvé, ou en l’absence de réponse sous un délai raisonnable d’un (1) mois, vous pouvez saisir gratuitement le médiateur de la consommation compétent, conformément aux articles L.612-1 et suivants du Code de la consommation.</p>
+      <p>Mambo &amp; Co adhère au service de médiation suivant :</p>
+      <div class="legal-info-block">
+        <p><strong>CM2C, Centre de la Médiation de la Consommation de Conciliateurs de Justice</strong></p>
+        <p>Site internet : <a href="https://www.cm2c.net/" target="_blank" rel="noopener" style="color:var(--bleu-clair)">https://www.cm2c.net/</a></p>
+      </div>
+      <p>Le recours à la médiation est facultatif et ne vous prive pas du droit de saisir les tribunaux compétents.</p>
+    </div>
+
+    <div class="legal-section" id="article16">
+      <span class="legal-section-num">16</span>
+      <h2>Données personnelles et droit à l’image</h2>
+      <p>Pour vous accompagner dans les meilleures conditions, Mambo &amp; Co collecte et traite quelques données vous concernant ainsi que des informations sur votre animal (identité, coordonnées, données de santé, ordonnances, contacts d’urgence).</p>
+      <p>Ces traitements reposent sur l’exécution du contrat (art. 6.1.b RGPD) et sur l’obligation légale (art. 6.1.c RGPD).</p>
+      <p>Pour faire connaître son activité, Mambo &amp; Co peut partager des photos, vidéos ou témoignages des animaux de ses clients sur ses supports de communication. Votre autorisation sera demandée au préalable via le contrat (art. 6.1.a RGPD), et vous pouvez la retirer à tout moment sur simple demande ; dans ce cas, rien ne sera publié. Mambo &amp; Co ne pourra être tenu responsable d’une utilisation frauduleuse des contenus publiés par des tiers.</p>
+      <p>Vous disposez des droits d’accès, de rectification, d’effacement, d’opposition, de limitation et de portabilité de vos données, ainsi que du droit de retirer votre consentement à tout moment, en écrivant à : <strong>contact@mamboandco.fr</strong>.</p>
+      <p>Vous pouvez aussi déposer une réclamation auprès de la <strong>CNIL</strong> (www.cnil.fr).</p>
+      <p>Pour en savoir plus, consultez la <a href="confidentialité.html" style="color:var(--bleu-clair)">Politique de confidentialité</a>.</p>
+    </div>
+
+    <div class="legal-section" id="article17">
+      <span class="legal-section-num">17</span>
+      <h2>Contact</h2>
+      <p>Une question sur ces conditions ou sur une prestation en cours ? N’hésitez pas à contacter Mambo &amp; Co :</p>
+      <p>par e-mail : <strong>contact@mamboandco.fr</strong></p>
+      <p>par téléphone : <strong>06.69.71.38.72</strong></p>
+      <p>zone d’intervention : <strong>Île-de-France (75, 92, 93, 95)</strong></p>
+    </div>
+
+    
+
+
+  </div>
+
+</div>
+
+  <!-- Vague bas de section -->
+  <div class="hero-wave2" aria-hidden="true">
+    <svg viewBox="0 0 3698 658" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <g transform="matrix(1,0,0,-1,0,657.5)">
+        <path d="M2890.273,284.25C3420.473,278.431 3698,440.628 3698,440.628L3698,0L0,0L0,599C0,599 221.316,411.33 722.281,401.206C1178.312,391.991 1365.676,544.01 1767.077,539.525C2117.428,535.61 2417.734,289.436 2890.273,284.25Z" fill="#E6F1FB"/>
+      </g>
+    </svg>
+  </div>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-logo-wrap">
+      <img src="./img/00_site_content/Mambo & Co logo_1.svg" alt="Mambo &amp; Co" class="footer-logo-img" />
+      <p class="footer-desc">Passionnée par le bien-être animal, j'accompagne chiens, chats et NAC avec bienveillance et respect.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+       <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#about">Qui suis-je ?</a></li>
+        <li><a href="index.html#histoire">Histoire</a></li>
+        <li><a href="index.html#tarifs">Service & Tarifs</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#cta">Prendre rendez-vous</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Suivez-moi</h4>
+       <div class="social-row">
+        <a class="social-btn2" href="https://www.instagram.com/mambo.and.co/" aria-label="Instagram" target="_blank">
+          <img class="social-img" src="./img/assets/instagram.png" alt="Instagram" />
+        </a>
+        <a class="social-btn2" href="https://www.tiktok.com/@mambo.and.co/" aria-label="Tiktok" target="_blank"> 
+          <img class="social-img" src="./img/assets/tik-tok.png" alt="Tiktok" />
+        </a>
+         <a class="social-btn2" href="https://www.linkedin.com/company/mamboandco" aria-label="LinkedIn" target="_blank"> 
+        <img class="social-img" src="./img/assets/linkedin.png" alt="LinkedIn" />
+         </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="contact-item"><span class="contact-icon">✉️</span> contact@mamboandco.fr</div>
+      <div class="contact-item"><span class="contact-icon">📞</span> 06.69.71.38.72</div>
+      <div class="contact-item"><span class="contact-icon">📍</span> Région parisienne (75, 92, 93, 95)</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Mambo &amp; Co · Ophélie</span>
+    <div class="footer-bottom-links">
+      <a href="./mentions-legales.html">Mentions légales</a>
+      <a href="./cgp.html">CGP</a>
+      <a href="./confidentialité.html">Politique de confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    document.querySelectorAll('.email-link').forEach(function(el) {
+      var addr = el.dataset.e + '@' + el.dataset.d;
+      var span = el.querySelector('.email-text');
+      if (span) span.textContent = addr;
+      else el.textContent = addr;
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'mailto:' + addr;
+      });
+    });
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/theme-toggle.js"></script>
+  <script src="js/scrollbar.js"></script>
+</body>
+</html>
