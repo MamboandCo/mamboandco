@@ -75,6 +75,7 @@
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "Quels animaux acceptez-vous ?", "acceptedAnswer": { "@type": "Answer", "text": "Chiens, chats et NAC (furets, rongeurs comme les cochons d'Inde, hamsters, souris, gerbilles et chinchillas, et lapins). Les promenades et l'éducation sont réservées aux chiens. Les chiens de catégorie 1 et 2 et les animaux nécessitant des injections médicales ne sont pas acceptés." } },
+      { "@type": "Question", "name": "Quels documents dois-je fournir pour mon animal ?", "acceptedAnswer": { "@type": "Answer", "text": "Le carnet de santé à jour et les coordonnées du vétérinaire habituel. Pour les chiens, chats et furets, la carte d'identification I-CAD ou le numéro d'identification. Pour les NAC, tout document vétérinaire disponible en l'absence de carnet de santé. Une assurance Responsabilité Civile couvrant les dommages causés par l'animal à des tiers est également requise." } },
       { "@type": "Question", "name": "Êtes-vous disponible les week-ends et jours fériés ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, Mambo & Co intervient 7j/7 y compris les week-ends et jours fériés. Il est conseillé de réserver à l'avance pour les vacances et longues absences." } },
       { "@type": "Question", "name": "Quels sont les tarifs ?", "acceptedAnswer": { "@type": "Answer", "text": "Visite à domicile : 20€. Promenade individuelle : 20€. Option éducative (visite ou promenade + éducation) : 30€. Pour toute prestation plus longue, un tarif personnalisé est établi sur devis." } },
       { "@type": "Question", "name": "Puis-je annuler une prestation ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Avant la pré-visite, l'annulation est gratuite si l'acompte n'a pas encore été versé ; une fois versé, il n'est pas remboursé. Après la pré-visite et le règlement du solde, aucune annulation n'ouvre droit à remboursement, sauf cas particuliers (décès de l'animal, force majeure). En cas d'annulation par Mambo & Co, remboursement intégral." } }
@@ -88,6 +89,37 @@
   <link rel="icon" type="image/png" href="./img/00_site_content/FAVICON2.ico" />
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <style>
+    /* ── Option éducative ── */
+    .cf-edu-block {
+      background: rgba(var(--bleu-clair-rgb, 100, 170, 220), 0.08);
+      border: 1.5px solid rgba(var(--bleu-clair-rgb, 100, 170, 220), 0.25);
+      border-radius: 14px;
+      padding: 16px 18px 14px;
+      animation: cf-edu-appear 0.25s ease;
+    }
+    @keyframes cf-edu-appear {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .cf-edu-badge {
+      display: inline-block;
+      background: var(--bleu-clair, #64aadc);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      border-radius: 20px;
+      padding: 2px 9px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .cf-edu-desc {
+      font-size: .85rem;
+      color: var(--grey, #666);
+      margin: 4px 0 12px;
+      line-height: 1.4;
+    }
+  </style>
 </head>
 <body>
 
@@ -553,7 +585,7 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
 
 <!-- ══ PROCESSUS ══ -->
 <section id="process">
-  <div class="dalma-deco dalma-process-tl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2835.513778,-3944.983184)"><path d="M848.742,1083.89C841.804,1086.492 840.937,1088.66 840.07,1099.934C839.203,1111.209 844.257,1120.315 853.221,1122.483C862.185,1124.651 864.353,1112.076 863.486,1103.837C862.618,1095.598 855.68,1081.288 848.742,1083.89Z"/></g></svg></div>
+  <div class="dalma-deco dalma-process-tl" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2363.785513,-3859.247261)"><path d="M747.126,930.49C742.269,926.328 720.068,951.651 720.762,959.63C721.455,967.609 724.802,970.037 729.72,967.609C734.638,965.181 743.657,950.958 745.391,944.367C747.126,937.775 751.983,934.653 747.126,930.49Z"/></g></svg></div>
   <!-- Nouvelles taches process -->
    <div class="dalma-deco dalma-process-tr" aria-hidden="true"><svg viewBox="0 0 987 907" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;width:100%;height:100%;"><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-2578.938416,-4918.23623)"><path d="M885.124,1354.463C879.687,1342.395 861.187,1365.386 861.187,1371.656C861.187,1377.926 863.227,1391.198 870.849,1389.504C876.261,1388.302 886.846,1383.71 888.51,1372.224C889.189,1367.533 888.38,1361.692 885.124,1354.463Z"/></g><g transform="matrix(3.988622,0.324725,-0.324725,3.988622,-3499.916374,-6422.322063)"><path d="M882.424,1343.096C876.988,1331.027 871.276,1358.139 861.187,1371.656C857.437,1376.681 863.275,1387.609 870.849,1389.504C884.218,1392.849 888.551,1379.874 886.804,1368.388C886.092,1363.702 885.681,1350.325 882.424,1343.096Z"/></g></svg></div>
   <div class="process-inner">
@@ -565,13 +597,13 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
         <span class="process-num">01</span>
         <span class="process-icon">💬</span>
         <div class="process-title">Prise de contact</div>
-        <p class="process-desc">Vous effectuez une demande via le formulaire de contact, par e-mail ou réseaux sociaux. Je vous recontacte ensuite par téléphone pour échanger sur les besoins de votre animal, vérifier la faisabilité et convenir d'une pré-visite.</p>
+        <p class="process-desc">Vous effectuez une demande via le formulaire de contact, par e-mail ou réseaux sociaux. Vous pouvez également m'appeler directement selon mes horaires d'ouverture, ou m'envoyer un message par téléphone, pour faire votre demande de rendez-vous. Je vous recontacte ensuite par téléphone pour échanger sur les besoins de votre animal, vérifier la faisabilité et convenir d'une pré-visite.</p>
       </div>
       <div class="process-step reveal">
         <span class="process-num">02</span>
         <span class="process-icon">📋</span>
         <div class="process-title">Devis contractuel</div>
-        <p class="process-desc">Je vous transmets un formulaire à compléter sur votre animal. Une fois retourné, je vous envoie un <strong>devis contractuel</strong> détaillant les prestations, les dates, les tarifs et incluant en annexe les CGP et les autorisations nécessaires (valable 24h en période chargée, 48h sinon). <strong>Sa signature vaut acceptation du contrat et confirme votre réservation.</strong></p>
+        <p class="process-desc">Je vous transmets un formulaire à compléter sur votre animal. Une fois retourné, je vous envoie un <strong>devis contractuel</strong> détaillant les prestations, les dates, les tarifs et incluant en annexe les CGP et les autorisations nécessaires (valable 24h en période chargée, 48h sinon). <strong>Sa signature vaut acceptation du contrat, mais c'est le versement de l'acompte de 50 % qui confirme définitivement votre réservation.</strong></p>
       </div>
       <div class="process-step reveal">
         <span class="process-num">03</span>
@@ -631,7 +663,7 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
       <!-- ── PROMENADE ── -->
       <div class="tarif-card reveal" data-tarif="promenade">
         <span class="tarif-badge">⏱ 30 min à 1h</span>
-        <div class="tarif-title">🐕‍🦺 Promenade individuelle</div>
+        <div class="tarif-title">🐕‍🦺 Promenade</div>
         <div class="tarif-price-big">20€</div>
         <div class="tarif-price-label">par sortie pour <strong>chien</strong></div>
         <div class="tarif-divider"></div>
@@ -641,6 +673,7 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
           <div class="tarif-feature"><span class="tarif-check">✓</span>Dépense physique & détente</div>
           <div class="tarif-feature"><span class="tarif-check">✓</span>Repas & eau fraîche si besoin</div>
           <div class="tarif-feature"><span class="tarif-check">✓</span>Photos & compte-rendu</div>
+          <div class="tarif-feature"><span class="tarif-check" style="color:var(--terra)">+</span><em>Chiens supplémentaires : <strong>sur devis</strong></em></div>
         </div>
         <p class="tarif-desc-block">Sortie adaptée au rythme de votre chien pour ses besoins, sa détente et sa dépense physique. Repas et eau fraîche assurés si besoin.</p>
         <a href="#cta" class="tarif-cta">Prendre rendez-vous <img src="./img/00_site_content/patte.svg" class="btn-paw-icon" alt=""></a>
@@ -669,7 +702,7 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
 
     <div class="tarif-note reveal" style="margin-top: 30px;">
       <strong>🔑 Remise &amp; restitution des clés</strong>
-      <br> La remise des clés lors de la pré-visite est gratuite si elle se fait en main propre ou via une boîte aux lettres sécurisée ; un déplacement spécifique est facturé. À votre retour, la restitution est <strong>gratuite</strong> si elle a lieu lors de la dernière visite ou via la boîte aux lettres ; en cas d'imprévu nécessitant un déplacement supplémentaire, des frais de <strong>5€</strong> pourront s'appliquer.
+      <br> La remise des clés a lieu lors de la pré-visite. Un déplacement spécifique organisé uniquement pour récupérer les clés est facturé <strong>5€</strong>. À votre retour, la restitution est <strong>gratuite</strong> si elle a lieu lors de la dernière visite, via une boîte aux lettres sécurisée, ou remise à une personne tierce désignée ; un déplacement spécifique organisé après la dernière prestation est facturé <strong>5€</strong>.
     </div>
     <div class="tarif-note reveal" style="margin-top: 16px;">
       <strong>📍 Fréquence &amp; zone d'intervention</strong>
@@ -706,7 +739,7 @@ Avec lui, j’ai découvert une relation unique, fusionnelle, une complicité qu
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Je m'occupe des <strong>chiens, chats et NAC</strong> (furets, rongeurs (cochons d'Inde, hamsters, souris, gerbilles, chinchillas) et lapins. <br>Les promenades et l'éducation sont <strong>réservées aux chiens</strong>.
+            Je m'occupe des <strong>chiens, chats et NAC</strong> (furets, rongeurs (cochons d'Inde, hamsters, souris, gerbilles, chinchillas) et lapins). <br>Les promenades et l'éducation sont <strong>réservées aux chiens</strong>.
 <br><br>🔒 <strong>Je n'accepte pas les chiens de catégorie 1 et 2 (chiens d'attaque, de garde et de défense)</strong>, car leur prise en charge demande des obligations légales strictes et une expérience spécifique que je ne peux pas garantir à ce stade.
 Ce choix n'est pas un jugement sur ces chiens, beaucoup sont équilibrés et affectueux mais une mesure de sécurité pour l'animal, les tiers et moi-même. <br><br>🔒 <strong>Je n'assure pas la prise en charge des animaux nécessitant un traitement par injection</strong> (injections médicales régulières ou ponctuelles).
           </div>
@@ -752,28 +785,41 @@ Dans tous les cas, n'hésitez pas à me contacter avec votre localisation : nous
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Voici comment ça se passe, étape par étape :
+            Voici comment ça se passe, étape par étape, conformément à <strong>l'article 5 des CGP</strong> :
             <br><br>
-            <strong>① Prise de contact</strong><br>
-            Cliquez sur <strong>"Prendre rendez-vous"</strong>, remplissez le formulaire de contact, ou contactez-moi par email ou réseaux sociaux. J'organise ensuite un <strong>échange téléphonique</strong> pour évaluer vos besoins, vérifier la faisabilité et convenir d'une date de pré-visite.
+            Les tarifs sont indiqués sur le site « www.mamboandco.fr », ainsi que sur le devis contractuel. <strong>TVA non applicable, article 293 B du CGI.</strong>
             <br><br>
-            <strong>② Formulaire d'informations</strong><br>
-            Je vous transmets un formulaire à compléter sur votre animal (santé, habitudes, vétérinaire…). Ces informations me permettent de préparer le devis et la prestation au mieux.
+            <strong>Étape 1 : On se contacte</strong><br>
+            Vous pouvez me joindre via le formulaire de contact du site mamboandco.fr, par téléphone, ou sur les réseaux sociaux.
             <br><br>
-            <strong>③ Devis contractuel</strong><br>
-            Après réception du formulaire, je vous transmets un <strong>devis contractuel</strong> récapitulant les prestations souhaitées, les dates, les tarifs, ainsi que les CGP et les autorisations nécessaires (urgence vétérinaire, droit à l'image) en annexe. Il reste valable <strong>24h en période chargée, 48h en période plus calme</strong>. Vous le validez par retour écrit (email) ou par accord téléphonique confirmé de ma part : <strong>sa signature vaut acceptation du contrat et confirme la réservation de vos dates</strong>, sous réserve du délai légal de rétractation de 14 jours (voir la question dédiée à l'annulation).
+            <strong>Étape 2 : On fait connaissance au téléphone</strong><br>
+            Un premier échange téléphonique permet de comprendre votre demande et de voir ensemble si la prestation est réalisable.
             <br><br>
-            <strong>④ L'acompte</strong><br>
-            À la signature du devis contractuel, un <strong>acompte de 50 % du montant total</strong> est réglé sous <strong>24h</strong> (hors espèces) : il confirme votre créneau, sous réserve du délai légal de rétractation. Passé ce délai de paiement, le créneau peut être réattribué à un autre client.
+            <strong>Étape 3 : Vous confirmez et remplissez la fiche animal</strong><br>
+            Une fois votre décision prise, vous complétez le formulaire de fiche animal en ligne. Si ce n'est pas possible en ligne, une solution sera trouvée ensemble.
             <br><br>
-            <strong>⑤ Pré-visite à domicile</strong><br>
-            Obligatoire avant toute première prestation, elle a lieu environ une semaine avant, chez vous. On fait connaissance, je rencontre votre animal, récupère les consignes et les clés si nécessaire.<br>
-            À l'issue de la pré-visite, je confirme la prise en charge ou, si l'animal présente un comportement incompatible, je peux refuser la prestation.<br>
-            Le <strong>solde</strong> (qui couvre le montant restant dû, pré-visite comprise) est réglé lors de ce rendez-vous, sous <strong>24h</strong>, et dans tous les cas avant le début de la prestation.
+            <strong>Étape 4 : Le devis contractuel</strong><br>
+            À partir des informations de la fiche animal, je rédige le devis contractuel et vous l'envoie. Il détaille les prestations, les dates, les tarifs, et inclut en annexe les CGP ainsi que la fiche animal, les contacts d'urgence et l'autorisation individuelle. <strong>Ce devis contractuel fait office de contrat dès que vous l'acceptez : aucun document contractuel distinct n'est établi.</strong> Il reste valable 24h en période chargée, et 48h en période plus calme.
             <br><br>
-            <strong>✓ C'est parti !</strong><br>
-            Tout est signé, réglé, organisé. 
-            <br>Votre animal est entre de bonnes pattes. 🐾
+            <strong>Étape 5 : L'acompte</strong><br>
+            Un acompte de 50 % du montant total est dû à la signature du devis, sous 24h, hors espèces.
+            <br><br>
+            <strong>Étape 6 : La pré-visite</strong><br>
+            Elle a lieu environ une semaine avant le début de la prestation.
+            <br><br>
+            <strong>Étape 7 : Le solde</strong><br>
+            Le solde couvre le montant restant dû (y compris la pré-visite et, le cas échéant, la remise des clés). Il se règle lors de la pré-visite, par virement bancaire ou Wero, sinon sous 24h avec un justificatif de paiement. Un règlement en espèces du solde ou du montant total reste possible à titre exceptionnel, avec accord préalable le jour de la pré-visite.
+            <br><br>
+            <strong>Étape 8 : La remise des clés</strong><br>
+            En me confiant vos clés lors de la pré-visite, vous confirmez la prise en charge de la prestation.
+            <br><br>
+            <strong>Étape 9 : La prestation se déroule</strong><br>
+            Tout se passe selon le planning convenu ensemble.
+            <br><br>
+            <strong>Étape 10 : La fin de la prestation</strong><br>
+            La prestation se termine à la date convenue ; les clés sont restituées selon les modalités choisies.
+            <br><br>
+            Le délai de 24h laissé pour régler l'acompte correspond à la période durant laquelle je bloque votre créneau et décline, de ce fait, toute autre demande sur les mêmes dates. Le règlement dans ce délai conditionne donc la réservation effective du créneau : passé ce délai, le créneau peut être réattribué à un autre client.
           </div>
         </div>
       </div>
@@ -787,8 +833,11 @@ Dans tous les cas, n'hésitez pas à me contacter avec votre localisation : nous
         <div class="faq-answer">
           <div class="faq-answer-inner">
             Pour que je puisse prendre soin de votre animal dans les meilleures conditions, vous devrez me fournir le <strong>carnet de santé</strong> de votre animal ainsi que les <strong>coordonnées de votre vétérinaire habituel</strong>.
+            <br><br>Pour les chiens, chats et furets, merci de présenter également, lors de la pré-visite, la <strong>carte d'identification (I-CAD)</strong> ou le numéro d'identification de l'animal. Pour les NAC, en l'absence de carnet de santé, tout document vétérinaire disponible (ordonnance, bilan, compte-rendu) suffit.
             <br><br>Votre animal doit être <strong>identifié, vacciné, suivi vétérinalement</strong> et traité contre les parasites internes et externes. Vous attestez qu'il est en bonne santé générale et ne présente pas de maladie contagieuse connue.
-            <br><br>⚠️ Pensez à me signaler tout <strong>antécédent médical, fragilité ou traitement en cours</strong> : c'est essentiel pour assurer sa sécurité. Les animaux présentant des parasites visibles peuvent être refusés.
+            <br><br>⚠️ Pensez à me signaler tout <strong>antécédent médical, fragilité ou traitement en cours</strong> : c'est essentiel pour assurer sa sécurité. Pour tout animal suivant un <strong>traitement en cours</strong>, une <strong>ordonnance</strong> du vétérinaire devra également être fournie. Les animaux présentant des parasites visibles peuvent être refusés.
+            <br><br>📋 Vous devez fournir, lors de la pré-visite, <strong>toute ordonnance vétérinaire originale en cours de validité</strong> pour un traitement à administrer pendant la prestation. Aucun médicament ne sera donné sans avoir vu l'ordonnance correspondante ; cette règle vaut pour tous les animaux.
+            <br><br>🛡️ Vous devez également disposer d'une <strong>assurance Responsabilité Civile</strong> couvrant les dommages que votre animal pourrait causer à des tiers (personnes, animaux, biens) pendant la prestation.
           </div>
         </div>
       </div>
@@ -801,22 +850,8 @@ Dans tous les cas, n'hésitez pas à me contacter avec votre localisation : nous
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Le règlement s'effectue principalement par <strong>virement bancaire</strong> ou <strong>Wero</strong>. Le paiement en <strong>espèces</strong> peut être accepté exceptionnellement, sur accord préalable.
-            <br><br>Les modalités de paiement sont les suivantes : un <strong>acompte de 50 %</strong> du montant total est réglé sous <strong>24h</strong> à la signature du devis contractuel (hors espèces), puis le <strong>solde</strong> (incluant la pré-visite) est réglé lors de celle-ci, sous <strong>24h</strong>, et dans tous les cas avant le démarrage des interventions.
-          </div>
-        </div>
-      </div>
-
-      <!-- 7. Comment se passe le retour et la restitution des clés ? -->
-      <div class="faq-item reveal">
-        <button class="faq-question" aria-expanded="false">
-          Comment se passe le retour et la restitution des clés ?
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            La restitution des clés est <strong>gratuite</strong> si elle a lieu lors de la dernière visite ou si les clés sont déposées dans une <strong>boîte aux lettres sécurisée</strong>. Elle peut également être remise à une <strong>personne tierce</strong> désignée.
-            <br><br>Si un déplacement spécifique est nécessaire après la dernière prestation, des <strong>frais de 5€</strong> pourront être appliqués. En cas d'imprévu, un arrangement sera recherché avec vous en priorité.
+            Le règlement s'effectue principalement par <strong>virement bancaire</strong> ou <strong>Wero</strong>. Le paiement en <strong>espèces</strong> peut être accepté exceptionnellement, sur accord préalable, avec un <strong>règlement intégral en espèces le jour de la pré-visite</strong>.
+            <br><br>Les modalités de paiement sont les suivantes : un <strong>acompte de 50 %</strong> du montant total est réglé sous <strong>24h</strong> à la signature du devis contractuel (hors espèces), puis le <strong>solde</strong> (incluant la pré-visite) est réglé lors de celle-ci, sous <strong>24h</strong>, et dans tous les cas avant le démarrage de la prestation.
           </div>
         </div>
       </div>
@@ -857,17 +892,17 @@ Dans tous les cas, n'hésitez pas à me contacter avec votre localisation : nous
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Oui, l'annulation est possible, selon le moment où elle intervient. Vous disposez par ailleurs d'un délai légal de rétractation de 14 jours, sauf si vous demandez que la prestation démarre immédiatement. Tant que ce délai n'est pas écoulé (ou que vous n'y avez pas renoncé expressément), votre réservation reste provisoire : le créneau pourrait être attribué à un autre client qui s'engagerait fermement.
-            <br><br><strong>Avant la pré-visite :</strong> si l'acompte n'a pas encore été versé, l'annulation est sans frais. S'il a déjà été versé, il n'est pas remboursé. En cas d'absence au rendez-vous, l'acompte reste dû, et 5€ de frais supplémentaires s'ajoutent si un nouveau déplacement est nécessaire.
+            Oui, l'annulation est possible, selon le moment où elle intervient, conformément à <strong>l'article 8 des CGP</strong>.
+            <br><br><strong>Avant la pré-visite :</strong> si l'acompte n'a pas encore été versé, vous pouvez annuler sans frais. S'il a déjà été versé, il n'est pas remboursé en cas d'annulation de votre part, sauf cas particulier. En cas d'absence au rendez-vous, l'acompte reste dû, et 5€ de frais supplémentaires s'ajoutent si un nouveau déplacement est nécessaire.
             <br><br><strong>Au moment de la pré-visite :</strong> si je décline la prestation pour raison de sécurité ou d'incompatibilité, alors que les informations transmises étaient exactes, 5€ sont retenus et le reste vous est remboursé. Si ce refus fait suite à une information fausse ou dissimulée, l'acompte n'est pas remboursé. Si le solde n'est pas réglé dans les conditions prévues, la prestation ne démarre pas et l'acompte reste acquis.
-            <br><br><strong>Après la pré-visite (solde réglé) :</strong> toute annulation de votre part, quel qu'en soit le motif, n'ouvre droit à aucun remboursement.
-            <br><br><strong>Cas particuliers :</strong> en cas de <strong>décès de l'animal</strong> en cours de contrat, les prestations non réalisées sont remboursées au prorata, sur présentation d'un justificatif vétérinaire. En cas de <strong>force majeure ou motif grave</strong> (hospitalisation, décès d'un proche…), le remboursement est laissé à mon appréciation.
-            <br><br>Si c'est moi qui dois annuler, les prestations non réalisées vous sont intégralement remboursées.
+            <br><br><strong>Après la pré-visite (solde réglé) :</strong> toute annulation de votre part, quel qu'en soit le motif, n'ouvre droit à aucun remboursement, sauf cas particuliers.
+            <br><br><strong>Cas particuliers :</strong> en cas de <strong>décès de l'animal</strong> en cours du devis contractuel, remboursement au prorata, sur présentation d'un justificatif vétérinaire. En cas de <strong>force majeure ou motif grave</strong> (hospitalisation, décès d'un proche…), remboursement laissé à mon appréciation. En cas d'annulation à mon initiative, remboursement intégral des prestations non réalisées.
+            <br><br>Pour toute situation non prévue ici, je m'engage à chercher, au cas par cas et de bonne foi, la solution la plus juste, en discutant avec vous.
           </div>
         </div>
       </div>
 
-      <!-- 12. Que se passe-t-il en cas d'urgence vétérinaire ? -->
+      <!-- 11. Que se passe-t-il en cas d'urgence vétérinaire ? -->
       <div class="faq-item reveal">
         <button class="faq-question" aria-expanded="false">
           Que se passe-t-il en cas d'urgence vétérinaire ?
@@ -881,9 +916,7 @@ Si la situation le nécessite, je contacte un vétérinaire (<strong>votre vét�
 
 Si besoin et dans la mesure du possible, je peux conduire votre animal chez le vétérinaire en transports en commun, conformément à la réglementation en vigueur, en privilégiant votre vétérinaire habituel. 
 <strong>Le propriétaire s'engage à fournir le matériel de transport adapté à son animal conformément à la réglementation en vigueur (RATP)</strong>
-, à savoir un panier, sac ou caisse de transport fermé pour les chats et chiens de petite taille, une muselière 
-et une laisse pour les chiens de taille moyenne et grande, ainsi qu'une cage ou un contenant de 
-transport sécurisé pour les NAC (nouveaux animaux de compagnie). À défaut de matériel approprié
+, à savoir un sac ou caisse de transport fermé pour les chats et chiens de petite taille. Un collier ou un harnais, une laisse et une muselière pour les chiens de taille moyenne et grande, ainsi qu'une cage ou un contenant de transport sécurisé pour les NAC (nouveaux animaux de compagnie). À défaut de matériel approprié
  ou si les conditions ne permettent pas l'utilisation des transports en commun, un  alternatif 
  pourra être organisé via un <strong>taxi acceptant les animaux</strong>, avec accord préalable du propriétaire.<br><br>
 
@@ -985,7 +1018,16 @@ transport sécurisé pour les NAC (nouveaux animaux de compagnie). À défaut de
           <div class="cf-chips">
             <button class="cf-chip" type="button" data-value="visite">🏠 Visite à domicile</button>
             <button class="cf-chip" type="button" data-value="promenade">🦮 Promenade</button>
-            <button class="cf-chip" type="button" data-value="education">🎓 Option Éducation</button>
+          </div>
+        </div>
+
+        <!-- Option éducative — visible uniquement si visite ou promenade sélectionnée -->
+        <div class="contact-field cf-edu-block" id="cf-edu-block" style="display:none;">
+          <label class="contact-label">Souhaitez-vous ajouter l'option éducative ? <span class="cf-edu-badge">+10 €</span></label>
+          <p class="cf-edu-desc">Exercices éducatifs pendant la prestation, vidéo de suivi et mini bilan inclus.</p>
+          <div class="cf-chips">
+            <button class="cf-chip" type="button" data-edu="oui">🎓 Oui, avec l'option éducative</button>
+            <button class="cf-chip" type="button" data-edu="non">✅ Non, sans option éducative</button>
           </div>
         </div>
 

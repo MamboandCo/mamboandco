@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Réserver · Mambo & Co</title>
-  <meta name="description" content="Réservez une prestation avec Mambo & Co — visite à domicile, promenade ou éducation canine." />
+  <meta name="description" content="Réservez une prestation avec Mambo & Co visite à domicile, promenade ou éducation canine." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -13,7 +13,7 @@
 
   <style>
     /* ═══════════════════════════════════
-       PAGE RÉSERVATION — style Mambo & Co
+       PAGE RÉSERVATION style Mambo & Co
     ═══════════════════════════════════ */
 .footer-inner{
       grid-template-columns: 1.6fr  1fr 1.2fr;
@@ -653,6 +653,24 @@
     }
     .btn-add-urgence:hover { background: rgba(90,175,212,.15); border-color: var(--blue); }
     .urgence-bloc-2 { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
+
+    /* ── Mise en évidence d'une fiche animal qui vient d'être ajoutée ── */
+    @keyframes fiche-highlight-pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(90,175,212,.5); }
+      70%  { box-shadow: 0 0 0 16px rgba(90,175,212,0); }
+      100% { box-shadow: 0 0 0 0 rgba(90,175,212,0); }
+    }
+    .fiche-just-added {
+      animation: fiche-highlight-pulse 1.5s ease-out;
+      border-radius: 20px;
+    }
+    .animaux-add-hint {
+      font-size: .78rem; font-weight: 700; color: var(--blue);
+      display: flex; align-items: center; gap: 6px; margin: 2px 0 0;
+      opacity: 0; max-height: 0; overflow: hidden;
+      transition: opacity .35s ease, max-height .35s ease, margin .35s ease;
+    }
+    .animaux-add-hint.visible { opacity: 1; max-height: 40px; margin-top: 6px; }
   </style>
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -736,7 +754,7 @@
         <!-- Étapes -->
         <div class="resa-steps">
 
-          <!-- ══ ÉTAPE 1 — Service ══ -->
+          <!-- ══ ÉTAPE 1 Service ══ -->
           <div class="resa-step active" id="step-1">
             <div>
               <h2 class="step-title">Quel service vous intéresse ?</h2>
@@ -812,7 +830,7 @@
             </div>
           </div>
 
-          <!-- ══ ÉTAPE 2 — CGP ══ -->
+          <!-- ══ ÉTAPE 2 CGP ══ -->
           <div class="resa-step" id="step-2">
             <div>
               <h2 class="step-title">Conditions Générales de Prestations 📄</h2>
@@ -821,18 +839,19 @@
             <div class="cgv-wrap" id="cgv-bloc">
               <div class="cgv-header">
                 <span class="cgv-header-icon">📄</span>
-                <span class="cgv-header-text">Conditions Générales de Prestations — à lire entièrement</span>
+                <span class="cgv-header-text">Conditions Générales de Prestations à lire entièrement</span>
               </div>
+              <p class="cgv-last-updated" style="margin:0 0 12px;font-size:.85rem;opacity:.75;">Dernière mise à jour : Juillet 2026</p>
               <div class="cgv-scroll" id="cgv-scroll-zone">
-                <p><strong>01 — Objet</strong><br>
-                Prestataire : GALIEGUE Ophélie — Nom commercial : Mambo &amp; Co — Adresse : 144 rue de Noisy-le-Sec, 93170 Bagnolet — SIRET : 10508235800018<br>
-                Ces Conditions Générales de Prestations expliquent, simplement, comment se passe la collaboration : elles définissent le cadre entre Mambo &amp; Co (Ophélie Galiegue) et toute personne (ci-après « le Client ») qui lui confie son chien, son chat ou son NAC (nouvel animal de compagnie).<br>
+                <p><strong>Article 1 - Objet</strong><br>
+                Prestataire : GALIEGUE Ophélie Nom commercial : Mambo &amp; Co Adresse : 144 rue de Noisy-le-Sec, 93170 Bagnolet SIRET : 10508235800018<br>
+                Ces Conditions Générales de Prestations expliquent, simplement, comment se passe la collaboration : elles définissent le cadre entre Mambo &amp; Co (Ophélie Galiègue) et toute personne (ci-après « le propriétaire ») qui lui confie son chien, son chat ou son NAC (nouvel animal de compagnie).<br>
                 En réservant une prestation, vous acceptez ces conditions. Elles sont là pour que tout soit clair entre nous.</p>
 
-                <p><strong>02 — Agréments</strong><br>
-                Mambo &amp; Co est titulaire de l'ACACED (Attestation de Connaissances pour les Animaux de Compagnie d'Espèces Domestiques) toutes catégories, Chien, Chat, NAC, conformément à la réglementation en vigueur.</p>
+                <p><strong>Article 2 - Agréments</strong><br>
+                Je suis titulaire de l'ACACED (Attestation de Connaissances pour les Animaux de Compagnie d'Espèces Domestiques) toutes catégories, Chien, Chat, NAC, conformément à la réglementation en vigueur.</p>
 
-                <p><strong>03 — Prestations proposées</strong><br>Voici, concrètement, ce que Mambo &amp; Co propose :<br>
+                <p><strong>Article 3 - Prestations proposées</strong><br>Voici, concrètement, ce que Mambo &amp; Co propose :<br>
                 &bull; des visites à domicile pour chiens, chats et NAC<br>
                 &bull; des promenades individuelles pour chiens ; plusieurs chiens d'un même foyer peuvent sortir ensemble si leur comportement le permet, après évaluation lors de la pré-visite. Le nombre d'animaux, la durée ou l'itinéraire peuvent être adaptés selon ce qui est observé sur le terrain, pour la sécurité de tous<br>
                 &bull; des visites ou promenades avec option éducative pour chien, incluant :<br>
@@ -844,98 +863,202 @@
                 &bull; les animaux nécessitant un traitement par injection (régulier ou ponctuel) ne peuvent pas être pris en charge.<br>
                 &bull; les chiens de catégorie 1 et 2 (chiens d'attaque, de garde et de défense) ne sont pas acceptés, en raison des obligations légales et de sécurité qui leur sont propres.</p>
 
-                <p><strong>04 — Zone d'intervention</strong><br>
-                Mambo &amp; Co se déplace en Île-de-France, dans les départements 75, 92, 93 et 95, principalement en transports en commun.<br>
-                Les éventuels frais liés à la pré-visite ou à un déplacement supplémentaire pour la remise des clés sont indiqués clairement dans le devis contractuel (voir articles 5, 6 et 7).</p>
+                <p><strong>Article 4 - Zone d'intervention</strong><br>
+                Je me déplace en Île-de-France, dans les départements 75, 92, 93 et 95, en transports en commun.<br>
+                Les frais liés à la pré-visite ou à un déplacement supplémentaire pour la remise des clés sont indiqués clairement dans le devis contractuel (voir articles 5, 6 et 7).</p>
 
-                <p><strong>05 — Réservation, devis et paiement</strong><br>
-                Les tarifs sont indiqués sur le site « www.mamboandco.fr », ainsi que sur le devis contractuel. <strong>TVA non applicable, article 293 B du CGI.</strong><br><br>
-                <strong>Étape 1 — On se contacte :</strong> via le formulaire de contact du site mamboandco.fr, par téléphone, ou sur les réseaux sociaux.<br><br>
-                <strong>Étape 2 — On fait connaissance au téléphone :</strong> un premier échange permet de comprendre la demande et de voir ensemble si la prestation est réalisable.<br><br>
-                <strong>Étape 3 — Vous confirmez et remplissez la fiche animal :</strong> une fois la décision prise, vous complétez le formulaire de fiche animal en ligne.<br><br>
-                <strong>Étape 4 — Le devis contractuel :</strong> à partir de la fiche animal, Mambo &amp; Co rédige le devis. Il fait office de contrat dès son acceptation, et reste valable 24h en période chargée, 48h en période plus calme.<br><br>
-                <strong>Étape 5 — L'acompte :</strong> un acompte de 50 % du montant total est dû à la signature du devis, sous 24h, hors espèces.<br><br>
-                <strong>Étape 6 — La pré-visite :</strong> elle a lieu environ une semaine avant le début de la prestation.<br><br>
-                <strong>Étape 7 — Le solde :</strong> il couvre le montant restant dû (y compris la pré-visite et, le cas échéant, la remise des clés). Réglé lors de la pré-visite, par virement bancaire ou Wero sous 24h, avec justificatif de paiement. Un règlement en espèces reste possible à titre exceptionnel, avec accord préalable.<br><br>
-                <strong>Étape 8 — La remise des clés :</strong> en confiant ses clés lors de la pré-visite, le Client confirme la prise en charge de la prestation.<br><br>
-                <strong>Étape 9 — La prestation se déroule :</strong> selon le planning convenu ensemble.<br><br>
-                <strong>Étape 10 — La fin de la prestation :</strong> à la date convenue ; les clés sont restituées selon les modalités choisies (voir article 7).<br><br>
-                Pour les prestations longue durée (plus d'un mois), les modalités de paiement et d'échéances sont définies au cas par cas, en dehors du cadre habituel de ces CGP.<br>
-                Le délai de 24h laissé pour régler l'acompte correspond à la période durant laquelle Mambo &amp; Co bloque le créneau et décline, de ce fait, toute autre demande sur les mêmes dates. Le règlement dans ce délai conditionne donc la réservation effective du créneau : passé ce délai, le créneau peut être réattribué à un autre client.</p>
+                <p><strong>Article 5 - Réservation, devis contractuel et paiement</strong><br>
+                Les tarifs sont indiqués sur le site « www.mamboandco.fr », ainsi que sur le devis contractuel.<br>
+                TVA non applicable, article 293 B du CGI.<br><br>
+                <strong>Étape 1 : On se contacte</strong><br>
+                Vous pouvez joindre Mambo &amp; Co via le formulaire de contact du site mamboandco.fr, par téléphone, ou sur les réseaux sociaux.<br><br>
+                <strong>Étape 2 : On fait connaissance au téléphone</strong><br>
+                Un premier échange téléphonique permet de comprendre votre demande et de voir ensemble si la prestation est réalisable.<br><br>
+                <strong>Étape 3 : Vous confirmez et remplissez la fiche animal</strong><br>
+                Une fois votre décision prise, vous complétez le formulaire de fiche animal en ligne. Si ce n'est pas possible en ligne, une solution sera trouvée ensemble.<br><br>
+                <strong>Étape 4 : Le devis contractuel</strong><br>
+                À partir des informations de la fiche animal, Mambo &amp; Co rédige le devis contractuel et vous l'envoie. Il détaille les prestations, les dates, les tarifs, et inclut en annexe les présentes CGP ainsi que la fiche animal, les contacts d'urgence et l'autorisation individuelle.<br>
+                Ce devis contractuel fait office de contrat dès que vous l'acceptez : aucun document contractuel distinct n'est établi. Il reste valable 24h en période chargée, et 48h en période plus calme.<br><br>
+                <strong>Étape 5 : L'acompte</strong><br>
+                Un acompte de 50 % du montant total est dû à la signature du devis, sous 24h, hors espèces.<br><br>
+                <strong>Étape 6 : La pré-visite</strong><br>
+                Elle a lieu environ une semaine avant le début de la prestation.<br><br>
+                <strong>Étape 7 : Le solde</strong><br>
+                Le solde couvre le montant restant dû (y compris la pré-visite et, le cas échéant, la remise des clés). Il se règle lors de la pré-visite, par virement bancaire ou Wero, sinon sous 24h avec un justificatif de paiement. Un règlement en espèces du solde ou du montant total reste possible à titre exceptionnel, avec accord préalable le jour de la pré-visite.<br><br>
+                <strong>Étape 8 : La remise des clés</strong><br>
+                En confiant vos clés lors de la pré-visite, vous confirmez la prise en charge de la prestation.<br><br>
+                <strong>Étape 9 : La prestation se déroule</strong><br>
+                Tout se passe selon le planning convenu ensemble.<br><br>
+                <strong>Étape 10 : La fin de la prestation</strong><br>
+                La prestation se termine à la date convenue ; les clés sont restituées selon les modalités choisies (voir article 7).<br><br>
+                Le délai de 24h laissé pour régler l'acompte correspond à la période durant laquelle Mambo &amp; Co bloque votre créneau et décline, de ce fait, toute autre demande sur les mêmes dates. Le règlement dans ce délai conditionne donc la réservation effective du créneau : passé ce délai, le créneau peut être réattribué à un autre client.</p>
 
-                <p><strong>06 — Pré-visite</strong><br>
-                La pré-visite est un passage obligé avant toute première prestation, environ une semaine avant le début de celle-ci. C'est l'occasion de faire connaissance avec l'animal, observer son comportement, récupérer toutes les consignes utiles, vérifier que tout est sécurisé et organiser ensemble les détails pratiques.<br>
-                À l'issue de ce rendez-vous, Mambo &amp; Co confirme la prestation, ou, plus rarement, peut la décliner si le comportement ou l'état de santé de l'animal ne permet pas une prise en charge sereine, dans des conditions de sécurité et de travail raisonnables. Un email de confirmation ou de refus est envoyé. Les modalités en cas de refus sont détaillées à l'article 8.</p>
+                <p><strong>Article 6 - Pré-visite</strong><br>
+                La pré-visite est obligatoire avant toute première prestation, environ une semaine avant le début de celle-ci.<br>
+                C'est l'occasion de :<br>
+                &bull; faire connaissance avec l'animal<br>
+                &bull; observer son comportement<br>
+                &bull; récupérer toutes les consignes utiles<br>
+                &bull; vérifier que tout est sécurisé<br>
+                &bull; organiser ensemble les détails pratiques<br><br>
+                À l'issue de ce rendez-vous, Mambo &amp; Co confirme la prestation, ou, plus rarement, peut la décliner si le comportement ou l'état de santé de l'animal ne permet pas une prise en charge sereine, dans des conditions de sécurité et de travail raisonnables. Un email de confirmation ou de refus vous est envoyé. Les modalités en cas de refus sont détaillées à l'article 8.</p>
 
-                <p><strong>07 — Remise des clés</strong><br>
-                La remise des clés est gratuite si elle se fait en main propre à une personne présente le jour de la dernière visite, ou déposée dans une boîte aux lettres sécurisée. Un déplacement spécifique pour les récupérer est en revanche facturé.<br>
-                En cas d'imprévu, un arrangement sera recherché ensemble. À défaut, des frais de 5 € pourront s'appliquer. Le Client reste responsable des accès confiés (clés, badges, digicode).</p>
+                <p><strong>Article 7 - Remise et restitution des clés</strong><br>
+                <strong>Remise des clés (pré-visite)</strong><br>
+                La remise des clés a lieu lors de la pré-visite. Un déplacement spécifique organisé uniquement pour récupérer les clés est en revanche facturé 5€.<br><br>
+                <strong>Restitution des clés (fin de prestation)</strong><br>
+                La restitution des clés est gratuite si elle se fait en main propre à une personne présente le jour de la dernière visite, via une boîte aux lettres sécurisée, ou remise à une personne tierce que vous aurez désignée. Un déplacement spécifique organisé après la dernière prestation est en revanche facturé 5€.<br><br>
+                En cas d'imprévu, un arrangement sera recherché ensemble en priorité. À défaut, des frais de 5 € s'appliqueront pour un déplacement spécifique.<br>
+                Mambo &amp; Co s'engage à assurer la garde sécurisée des clés, badges et codes d'accès qui lui sont confiés pendant la durée de la prestation.</p>
 
-                <p><strong>08 — Annulation, refus et rétractation</strong> ⚠️<br>
-                Le Client dispose d'un délai légal de rétractation de 14 jours (article L221-18 du Code de la consommation). Ce droit tombe si le Client demande que la prestation démarre immédiatement. Tant que ce délai n'est pas écoulé (ou que le Client n'y a pas renoncé expressément), la réservation reste provisoire.<br><br>
-                <strong>Avant la pré-visite :</strong><br>
-                &bull; si l'acompte n'a pas encore été versé, annulation possible sans frais ;<br>
-                &bull; si l'acompte a été versé, il n'est pas remboursé en cas d'annulation ;<br>
-                &bull; en cas d'absence au rendez-vous, l'acompte reste dû, et 5 € de frais supplémentaires s'ajoutent si un nouveau déplacement est nécessaire.<br><br>
-                <strong>Au moment de la pré-visite :</strong><br>
-                &bull; si Mambo &amp; Co décline la prestation pour raison de sécurité ou d'incompatibilité, alors que les informations transmises étaient exactes : 5 € sont retenus, le reste est remboursé ;<br>
-                &bull; si ce refus fait suite à une information fausse ou dissimulée : l'acompte n'est pas remboursé ;<br>
-                &bull; si le solde n'est pas réglé dans les conditions prévues : la prestation ne démarre pas, l'acompte reste acquis.<br><br>
-                <strong>Après la pré-visite (solde réglé) :</strong> toute annulation de votre part, quel qu’en soit le motif, n’ouvre droit à aucun remboursement sauf cas particuliers<br><br>
-                <strong>Cas particuliers :</strong><br>
-                &bull; décès de l'animal en cours de contrat : remboursement au prorata, sur présentation d'un justificatif vétérinaire ;<br>
-                &bull; force majeure ou motif grave (hospitalisation, décès d'un proche…) : remboursement laissé à l'appréciation de Mambo &amp; Co ;<br>
-                &bull; annulation à l'initiative de Mambo &amp; Co : remboursement intégral des prestations non réalisées.<br><br>
-                Pour toute situation non prévue ici, Mambo &amp; Co s'engage à chercher, au cas par cas et de bonne foi, la solution la plus juste, en discutant avec le Client.</p>
+                <p><strong>Article 8 - Annulation, refus et rétractation</strong> ⚠️<br>
+                Vous disposez d'un délai légal de rétractation de 14 jours (article L221-18 du Code de la consommation). Ce droit tombe si vous demandez que la prestation démarre immédiatement dans le devis contractuel.<br>
+                Tant que ce délai n'est pas écoulé (ou que vous n'y avez pas renoncé expressément), la réservation reste provisoire : le créneau peut être attribué à un autre client qui s'engage fermement.<br><br>
+                <strong>Avant la pré-visite</strong><br>
+                &bull; si l'acompte n'a pas encore été versé, vous pouvez annuler sans frais<br>
+                &bull; si l'acompte a été versé, il n'est pas remboursé en cas d'annulation de votre part sauf cas particulier<br>
+                &bull; en cas d'absence au rendez-vous, l'acompte reste dû, et 5 € de frais supplémentaires s'ajoutent si un nouveau déplacement est nécessaire<br><br>
+                <strong>Au moment de la pré-visite</strong><br>
+                &bull; si Mambo &amp; Co décline la prestation pour raison de sécurité ou d'incompatibilité, alors que les informations transmises étaient exactes : 5 € sont retenus, le reste vous est remboursé<br>
+                &bull; si ce refus fait suite à une information fausse ou dissimulée : l'acompte n'est pas remboursé<br>
+                &bull; si le solde n'est pas réglé dans les conditions prévues : la prestation ne démarre pas, l'acompte reste acquis<br><br>
+                <strong>Après la pré-visite (solde réglé)</strong><br>
+                &bull; toute annulation de votre part, quel qu'en soit le motif, n'ouvre droit à aucun remboursement sauf cas particuliers<br><br>
+                <strong>Cas particuliers</strong><br>
+                &bull; décès de l'animal en cours du devis contractuel : remboursement au prorata, sur présentation d'un justificatif vétérinaire<br>
+                &bull; force majeure ou motif grave (hospitalisation, décès d'un proche…) : remboursement laissé à l'appréciation de Mambo &amp; Co<br>
+                &bull; annulation à l'initiative de Mambo &amp; Co : remboursement intégral des prestations non réalisées<br><br>
+                Pour toute situation non prévue ici, Mambo &amp; Co s'engage à chercher, au cas par cas et de bonne foi, la solution la plus juste, en discutant avec vous.</p>
 
-                <p><strong>09 — Éducation canine</strong><br>
-                Les prestations éducatives, ce sont : des apprentissages du quotidien, du renforcement éducatif, des exercices de stimulation et de comportement et des conseils de base. Ce n'est pas du dressage professionnel certifié, et aucun résultat n'est garanti — les progrès dépendent de la régularité du travail, du comportement de l'animal et de l'implication du Client.<br>
-                Ces prestations ne couvrent pas la rééducation comportementale (agressivité, anxiété sévère, troubles du comportement) ; Mambo &amp; Co pourra refuser ou interrompre la prestation dans ce cas, cela sortant du cadre de l'option éducative proposée.</p>
+                <p><strong>Article 9 - Education canine</strong><br>
+                Les prestations éducatives, ce sont :<br>
+                &bull; des apprentissages du quotidien<br>
+                &bull; du renforcement éducatif<br>
+                &bull; des exercices de stimulation et de comportement<br>
+                &bull; des conseils de base<br><br>
+                Ce n'est pas du dressage professionnel certifié, et aucun résultat n'est garanti. Les progrès dépendent de plusieurs facteurs :<br>
+                &bull; la régularité du travail<br>
+                &bull; le comportement de l'animal<br>
+                &bull; votre implication<br><br>
+                Ces prestations ne couvrent pas la rééducation comportementale (agressivité, anxiété sévère, troubles du comportement). Si le comportement de l'animal relève de ce type de prise en charge, Mambo &amp; Co pourra refuser ou interrompre la prestation, cela sortant du cadre de l'option éducative proposée.</p>
 
-                <p><strong>10 — Obligations et responsabilités des parties</strong> ⚠️<br>
-                <strong>De son côté, Mambo &amp; Co s'engage à :</strong> assurer les prestations convenues, veiller au bien-être de l'animal, respecter la confidentialité, informer le Client en cas d'incident, et le prévenir en cas de retard.<br>
-                Mambo &amp; Co garde l'animal dans le cadre d'une obligation de moyens et de surveillance pendant la prestation. Sa responsabilité ne pourra être engagée qu'en cas de faute prouvée. Elle ne saurait être tenue responsable des maladies préexistantes ou pathologies non détectables pendant la prestation, des accidents imprévisibles et extérieurs à sa volonté, des fugues liées à un défaut des installations fournies par le Client, ni des dommages causés par un cas de force majeure au sens de l'article 1218 du Code civil.<br><br>
-                <strong>De son côté, le Client s'engage à :</strong> être majeur et propriétaire de l'animal, fournir des informations complètes et exactes sur lui (comportement, santé, antécédents), présenter lors de la pré-visite la carte d'identification (I-CAD) ou le numéro d'identification ainsi que le carnet de santé à jour (chiens, chats, furets — pour les NAC, tout document vétérinaire disponible en l'absence de carnet de santé), transmettre les coordonnées de son vétérinaire, maintenir l'animal vacciné, suivi et identifié conformément à la réglementation, et disposer d'une assurance Responsabilité Civile couvrant les dommages que son animal pourrait causer à des tiers.<br>
+                <p><strong>Article 10 - Obligations et responsabilités des parties</strong> ⚠️<br>
+                <strong>De son côté, Mambo &amp; Co s'engage à :</strong><br>
+                &bull; assurer les prestations convenues<br>
+                &bull; veiller au bien-être de l'animal<br>
+                &bull; respecter la confidentialité<br>
+                &bull; vous informer en cas d'incident<br>
+                &bull; vous prévenir en cas de retard<br><br>
+                Mambo &amp; Co garde l'animal dans le cadre d'une obligation de moyens et de surveillance pendant la prestation. Sa responsabilité ne pourra être engagée qu'en cas de faute prouvée. Elle ne saurait être tenue responsable :<br>
+                &bull; des maladies préexistantes ou pathologies non détectables pendant la prestation<br>
+                &bull; des accidents imprévisibles et extérieurs à sa volonté<br>
+                &bull; des fugues liées à un défaut ou une défaillance des installations fournies par le propriétaire<br>
+                &bull; des dommages causés par un cas de force majeure au sens de l'article 1218 du Code civil<br><br>
+                <strong>De votre côté, vous vous engagez à :</strong><br>
+                &bull; être majeur et propriétaire de l'animal<br>
+                &bull; fournir toutes les informations complètes et exactes sur lui (comportement, santé, antécédents)<br>
+                &bull; présenter, lors de la pré-visite, pour les chiens, chats et furets : la carte d'identification (I-CAD) ou le numéro d'identification, ainsi que le carnet de santé à jour<br>
+                &bull; pour les NAC : fournir tout document vétérinaire disponible (ordonnances, bilans, comptes-rendus) en l'absence de carnet de santé<br>
+                &bull; transmettre les coordonnées de votre vétérinaire<br>
+                &bull; maintenir l'animal vacciné et suivi<br>
+                &bull; pour les chiens, chats et furets : l'animal doit être identifié conformément à la réglementation (puce électronique ou tatouage)<br>
+                &bull; disposer d'une assurance Responsabilité Civile couvrant les dommages que votre animal pourrait causer à des tiers (personnes, animaux, biens) pendant la prestation<br><br>
                 Si les informations transmises sont erronées, incomplètes, ou si des documents manquent, Mambo &amp; Co pourra refuser ou interrompre la prestation, sans obligation de remboursement.<br>
-                Le Client reste responsable des dommages causés par son animal en dehors des périodes de garde, des incidents liés à un comportement non signalé, et des frais vétérinaires liés à une pathologie préexistante ou non communiquée. Pendant la prestation, la responsabilité est régie par l'article 1243 du Code civil, selon la qualité de gardien.</p>
+                Vous restez responsable :<br>
+                &bull; des dommages causés par votre animal en dehors des périodes de garde<br>
+                &bull; des incidents liés à un comportement non signalé ou insuffisamment communiqué<br>
+                &bull; des frais vétérinaires liés à une pathologie préexistante ou non communiquée<br>
+                &bull; des dommages liés à des informations incomplètes concernant l'animal (santé, comportement, antécédents)<br><br>
+                Pendant la prestation, la responsabilité est régie par l'article 1243 du Code civil, selon la qualité de gardien.</p>
 
-                <p><strong>11 — Santé animale et conditions sanitaires</strong> ⚠️<br>
-                <strong>Traitements et ordonnances :</strong> merci de fournir une copie de toute ordonnance vétérinaire en cours de validité pour un traitement à administrer pendant la prestation. L'ordonnance originale est récupérée lors de la pré-visite. Aucun médicament ne sera donné sans avoir vu l'ordonnance correspondante.<br><br>
-                <strong>Santé et conditions sanitaires :</strong> le Client confirme que l'animal est en bonne santé générale, ne présente pas de maladie contagieuse connue, bénéficie d'un suivi vétérinaire adapté et que son carnet de santé est à jour. Merci de signaler tout problème de santé, traitement en cours, fragilité ou antécédent médical. Certains animaux (NAC, animaux âgés ou fragiles) peuvent voir leur état se dégrader rapidement malgré une surveillance attentive. En cas d'informations erronées, incomplètes ou de documents manquants, Mambo &amp; Co pourra refuser ou interrompre la prestation, sans obligation de remboursement.<br><br>
-                <strong>Vaccins obligatoires :</strong><br>
+                <p><strong>Article 11 - Santé animale et conditions sanitaires</strong> ⚠️<br>
+                <strong>Traitements et ordonnances</strong><br>
+                Vous devez fournir, lors de la pré-visite, toute ordonnance vétérinaire originale en cours de validité pour un traitement à administrer pendant la prestation. Aucun médicament ne sera donné sans avoir vu l'ordonnance correspondante ; cette règle vaut pour tous les animaux.<br><br>
+                <strong>Santé et conditions sanitaires</strong><br>
+                Vous confirmez que :<br>
+                &bull; l'animal est en bonne santé générale<br>
+                &bull; il ne présente pas de maladie contagieuse connue<br>
+                &bull; il bénéficie d'un suivi vétérinaire adapté<br>
+                &bull; son carnet de santé est à jour<br><br>
+                Vous devez signaler tout problème de santé, traitement en cours, fragilité ou antécédent médical. Le carnet de santé est obligatoire pour les chiens, chats et furets. Pour les NAC, tout document vétérinaire disponible (ordonnance, bilan, compte-rendu) suffit en l'absence de carnet de santé. Ces documents sont à présenter lors de la pré-visite.<br>
+                Certains animaux (NAC, animaux âgés ou fragiles) peuvent voir leur état se dégrader rapidement malgré une surveillance attentive ; c'est important d'en avoir conscience ensemble.<br>
+                En cas d'informations erronées, incomplètes ou de documents manquants concernant la santé de l'animal, Mambo &amp; Co pourra refuser ou interrompre la prestation, sans obligation de remboursement.<br><br>
+                <strong>Vaccins obligatoires</strong><br>
                 &bull; Chien : CHPPiL (Maladie de Carré, Hépatite de Rubarth, Parvovirose, Parainfluenza, Leptospirose)<br>
-                &bull; Chat d'intérieur : Coryza · Typhus félin<br>
-                &bull; Chat d'extérieur : Coryza · Typhus félin · Leucose féline (FeLV)<br>
-                &bull; Lapin : Myxomatose · VHD 1 &amp; 2 (Maladie Hémorragique Virale)<br>
-                &bull; Furet : Maladie de Carré<br>
-                Pour tout animal adopté ou importé d'un autre pays, ou ayant voyagé hors de France récemment, le vaccin antirabique est aussi obligatoire. Si les vaccins ne sont pas à jour, Mambo &amp; Co pourra refuser la prestation.<br><br>
-                <strong>Parasites et hygiène :</strong> il est vivement conseillé de traiter régulièrement l'animal contre les parasites internes et externes. Une infestation constatée lors de la pré-visite peut entraîner un report ou un refus de prise en charge ; si elle est détectée en cours de prestation, l'animal pourra être conduit chez le vétérinaire, aux frais du Client.<br><br>
-                <strong>Vétérinaire et urgence :</strong> en cas de problème de santé ou d'urgence, le Client est prévenu immédiatement. Mambo &amp; Co pourra contacter le vétérinaire désigné ou, si nécessaire, tout autre vétérinaire disponible, voire un toiletteur professionnel si l'état du pelage l'exige. Dans la mesure du possible, l'animal sera transporté chez le vétérinaire en transports en commun. Merci de fournir le matériel adapté : panier ou caisse fermée pour chats et petits chiens, laisse et muselière pour chiens de taille moyenne ou grande, contenant sécurisé pour NAC. Les frais vétérinaires, de toilettage, de transport ou d'urgence restent entièrement à la charge du Client ; en signant le contrat, celui-ci autorise le vétérinaire consulté à agir et à facturer directement en son nom.<br><br>
-                <strong>Matériel et conditions d'accueil à domicile :</strong> merci de vous assurer que tout ce dont l'animal a besoin est disponible, en bon état et bien approvisionné avant chaque prestation (gamelles, eau, alimentation, litière, jouets, médicaments, accessoires spécifiques à l'espèce). Le Client reste seul responsable de l'approvisionnement et de l'état du matériel présent chez lui.<br><br>
-                <strong>Matériel pour les promenades :</strong> merci de mettre à disposition le matériel nécessaire (laisse adaptée, harnais ou collier en bon état, muselière si besoin, sacs à déjections en quantité suffisante). Mambo &amp; Co ne fournit pas d'équipement.<br><br>
-                <strong>Joignabilité pendant la prestation :</strong> merci de laisser un numéro où le Client est joignable pendant toute la durée de la prestation, ou de désigner une personne de confiance à prévenir en cas d'incident ou d'urgence.</p>
+                &bull; Chat d'intérieur : Coryza • Typhus félin<br>
+                &bull; Chat d'extérieur : Coryza • Typhus félin • Leucose féline (FeLV)<br>
+                &bull; Lapin : Myxomatose • VHD 1 &amp; 2 (Maladie Hémorragique Virale)<br>
+                &bull; Furet : Maladie de Carré<br><br>
+                Pour tout animal adopté ou importé d'un autre pays, ou ayant voyagé hors de France récemment, le vaccin antirabique (rage) est aussi obligatoire.<br>
+                Si les vaccins ne sont pas à jour, Mambo &amp; Co pourra refuser la prestation.<br><br>
+                <strong>Parasites et hygiène</strong><br>
+                Il est vivement conseillé de traiter régulièrement l'animal contre les parasites internes et externes (antipuces, vermifuge). Mambo &amp; Co ne pourra être tenu responsable d'un problème de santé lié à l'absence de traitement antiparasitaire. Une infestation constatée lors de la pré-visite peut entraîner un report ou un refus de prise en charge, et un animal présentant des parasites visibles pourra être refusé, pour des raisons sanitaires et de sécurité. Si une infestation est détectée en cours de prestation, l'animal pourra être conduit chez le vétérinaire, aux frais du propriétaire.<br><br>
+                <strong>Vétérinaire et urgence</strong><br>
+                En cas de problème de santé ou d'urgence, vous êtes prévenu immédiatement.<br>
+                Si besoin, Mambo &amp; Co pourra contacter votre vétérinaire ou, si la situation l'exige, tout autre vétérinaire disponible pour un avis professionnel. Un toiletteur professionnel pourra aussi être sollicité si l'état du pelage l'exige (nœuds, bourres de poils, hygiène).<br>
+                Dans la mesure du possible, l'animal sera transporté chez le vétérinaire en transports en commun, conformément à la réglementation applicable.<br>
+                Vous devez fournir le matériel adapté :<br>
+                &bull; sac ou caisse de transport fermée pour chats et petits chiens ;<br>
+                &bull; collier ou harnais, laisse et muselière pour chiens de taille moyenne ou grande ;<br>
+                &bull; contenant de transport sécurisé pour NAC.<br><br>
+                Si les transports en commun ne sont pas envisageables, une solution alternative pourra être organisée avec votre accord préalable.<br>
+                Les frais vétérinaires, de toilettage, de transport ou d'urgence restent entièrement à votre charge. Toute consultation ou intervention en urgence est facturée directement en votre nom. Mambo &amp; Co n'avance aucun frais vétérinaire. En signant le contrat, vous autorisez le vétérinaire consulté à agir et à facturer directement en votre nom.<br><br>
+                <strong>Matériel et conditions d'accueil à domicile</strong><br>
+                Lors des visites à domicile, l'animal reste dans son propre environnement. Vous devez vous assurer que tout ce dont il a besoin est disponible, en bon état et bien approvisionné avant chaque prestation :<br>
+                &bull; gamelles propres, eau fraîche et alimentation en quantité suffisante ;<br>
+                &bull; litière propre et approvisionnée pour les chats et NAC ;<br>
+                &bull; jouets, griffoirs, cachettes ou tout enrichissement habituel de l'animal ;<br>
+                &bull; médicaments, compléments ou matériel vétérinaire nécessaires en cas de traitement en cours ;<br>
+                &bull; tout accessoire spécifique à l'espèce.<br><br>
+                Vous restez seul responsable de l'approvisionnement et de l'état du matériel présent chez vous.<br>
+                En cas d'imprévu ne permettant pas d'assurer le bien-être de l'animal (nourriture ou élément indispensable manquant, non anticipé lors de la pré-visite), Mambo &amp; Co pourra procéder à l'achat du nécessaire, dont les frais seront facturés au propriétaire sur présentation du justificatif.<br><br>
+                <strong>Matériel pour les promenades</strong><br>
+                Pour toute promenade, vous devez mettre à disposition le matériel nécessaire :<br>
+                &bull; laisse adaptée à la taille et au comportement du chien en bon état ;<br>
+                &bull; harnais ou collier en bon état ;<br>
+                &bull; muselière si le chien est susceptible de mordre ou si elle est imposée par la réglementation ;<br>
+                &bull; sacs à déjections en quantité suffisante ;<br>
+                &bull; tout autre accessoire signalé lors de la pré-visite (longe, gilet réfléchissant, etc.).<br><br>
+                Ce matériel doit être disponible, en bon état et facilement accessible dès l'arrivée du prestataire. Mambo &amp; Co ne fournit pas d'équipement et ne pourra être tenu responsable d'un incident lié à un matériel défectueux, inadapté ou absent.<br><br>
+                <strong>Joignabilité pendant la prestation</strong><br>
+                Vous devez laisser un numéro où vous êtes joignable pendant toute la durée de la prestation. Si vous êtes injoignable (voyage à l'étranger, déplacement itinérant), il faudra désigner une personne de confiance à prévenir en cas d'incident ou d'urgence concernant l'animal ou le domicile.</p>
 
-                <p><strong>12 — Confidentialité</strong><br>
-                Tout ce qui se dit et s'échange dans le cadre des prestations reste entre les parties. Cet engagement de confidentialité vaut pendant toute la durée du contrat, et continue après sa fin.</p>
+                <p><strong>Article 12 - Confidentialité</strong><br>
+                Tout ce qui se dit et s'échange dans le cadre des prestations reste entre nous.<br>
+                Cet engagement de confidentialité vaut pendant toute la durée du devis contractuel, et continue après sa fin.</p>
 
-                <p><strong>13 — Propriété intellectuelle</strong><br>
-                Les textes, images, logos, documents et autres contenus présents sur les supports de communication et le site de Mambo &amp; Co lui appartiennent. Toute reproduction, diffusion ou utilisation sans autorisation écrite préalable n'est pas permise.</p>
+                <p><strong>Article 13 - Propriété intellectuelle</strong><br>
+                Les textes, images, logos, documents et autres contenus présents sur les supports de communication et le site de Mambo &amp; Co lui appartiennent.<br>
+                Toute reproduction, diffusion ou utilisation sans autorisation écrite préalable n'est pas permise.<br>
+                Toute violation de cette règle expose son auteur à des poursuites judiciaires pour contrefaçon, ainsi qu'au versement de dommages et intérêts.</p>
 
-                <p><strong>14 — Modification des Conditions Générales de Prestations</strong><br>
-                Ces Conditions Générales de Prestations et les tarifs peuvent évoluer, avec un préavis raisonnable de 30 jours, sauf si un changement légal ou réglementaire l'impose plus rapidement. Les nouvelles conditions ne s'appliqueront jamais aux prestations déjà réservées et validées avant leur mise à jour.</p>
+                <p><strong>Article 14 - Modification des Conditions Générales de Prestations</strong><br>
+                Ces Conditions Générales de Prestations et les tarifs peuvent évoluer, avec un préavis raisonnable de 30 jours, sauf si un changement légal ou réglementaire l'impose plus rapidement.<br>
+                Les nouvelles conditions ne s'appliqueront jamais aux prestations déjà réservées et validées avant leur mise à jour.</p>
 
-                <p><strong>15 — Médiation et litiges</strong><br>
-                En cas de désaccord, une solution amiable sera toujours recherchée en priorité. Le Client peut adresser une réclamation écrite pour tenter de résoudre la situation directement avec Mambo &amp; Co. Si aucun accord n'est trouvé, ou en l'absence de réponse sous un délai raisonnable d'un (1) mois, le Client peut saisir gratuitement le médiateur de la consommation compétent, conformément aux articles L.612-1 et suivants du Code de la consommation.<br>
-                Mambo &amp; Co adhère au service de médiation suivant : <strong>CM2C, Centre de la Médiation de la Consommation de Conciliateurs de Justice</strong> — Site internet : https://www.cm2c.net/<br>
-                Le recours à la médiation est facultatif et ne prive pas le Client du droit de saisir les tribunaux compétents.</p>
+                <p><strong>Article 15 - Médiation et litiges</strong><br>
+                En cas de désaccord, une solution amiable sera toujours recherchée en priorité.<br>
+                Vous pouvez adresser une réclamation écrite pour tenter de résoudre la situation directement avec Mambo &amp; Co.<br>
+                Si aucun accord n'est trouvé, ou en l'absence de réponse sous un délai raisonnable d'un mois, vous pouvez saisir gratuitement le médiateur de la consommation compétent, conformément aux articles L.612-1 et suivants du Code de la consommation.<br>
+                Mambo &amp; Co adhère au service de médiation suivant :<br>
+                CM2C, Centre de la Médiation de la Consommation de Conciliateurs de Justice<br>
+                Site internet : https://www.cm2c.net/<br>
+                Le recours à la médiation est facultatif et ne vous prive pas du droit de saisir les tribunaux compétents.</p>
 
-                <p><strong>16 — Données personnelles et droit à l'image</strong><br>
-                Pour vous accompagner dans les meilleures conditions, Mambo &amp; Co collecte et traite quelques données vous concernant ainsi que des informations sur votre animal (identité, coordonnées, données de santé, ordonnances, contacts d'urgence). Ces traitements reposent sur l'exécution du contrat (art. 6.1.b RGPD) et sur l'obligation légale (art. 6.1.c RGPD).<br>
-                Pour faire connaître son activité, Mambo &amp; Co peut partager des photos, vidéos ou témoignages des animaux de ses clients sur ses supports de communication. Votre autorisation sera demandée au préalable via le contrat (art. 6.1.a RGPD), et vous pouvez la retirer à tout moment sur simple demande ; dans ce cas, rien ne sera publié. Mambo &amp; Co ne pourra être tenu responsable d'une utilisation frauduleuse des contenus publiés par des tiers.<br>
-                Vous disposez des droits d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité de vos données, ainsi que du droit de retirer votre consentement à tout moment, en écrivant à : <strong>contact@mamboandco.fr</strong>. Vous pouvez aussi déposer une réclamation auprès de la <strong>CNIL</strong> (www.cnil.fr). Pour en savoir plus, consultez la Politique de confidentialité.</p>
+                <p><strong>Article 16 - Données personnelles et droit à l'image</strong><br>
+                Pour vous accompagner dans les meilleures conditions, Mambo &amp; Co collecte et traite quelques données vous concernant ainsi que des informations sur votre animal (identité, coordonnées, données de santé, ordonnances, contacts d'urgence).<br>
+                Ces traitements reposent sur l'exécution du contrat (art. 6.1.b RGPD) et sur l'obligation légale (art. 6.1.c RGPD).<br>
+                Pour faire connaître son activité, Mambo &amp; Co peut partager des avis clients, des photos et vidéos des animaux gardés sur ses supports de communication. Votre autorisation sera demandée au préalable via le devis contractuel (art. 6.1.a RGPD), et vous pouvez la retirer à tout moment sur simple demande ; dans ce cas, rien ne sera publié. Mambo &amp; Co ne pourra être tenu responsable d'une utilisation frauduleuse des contenus publiés par des tiers.<br>
+                Vous disposez des droits d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité de vos données, ainsi que du droit de retirer votre consentement à tout moment, en écrivant à : contact@mamboandco.fr.<br>
+                Vous pouvez aussi déposer une réclamation auprès de la CNIL (www.cnil.fr).<br>
+                Pour en savoir plus, consultez la Politique de confidentialité.</p>
 
-                <p><strong>17 — Contact</strong><br>
-                Une question sur ces conditions ou sur une prestation en cours ? N'hésitez pas à contacter Mambo &amp; Co : par e-mail à <strong>contact@mamboandco.fr</strong>, par téléphone au <strong>06.69.71.38.72</strong>, ou pour toute question sur la zone d'intervention : <strong>Île-de-France (75, 92, 93, 95)</strong>.</p>
+                <p><strong>Article 17 - Contact</strong><br>
+                Une question sur ces conditions ou sur une prestation en cours ? N'hésitez pas à contacter Mambo &amp; Co :<br>
+                &bull; par e-mail : contact@mamboandco.fr<br>
+                &bull; par téléphone : 06.69.71.38.72<br>
+                &bull; zone d'intervention : Île-de-France (75, 92, 93, 95)</p>
+
 
               </div>
               <div class="cgv-footer">
@@ -949,11 +1072,18 @@
             </div>
           </div>
 
-          <!-- ══ ÉTAPE 3 — Vos animaux ══ -->
+          <!-- ══ ÉTAPE 3 Vos animaux ══ -->
 <div class="resa-step" id="step-3">
   <div>
     <h2 class="step-title">Parlez-moi de votre animal 🐾</h2>
     <p class="step-sub">Ces informations me permettent de préparer au mieux la prestation.</p>
+  </div>
+
+  <!-- ── Ajouter un second chien (promenade seule uniquement, 2 chiens max) ── -->
+  <div class="form-group" id="add-animal-promenade-grp" style="display:none; flex-direction:column; gap:8px;">
+    <button type="button" class="btn-add-urgence" id="btn-add-animal-promenade" onclick="toggleSecondAnimalPromenade()">+ Ajouter un second chien</button>
+    <p class="step-sub" style="font-size:.78rem; margin:0;">Les promenades sont acceptées avec deux chiens maximum (du même foyer), sous réserve d'évaluation lors de la pré-visite. Le formulaire du 2ᵉ chien s'ajoutera juste après celui du 1er.</p>
+    <p class="animaux-add-hint" id="animaux-add-hint">⬇️ Le formulaire du chien n°2 vient d'apparaître juste en dessous.</p>
   </div>
 
   <!-- ── Nombre d'animaux (visite uniquement) ── -->
@@ -971,6 +1101,7 @@
       <option value="9">9 animaux</option>
       <option value="10">10 animaux</option>
     </select>
+    <p class="animaux-add-hint" id="visite-add-hint">⬇️ Le formulaire du 2ᵉ animal vient d'apparaître juste en dessous du premier.</p>
   </div>
 
   <!-- ── Conteneur des fiches animaux (généré dynamiquement) ── -->
@@ -978,7 +1109,7 @@
 </div>
 <!-- /step-3 -->
 
-          <!-- ══ ÉTAPE 4 — Disponibilités ══ -->
+          <!-- ══ ÉTAPE 4 Disponibilités ══ -->
           <div class="resa-step" id="step-4">
             <div>
               <h2 class="step-title" id="step4-title">Quand avez-vous besoin de moi ?</h2>
@@ -1019,7 +1150,7 @@
             </div>
             <div class="resa-note note-warn" id="note-distance-multi" style="display:none;">
               <span>📍</span>
-              <span><strong style="color:var(--terra);">Visites multiples par jour</strong> — Plusieurs déplacements quotidiens dépendent de votre distance par rapport à mon domicile. Merci d'indiquer votre adresse ci-dessous.</span>
+              <span><strong style="color:var(--terra);">Visites multiples par jour</strong> Plusieurs déplacements quotidiens dépendent de votre distance par rapport à mon domicile. Merci d'indiquer votre adresse ci-dessous.</span>
             </div>
             <div class="form-group" id="horaires-grp" style="display:flex; flex-direction:column; gap:7px;">
               <label for="horaires">Horaires préférés <span class="req">*</span></label>
@@ -1031,7 +1162,7 @@
             </div>
           </div>
 
-          <!-- ══ ÉTAPE 5 — Coordonnées ══ -->
+          <!-- ══ ÉTAPE 5 Coordonnées ══ -->
           <div class="resa-step" id="step-5">
             <div>
               <h2 class="step-title">Comment vous joindre ?</h2>
@@ -1508,17 +1639,17 @@
         .map(function(c) {
           var lbl = document.querySelector('label[for="' + c.id + '"]');
           return lbl ? lbl.textContent.trim() : c.value;
-        }).join(', ') || '—';
+        }).join(', ') || '';
     }
     function selectLabel(id) {
       var el = document.getElementById(id);
-      if (!el || el.selectedIndex < 0) return '—';
+      if (!el || el.selectedIndex < 0) return '';
       var txt = el.options[el.selectedIndex].text.trim();
-      return txt || '—';
+      return txt || '';
     }
     function yesno(name) {
       var v = radioVal(name);
-      return v === 'oui' ? 'Oui' : v === 'non' ? 'Non' : '—';
+      return v === 'oui' ? 'Oui' : v === 'non' ? 'Non' : '';
     }
     /* Retourne la valeur d'un champ seulement si son conteneur est visible */
     function visibleVal(id) {
@@ -1534,28 +1665,28 @@
     }
     function visibleSelect(id) {
       var el = document.getElementById(id);
-      if (!el) return '—';
+      if (!el) return '';
       var node = el;
       while (node) {
-        if (node.style && node.style.display === 'none') return '—';
+        if (node.style && node.style.display === 'none') return '';
         if (node.classList && node.classList.contains('resa-steps')) break;
         node = node.parentElement;
       }
-      return el.selectedIndex >= 0 ? el.options[el.selectedIndex].text.trim() : '—';
+      return el.selectedIndex >= 0 ? el.options[el.selectedIndex].text.trim() : '';
     }
     function visibleYesno(name) {
       var el = document.querySelector('input[name="' + name + '"]:checked');
-      if (!el) return '—';
+      if (!el) return '';
       var node = el;
       while (node) {
-        if (node.style && node.style.display === 'none') return '—';
+        if (node.style && node.style.display === 'none') return '';
         if (node.classList && node.classList.contains('resa-steps')) break;
         node = node.parentElement;
       }
       return el.value === 'oui' ? 'Oui' : 'Non';
     }
     function row(label, value) {
-      if (!value || value === '—' || value === '') return '';
+      if (!value || value === '' || value === '') return '';
       return '  ' + label + ' : ' + value + '\n';
     }
     function section(title) { return '\n' + title + '\n' + '─'.repeat(title.replace(/[^\x00-\x7F]/g, '  ').length) + '\n'; }
@@ -1567,8 +1698,8 @@
     var educBase_ = radioVal('educ-base');
     var serviceLabel = service === 'visite' ? 'Visite à domicile'
       : service === 'garde' ? 'Promenade'
-      : service === 'education' && educBase_ === 'educ-visite' ? 'Option éducative — Visite + éducation'
-      : service === 'education' && educBase_ === 'educ-promenade' ? 'Option éducative — Promenade + éducation'
+      : service === 'education' && educBase_ === 'educ-visite' ? 'Option éducative Visite + éducation'
+      : service === 'education' && educBase_ === 'educ-promenade' ? 'Option éducative Promenade + éducation'
       : service;
 
     /* ════════════════════════════════════════════
@@ -1613,7 +1744,7 @@
       /* Identité de base */
       var typeEl = document.getElementById('animal-type' + s);
       var espece = typeEl ? typeEl.value : '';
-      var especeLabel = typeEl && typeEl.selectedIndex >= 0 ? typeEl.options[typeEl.selectedIndex].text.trim() : '—';
+      var especeLabel = typeEl && typeEl.selectedIndex >= 0 ? typeEl.options[typeEl.selectedIndex].text.trim() : '';
       lines += row('Espèce', especeLabel);
       lines += row('Prénom', val('animal-name' + s));
       lines += row('Âge',   val('animal-age' + s));
@@ -1656,17 +1787,17 @@
                 tData.push((lbl ? lbl.textContent.replace('*','').trim() : '') + ' : ' + inp.value.trim());
               }
             });
-            if (tData.length) lines += '  Traitement ' + (ti + 1) + ' — ' + tData.join(' | ') + '\n';
+            if (tData.length) lines += '  Traitement ' + (ti + 1) + ' ' + tData.join(' | ') + '\n';
           });
         }
 
         lines += section('🐛 Antiparasitaires');
         lines += row('Vermifugé', visibleYesno('chien-vermifuge-ok' + s));
-        lines += row('Vermifuge — date', visibleVal('chien-verm-date' + s));
-        lines += row('Vermifuge — produit', visibleVal('chien-verm-produit' + s));
+        lines += row('Vermifuge date', visibleVal('chien-verm-date' + s));
+        lines += row('Vermifuge produit', visibleVal('chien-verm-produit' + s));
         lines += row('Antiparasitaire externe', visibleYesno('chien-antipara-ok' + s));
-        lines += row('Antiparasitaire — date', visibleVal('chien-anti-date' + s));
-        lines += row('Antiparasitaire — produit', visibleVal('chien-anti-produit' + s));
+        lines += row('Antiparasitaire date', visibleVal('chien-anti-date' + s));
+        lines += row('Antiparasitaire produit', visibleVal('chien-anti-produit' + s));
         lines += row('Puces / tiques récentes', visibleYesno('chien-puces-ok' + s));
 
         lines += section('😄 Tempérament');
@@ -1763,7 +1894,7 @@
       /* ── CHAT ── */
       if (espece === 'chat') {
         lines += section('🐱 Identification');
-        /* Race/poids chat sans id fixe — on cherche dans le bloc */
+        /* Race/poids chat sans id fixe on cherche dans le bloc */
         var blocChat = document.getElementById('bloc-chat' + s);
         if (blocChat) {
           var chatInputs = blocChat.querySelectorAll('.form-row:first-of-type input');
@@ -1794,9 +1925,9 @@
         lines += row('Agressif envers', checkboxVals('chat-agr-cible' + s));
 
         lines += section('🍽️ Alimentation');
-        /* Type alimentation sans id — cherche dans le bloc */
+        /* Type alimentation sans id cherche dans le bloc */
         var chatAlimSel = document.querySelector('#bloc-chat' + s + ' select[data-mixte-target]');
-        if (chatAlimSel) lines += row('Type nourriture', chatAlimSel.options[chatAlimSel.selectedIndex] ? chatAlimSel.options[chatAlimSel.selectedIndex].text.trim() : '—');
+        if (chatAlimSel) lines += row('Type nourriture', chatAlimSel.options[chatAlimSel.selectedIndex] ? chatAlimSel.options[chatAlimSel.selectedIndex].text.trim() : '');
 
         lines += section('🤗 Interactions');
         lines += row('Aime être caressé', visibleYesno('chat-calins' + s));
@@ -1858,7 +1989,7 @@
       /* ── ANTÉCÉDENTS & EXPÉRIENCE (communs) ── */
       lines += section('📋 Antécédents & expérience');
       lines += row('Antécédents médicaux', visibleYesno('antecedents-ok' + s));
-      /* Précisions antécédents — textarea sans id fixe dans le cond-block */
+      /* Précisions antécédents textarea sans id fixe dans le cond-block */
       var antecedentsBloc = document.getElementById('antecedents-detail' + s);
       if (antecedentsBloc && antecedentsBloc.style.display !== 'none') {
         var antTa = antecedentsBloc.querySelector('textarea');
@@ -1880,7 +2011,7 @@
     for (var ai = 1; ai <= animauxCount; ai++) {
       var aLines = collectAnimal(ai);
       var nomAnimal = val('animal-name-' + ai) || val('animal-name' + '-' + ai) || ('#' + ai);
-      animauxBlocs.push('┌─────────────────────────────────────\n│  ANIMAL N°' + ai + ' — ' + nomAnimal.toUpperCase() + '\n└─────────────────────────────────────\n' + aLines);
+      animauxBlocs.push('┌─────────────────────────────────────\n│  ANIMAL N°' + ai + ' ' + nomAnimal.toUpperCase() + '\n└─────────────────────────────────────\n' + aLines);
     }
     /* Pour la liste courte (EmailJS) */
     var animauxLines = [];
@@ -1897,7 +2028,7 @@
     ════════════════════════════════════════════ */
     var emailBody = [
       '╔══════════════════════════════════════════╗',
-      '║     NOUVELLE RÉSERVATION — MAMBO & CO    ║',
+      '║     NOUVELLE RÉSERVATION MAMBO & CO    ║',
       '╚══════════════════════════════════════════╝',
       '',
       '━━━ 📌 SERVICE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
@@ -1906,7 +2037,7 @@
       '━━━ 📅 DISPONIBILITÉS ━━━━━━━━━━━━━━━━━━━━━',
       row('Date de début', dateDebut),
       row('Date de fin',   dateFin),
-      row('Fréquence', frequenceLabel + (freqDetail ? ' — ' + freqDetail : '')),
+      row('Fréquence', frequenceLabel + (freqDetail ? ' ' + freqDetail : '')),
       row('Horaires', horaires),
       row('Lieu / adresse', lieu),
       '',
@@ -1933,7 +2064,7 @@
       '━━━ 📅 DISPONIBILITÉS ━━━━━━━━━━━━━━━━━━━━━',
       row('Date de début', dateDebut),
       row('Date de fin',   dateFin),
-      row('Fréquence', frequenceLabel + (freqDetail ? ' — ' + freqDetail : '')),
+      row('Fréquence', frequenceLabel + (freqDetail ? ' ' + freqDetail : '')),
       row('Horaires', horaires),
       row('Lieu / adresse', lieu),
       '',
@@ -1958,7 +2089,7 @@
 
     var formData = new FormData();
     formData.append('access_key', W3F_ACCESS_KEY);
-    formData.append('subject', '🐾 Nouvelle réservation — ' + serviceLabel + ' — ' + prenom + ' ' + nom);
+    formData.append('subject', '🐾 Nouvelle réservation ' + serviceLabel + ' ' + prenom + ' ' + nom);
     formData.append('from_name', prenom + ' ' + nom + ' (Mambo & Co)');
     formData.append('email', email || 'noreply@mamboandco.fr');
     formData.append('message', emailBody);
@@ -1993,7 +2124,7 @@
         service:      serviceLabel,
         date_debut:   dateDebut,
         date_fin:     dateFin,
-        frequence:    frequenceLabel + (freqDetail ? ' — ' + freqDetail : ''),
+        frequence:    frequenceLabel + (freqDetail ? ' ' + freqDetail : ''),
         horaires:     horaires,
         lieu:         lieu,
         animaux:      animauxLines.join(' | '),
@@ -2008,7 +2139,7 @@
         showConfirmation();
       }).catch(function(err) {
         console.error('EmailJS error:', err);
-        /* Web3Forms a déjà envoyé à Ophélie — on affiche quand même la confirmation */
+        /* Web3Forms a déjà envoyé à Ophélie on affiche quand même la confirmation */
         showConfirmation();
       });
     }
@@ -2039,8 +2170,36 @@
   var nbSelect = document.getElementById('nb-animaux');
   if (nbSelect) {
     nbSelect.addEventListener('change', function () {
+      var prevCount = animauxCount;
       animauxCount = parseInt(this.value) || 1;
       renderAnimaux();
+
+      var hint = document.getElementById('visite-add-hint');
+      if (animauxCount > 1) {
+        /* Surbrillance des fiches nouvellement ajoutées */
+        if (animauxCount > prevCount) {
+          for (var k = Math.max(2, prevCount + 1); k <= animauxCount; k++) {
+            (function (kk) {
+              var f = document.getElementById('fiche-' + kk);
+              if (f) {
+                f.classList.remove('fiche-just-added');
+                void f.offsetWidth;
+                f.classList.add('fiche-just-added');
+                setTimeout(function () { f.classList.remove('fiche-just-added'); }, 1600);
+              }
+            })(k);
+          }
+        }
+        if (hint) {
+          hint.textContent = animauxCount === 2
+            ? "⬇️ Le formulaire du 2ᵉ animal vient d'apparaître juste en dessous du premier."
+            : '⬇️ Les formulaires des ' + (animauxCount - 1) + ' animaux suivants se trouvent juste en dessous du premier.';
+          hint.classList.add('visible');
+          setTimeout(function () { hint.classList.remove('visible'); }, 3500);
+        }
+      } else if (hint) {
+        hint.classList.remove('visible');
+      }
     });
   }
 
@@ -2146,18 +2305,18 @@
 
   /* ── Affiche le bon bloc service dans chaque fiche chien ── */
   function adapterBlocsService(service) {
-    /* Afficher/masquer le sélecteur nombre d'animaux (visite seulement) */
+    /* Afficher/masquer le sélecteur nombre d'animaux (visite) ou le bouton d'ajout (promenade seule) */
     var nbGrp = document.getElementById('nb-animaux-grp');
+    var addAnimalGrp = document.getElementById('add-animal-promenade-grp');
+    var isVisite = (service === 'visite');
+    /* Promenade seule = service "garde" (la promenade avec option éducative passe par service "education") */
+    var isGardeSimple = (service === 'garde');
     if (nbGrp) {
-      var isVisite = (service === 'visite');
       nbGrp.style.display = isVisite ? 'flex' : 'none';
       nbGrp.style.flexDirection = isVisite ? 'column' : '';
-      /* Si on passe à garde/education, forcer animauxCount à 1 */
-      if (!isVisite) {
-        animauxCount = 1;
-        var nbSel = document.getElementById('nb-animaux');
-        if (nbSel) nbSel.value = '1';
-      }
+    }
+    if (addAnimalGrp) {
+      addAnimalGrp.style.display = isGardeSimple ? 'flex' : 'none';
     }
 
     /* Déterminer les blocs à afficher */
@@ -2227,7 +2386,7 @@
             setRequired(alumDetail, true);
           }
         } else {
-          /* Éducation seule ou autre — masquer tout */
+          /* Éducation seule ou autre masquer tout */
           alumSection.style.display = 'none';
           setRequired(alumSection, false);
         }
@@ -2465,17 +2624,47 @@
 
         buildYesNo('chien-vaccins-ok' + s, 'chien-vaccins-ok' + s, 'Les vaccins sont-ils à jour ?'),
         '<div class="resa-note" style="margin-top:-6px;font-size:.79rem;"><span>💉</span><span><strong style="color:var(--navy);">Le chien est vacciné contre :</strong> la maladie de Carré · l\'Hépatite de Rubarth · la Parvovirose · le virus de la toux de chenil · la Leptospirose.</span></div>',
+        '<div class="cond-block" id="chien-vaccins-date-detail' + s + '">',
+          '<div class="cond-title">Date de chaque vaccin</div>',
+          '<div class="form-row">',
+            '<div class="form-group"><label>Maladie de Carré <span class="req">*</span></label><input type="date"></div>',
+            '<div class="form-group"><label>Hépatite de Rubarth <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
+          '<div class="form-row">',
+            '<div class="form-group"><label>Parvovirose <span class="req">*</span></label><input type="date"></div>',
+            '<div class="form-group"><label>Leptospirose <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
+          '<div class="form-group"><label>Toux du chenil <span class="req">*</span></label><input type="date"></div>',
+        '</div>',
         '<div class="cond-block" id="chien-vaccins-detail' + s + '" style="display:none;">',
-          '<div class="cond-title">Vaccins non à jour — précisez</div>',
+          '<div class="cond-title">Vaccins non à jour précisez</div>',
           buildYesNo('chien-vaccin-carre' + s, 'chien-vaccin-carre' + s, 'Maladie de Carré à jour ?'),
+          '<div class="cond-block" id="chien-vaccin-carre-date-detail' + s + '">',
+            '<div class="form-group"><label>Date (Carré) <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
           buildYesNo('chien-vaccin-hepatite' + s, 'chien-vaccin-hepatite' + s, 'Hépatite de Rubarth à jour ?'),
+          '<div class="cond-block" id="chien-vaccin-hepatite-date-detail' + s + '">',
+            '<div class="form-group"><label>Date (Hépatite de Rubarth) <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
           buildYesNo('chien-vaccin-parvo' + s, 'chien-vaccin-parvo' + s, 'Parvovirose à jour ?'),
+          '<div class="cond-block" id="chien-vaccin-parvo-date-detail' + s + '">',
+            '<div class="form-group"><label>Date (Parvovirose) <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
           buildYesNo('chien-vaccin-lepto' + s, 'chien-vaccin-lepto' + s, 'Leptospirose à jour ?'),
+          '<div class="cond-block" id="chien-vaccin-lepto-date-detail' + s + '">',
+            '<div class="form-group"><label>Date (Leptospirose) <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
           buildYesNo('chien-vaccin-toux' + s, 'chien-vaccin-toux' + s, 'Toux du chenil à jour ?'),
+          '<div class="cond-block" id="chien-vaccin-toux-date-detail' + s + '">',
+            '<div class="form-group"><label>Date (Toux du chenil) <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
         '</div>',
         buildImport(s, 'chien'),
         '<div class="cond-block" id="chien-rage-bloc' + s + '" style="display:none;">',
           buildYesNoRage('chien-rage' + s, 'chien-rage' + s, 'Vaccin de la rage à jour ?'),
+          '<div class="cond-block" id="chien-rage-date-detail' + s + '">',
+            '<div class="form-group"><label>Date du vaccin rage <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
         '</div>',
 
         /* Santé */
@@ -2526,6 +2715,13 @@
           '</div>',
         '</div>',
         buildYesNo('chien-puces-ok' + s, 'chien-puces-ok' + s, 'Présence récente de puces ou tiques ?'),
+        '<div class="cond-block" id="chien-puces-traite-detail' + s + '">',
+          buildYesNo('chien-puces-traite' + s, 'chien-puces-traite' + s, 'Cela a-t-il été traité ?'),
+        '</div>',
+        buildYesNo('chien-vers-ok' + s, 'chien-vers-ok' + s, 'Présence récente de vers ?'),
+        '<div class="cond-block" id="chien-vers-traite-detail' + s + '">',
+          buildYesNo('chien-vers-traite' + s, 'chien-vers-traite' + s, 'Cela a-t-il été traité ?'),
+        '</div>',
 
         /* Tempérament */
         '<div class="form-section-title">😄 Tempérament & comportement</div>',
@@ -2632,18 +2828,18 @@
             '<label for="chien-laisse-tenu' + s + '">Comportement en laisse <span class="req">*</span></label>',
             '<select id="chien-laisse-tenu' + s + '">',
               '<option value="">Choisissez...</option>',
-              '<option value="excellent">Excellent — marche sans tirer</option>',
-              '<option value="bon">Bon — tire un peu mais se reprend</option>',
-              '<option value="moyen">Moyen — tire régulièrement</option>',
-              '<option value="difficile">Difficile — tire beaucoup / réactif</option>',
+              '<option value="excellent">Excellent marche sans tirer</option>',
+              '<option value="bon">Bon tire un peu mais se reprend</option>',
+              '<option value="moyen">Moyen tire régulièrement</option>',
+              '<option value="difficile">Difficile tire beaucoup / réactif</option>',
             '</select>',
           '</div>',
           '<div class="form-group">',
             '<label for="chien-rappel' + s + '">Rappel <span class="req">*</span></label>',
             '<select id="chien-rappel' + s + '">',
               '<option value="">Choisissez...</option>',
-              '<option value="fiable">Fiable — revient toujours</option>',
-              '<option value="variable">Variable — dépend du contexte</option>',
+              '<option value="fiable">Fiable revient toujours</option>',
+              '<option value="variable">Variable dépend du contexte</option>',
               '<option value="inexistant">Absent / non acquis</option>',
             '</select>',
           '</div>',
@@ -2685,10 +2881,10 @@
             '<label for="chien-niveau-v' + s + '">Niveau éducatif actuel <span class="req">*</span></label>',
             '<select id="chien-niveau-v' + s + '">',
               '<option value="">Choisissez...</option>',
-              '<option value="debutant">Débutant — aucune base</option>',
+              '<option value="debutant">Débutant aucune base</option>',
               '<option value="quelques-bases">Quelques bases (assis, couché...)</option>',
-              '<option value="intermediaire">Intermédiaire — bases solides</option>',
-              '<option value="avance">Avancé — commandes multiples acquises</option>',
+              '<option value="intermediaire">Intermédiaire bases solides</option>',
+              '<option value="avance">Avancé commandes multiples acquises</option>',
             '</select>',
           "</div>",
 
@@ -2724,7 +2920,7 @@
               buildPill("ov-patte"    + s, "chien-obj-v" + s, "chien-obj-v", "🐾 Donne la patte / Check"),
               buildPill("ov-autre"    + s, "chien-obj-v" + s, "chien-obj-v", "➕ Autre"),
             "</div>",
-            '<div class="resa-note" id="note-couche-roule' + s + '" style="display:none; margin-top:6px;"><span>🛏️</span><span><strong>Couché requis</strong> — Le rouler s\'apprend depuis la position couchée. Votre chien doit maîtriser l\'ordre couché avant de travailler cet exercice.</span></div>',
+            '<div class="resa-note" id="note-couche-roule' + s + '" style="display:none; margin-top:6px;"><span>🛏️</span><span><strong>Couché requis</strong> Le rouler s\'apprend depuis la position couchée. Votre chien doit maîtriser l\'ordre couché avant de travailler cet exercice.</span></div>',
           "</div>",
           '<div class="cond-block" id="educ-v-autre-detail' + s + '" style="display:none;">',
             '<div class="cond-title">Précisez</div>',
@@ -2743,10 +2939,10 @@
             '<label for="chien-niveau-p' + s + '">Niveau éducatif actuel <span class="req">*</span></label>',
             '<select id="chien-niveau-p' + s + '">',
               '<option value="">Choisissez...</option>',
-              '<option value="debutant">Débutant — aucune base</option>',
+              '<option value="debutant">Débutant aucune base</option>',
               '<option value="quelques-bases">Quelques bases (au pied, rappel partiel...)</option>',
-              '<option value="intermediaire">Intermédiaire — bases solides</option>',
-              '<option value="avance">Avancé — commandes multiples acquises</option>',
+              '<option value="intermediaire">Intermédiaire bases solides</option>',
+              '<option value="avance">Avancé commandes multiples acquises</option>',
             '</select>',
           "</div>",
 
@@ -2774,7 +2970,7 @@
               buildPill("op-rappel"   + s, "chien-obj-p" + s, "chien-obj-p", "📣 Rappel extérieur"),
               buildPill("op-autre"    + s, "chien-obj-p" + s, "chien-obj-p", "➕ Autre"),
             "</div>",
-            '<div class="resa-note" id="note-longe-rappel' + s + '" style="display:none; margin-top:6px;"><span>🪢</span><span><strong>Longe requise</strong> — Le travail du rappel en extérieur nécessite une longe. Merci d\'en prévoir une pour la séance.</span></div>',
+            '<div class="resa-note" id="note-longe-rappel' + s + '" style="display:none; margin-top:6px;"><span>🪢</span><span><strong>Longe requise</strong> Le travail du rappel en extérieur nécessite une longe. Merci d\'en prévoir une pour la séance.</span></div>',
           "</div>",
           '<div class="cond-block" id="educ-p-autre-detail' + s + '" style="display:none;">',
             '<div class="cond-title">Précisez</div>',
@@ -2873,17 +3069,42 @@
         '</div>',
 
         '<div class="form-section-title">💉 Vaccinations</div>',
+        '<div class="resa-note" style="font-size:.79rem;"><span>💉</span><span><strong style="color:var(--navy);">Le chat est vacciné contre :</strong> Coryza · Typhus félin ·  <br> et Leucose féline (obligatoire uniquement pour les chats ayant accès à l\'extérieur).</span></div>',
+        buildYesNo('chat-exterieur' + s, 'chat-exterieur' + s, 'Le chat a-t-il accès à l\'extérieur ?'),
         buildYesNo('chat-vaccins-ok' + s, 'chat-vaccins-ok' + s, 'Les vaccins sont-ils à jour ?'),
-        '<div class="resa-note" style="margin-top:-6px;font-size:.79rem;"><span>💉</span><span><strong style="color:var(--navy);">Le chat est vacciné contre :</strong> Coryza · Typhus félin · Leucose féline.</span></div>',
+        '<div class="cond-block" id="chat-vaccins-date-detail' + s + '">',
+          '<div class="cond-title">Date de chaque vaccin</div>',
+          '<div class="form-row">',
+            '<div class="form-group"><label>Coryza <span class="req">*</span></label><input type="date"></div>',
+            '<div class="form-group"><label>Typhus félin <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
+          '<div class="cond-block" id="chat-ext-leucose-date-detail' + s + '">',
+            '<div class="form-group"><label>Leucose féline <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
+        '</div>',
         '<div class="cond-block" id="chat-vaccins-detail' + s + '" style="display:none;">',
-          '<div class="cond-title">Vaccins non à jour — précisez</div>',
+          '<div class="cond-title">Vaccins non à jour précisez</div>',
           buildYesNo('ch-v-coryza' + s, 'ch-v-coryza' + s, 'Coryza à jour ?'),
+          '<div class="cond-block" id="ch-v-coryza-date-detail' + s + '">',
+            '<div class="form-group"><label>Date (Coryza) <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
           buildYesNo('ch-v-typhus' + s, 'ch-v-typhus' + s, 'Typhus félin à jour ?'),
-          buildYesNo('ch-v-leucose' + s, 'ch-v-leucose' + s, 'Leucose féline à jour ?'),
+          '<div class="cond-block" id="ch-v-typhus-date-detail' + s + '">',
+            '<div class="form-group"><label>Date (Typhus félin) <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
+          '<div class="cond-block" id="chat-ext-leucose-question-detail' + s + '">',
+            buildYesNo('ch-v-leucose' + s, 'ch-v-leucose' + s, 'Leucose féline à jour ?'),
+            '<div class="cond-block" id="ch-v-leucose-date-detail' + s + '">',
+              '<div class="form-group"><label>Date (Leucose féline) <span class="req">*</span></label><input type="date"></div>',
+            '</div>',
+          '</div>',
         '</div>',
         buildImport(s, 'chat'),
         '<div class="cond-block" id="chat-rage-bloc' + s + '" style="display:none;">',
           buildYesNoRage('chat-rage' + s, 'chat-rage' + s, 'Vaccin de la rage à jour ?'),
+          '<div class="cond-block" id="chat-rage-date-detail' + s + '">',
+            '<div class="form-group"><label>Date du vaccin rage <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
         '</div>',
 
         '<div class="form-section-title">🩺 Santé</div>',
@@ -2926,6 +3147,13 @@
           '</div>',
         '</div>',
         buildYesNo('chat-puces-ok' + s, 'chat-puces-ok' + s, 'Présence récente de puces / tiques ?'),
+        '<div class="cond-block" id="chat-puces-traite-detail' + s + '">',
+          buildYesNo('chat-puces-traite' + s, 'chat-puces-traite' + s, 'Cela a-t-il été traité ?'),
+        '</div>',
+        buildYesNo('chat-vers-ok' + s, 'chat-vers-ok' + s, 'Présence récente de vers ?'),
+        '<div class="cond-block" id="chat-vers-traite-detail' + s + '">',
+          buildYesNo('chat-vers-traite' + s, 'chat-vers-traite' + s, 'Cela a-t-il été traité ?'),
+        '</div>',
 
         buildVeto(s, 'chat'),
 
@@ -3023,10 +3251,23 @@
 
         buildYesNo('lapin-vaccins-ok' + s, 'lapin-vaccins-ok' + s, 'Les vaccins sont-ils à jour ?'),
         '<div class="resa-note" style="margin-top:-6px;font-size:.79rem;"><span>💉</span><span><strong style="color:var(--navy);">Le lapin est vacciné contre :</strong> Myxomatose · VHD 1 &amp; 2 (Maladie Hémorragique Virale).</span></div>',
+        '<div class="cond-block" id="lapin-vaccins-date-detail' + s + '">',
+          '<div class="cond-title">Date de chaque vaccin</div>',
+          '<div class="form-row">',
+            '<div class="form-group"><label>Myxomatose <span class="req">*</span></label><input type="date"></div>',
+            '<div class="form-group"><label>VHD (Maladie Hémorragique Virale) <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
+        '</div>',
         '<div class="cond-block" id="lapin-vaccins-detail' + s + '" style="display:none;">',
-          '<div class="cond-title">Vaccins non à jour — précisez</div>',
+          '<div class="cond-title">Vaccins non à jour précisez</div>',
           buildYesNo('lapin-vaccin-myx' + s, 'lapin-vaccin-myx' + s, 'Myxomatose à jour ?'),
+          '<div class="cond-block" id="lapin-vaccin-myx-date-detail' + s + '">',
+            '<div class="form-group"><label>Date (Myxomatose) <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
           buildYesNo('lapin-vaccin-vhd' + s, 'lapin-vaccin-vhd' + s, 'VHD (maladie hémorragique) à jour ?'),
+          '<div class="cond-block" id="lapin-vaccin-vhd-date-detail' + s + '">',
+            '<div class="form-group"><label>Date (VHD) <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
         '</div>',
 
         '<div class="form-section-title">🩺 Santé</div>',
@@ -3072,17 +3313,39 @@
         '<div class="cond-block" id="lapin-parasites-detail' + s + '">',
           '<div class="cond-title">Précisions</div>',
           '<div class="form-group"><label>Lesquels ? <span class="req">*</span></label><input type="text" placeholder="Ex : puces, gale, acariens..."></div>',
+          buildYesNo('lapin-parasites-traite' + s, 'lapin-parasites-traite' + s, 'Cela a-t-il été traité ?'),
+        '</div>',
+        buildYesNo('lapin-vers-ok' + s, 'lapin-vers-ok' + s, 'Présence récente de vers ?'),
+        '<div class="cond-block" id="lapin-vers-traite-detail' + s + '">',
+          buildYesNo('lapin-vers-traite' + s, 'lapin-vers-traite' + s, 'Cela a-t-il été traité ?'),
         '</div>',
 
-        '<div class="form-section-title">🌿 Alimentation</div>',
-        '<div class="form-group"><label>Foin <span class="req">*</span></label>',
-          '<select><option>Illimité</option><option>Rationné</option></select>',
+        '<div class="form-section-title">🍽️ Alimentation</div>',
+        '<div class="form-group">',
+          '<label>Type de nourriture <span class="req">*</span></label>',
+          '<select id="lapin-alim-type' + s + '" data-mixte-target="lapin-mixte-detail' + s + '" data-autre-target="lapin-alim-autre-detail' + s + '">',
+            '<option value="">Choisissez...</option>',
+            '<option>Foin</option><option>Granulés</option><option>Légumes / fruits</option>',
+            '<option value="Mixte">Mixte</option>',
+            '<option value="Autre">Autre</option>',
+          '</select>',
         '</div>',
-        '<div class="form-row">',
-          '<div class="form-group"><label>Granulés <span class="req">*</span></label><input type="text" placeholder="Quantité, marque..."></div>',
-          '<div class="form-group"><label>Légumes / fruits <span class="req">*</span></label><input type="text" placeholder="Lesquels, quelle fréquence..."></div>',
+        '<div class="cond-block" id="lapin-mixte-detail' + s + '" style="display:none;">',
+          '<div class="cond-title">Détail alimentation mixte</div>',
+          '<div class="form-group"><label for="lapin-mixte-matin' + s + '">Repas du matin <span class="req">*</span></label><input type="text" id="lapin-mixte-matin' + s + '" placeholder="Ex : foin à volonté, granulés..."></div>',
+          '<div class="form-group"><label for="lapin-mixte-soir' + s + '">Repas du soir <span class="req">*</span></label><input type="text" id="lapin-mixte-soir' + s + '" placeholder="Ex : légumes frais..."></div>',
+          '<div class="form-group"><label for="lapin-mixte-autres' + s + '">Autres repas / précisions <span class="req">*</span></label><textarea id="lapin-mixte-autres' + s + '" placeholder="Horaires différents, notes particulières..."></textarea></div>',
         '</div>',
-        '<div class="form-group"><label>Restrictions alimentaires <span class="req">*</span></label><input type="text" placeholder="Aliments interdits, sensibilités..."></div>',
+        '<div class="cond-block" id="lapin-alim-autre-detail' + s + '" style="display:none;">',
+          '<div class="form-group"><label for="lapin-alim-autre' + s + '">Précisez <span class="req">*</span></label><input type="text" id="lapin-alim-autre' + s + '" placeholder="Ex : ration spécifique..."></div>',
+        '</div>',
+        '<div id="lapin-alim-quantite-grp' + s + '">',
+          '<div class="form-row">',
+            '<div class="form-group"><label for="lapin-alim-quantite' + s + '">Quantité <span class="req">*</span></label><input type="text" id="lapin-alim-quantite' + s + '" placeholder="Ex : bol de granulés, foin à volonté..."></div>',
+            '<div class="form-group"><label for="lapin-alim-heure' + s + '">Heure du repas <span class="req">*</span></label><input type="text" id="lapin-alim-heure' + s + '" placeholder="Ex : matin et soir..."></div>',
+          '</div>',
+        '</div>',
+        '<div class="form-group"><label for="lapin-alim-consignes' + s + '">Consignes particulières</label><input type="text" id="lapin-alim-consignes' + s + '" placeholder="Aliments interdits, sensibilités, restrictions..."></div>',
 
         '<div class="form-section-title">🐰 Comportement</div>',
         '<div class="form-group"><label>Caractère <span class="req">*</span></label>',
@@ -3094,6 +3357,14 @@
             buildPill('lap-manipulable' + s, 'lapin-carac' + s, 'lapin-carac', '🤲 Manipulable'),
             buildPill('lap-difficile' + s, 'lapin-carac' + s, 'lapin-carac', '⚠️ Difficile à manipuler'),
           '</div>',
+        '</div>',
+        buildYesNo('lapin-agressif' + s, 'lapin-agressif' + s, 'A-t-il déjà été agressif ?'),
+        '<div class="cond-block" id="lapin-agr-detail' + s + '">',
+          '<div class="cond-title">Précisions</div>',
+          '<div class="form-group"><label>Contexte <span class="req">*</span></label><textarea placeholder="Situation, fréquence..."></textarea></div>',
+        '</div>',
+        '<div class="form-group"><label for="lapin-autres-infos' + s + '">Autres informations</label>',
+          '<textarea id="lapin-autres-infos' + s + '" placeholder="Peurs, habitudes, routine particulière..."></textarea>',
         '</div>',
 
         buildVeto(s, 'lapin'),
@@ -3154,9 +3425,15 @@
         '<div class="form-section-title">💉 Vaccinations</div>',
 
         buildYesNo('furet-vaccin-carre' + s, 'furet-vaccin-carre' + s, 'Est-il vacciné contre la maladie de Carré ?'),
+        '<div class="cond-block" id="furet-vaccin-carre-date-detail' + s + '">',
+          '<div class="form-group"><label>Date du vaccin (maladie de Carré) <span class="req">*</span></label><input type="date"></div>',
+        '</div>',
         buildImport(s, 'furet'),
         '<div class="cond-block" id="furet-rage-bloc' + s + '" style="display:none;">',
           buildYesNoRage('furet-rage' + s, 'furet-rage' + s, 'Vaccin de la rage à jour ?'),
+          '<div class="cond-block" id="furet-rage-date-detail' + s + '">',
+            '<div class="form-group"><label>Date du vaccin rage <span class="req">*</span></label><input type="date"></div>',
+          '</div>',
         '</div>',
 
         '<div class="form-section-title">🩺 Santé</div>',
@@ -3202,18 +3479,39 @@
         '<div class="cond-block" id="furet-parasites-detail' + s + '">',
           '<div class="cond-title">Précisions</div>',
           '<div class="form-group"><label>Lesquels ? <span class="req">*</span></label><input type="text" placeholder="Ex : puces, gale, acariens..."></div>',
+          buildYesNo('furet-parasites-traite' + s, 'furet-parasites-traite' + s, 'Cela a-t-il été traité ?'),
+        '</div>',
+        buildYesNo('furet-vers-ok' + s, 'furet-vers-ok' + s, 'Présence récente de vers ?'),
+        '<div class="cond-block" id="furet-vers-traite-detail' + s + '">',
+          buildYesNo('furet-vers-traite' + s, 'furet-vers-traite' + s, 'Cela a-t-il été traité ?'),
         '</div>',
 
         '<div class="form-section-title">🍽️ Alimentation</div>',
-        '<div class="form-group"><label>Type</label>',
-          '<select id="furet-alim-type' + s + '" data-autre-target="furet-alim-autre-detail' + s + '">',
-            '<option value="">Choisissez...</option><option>Croquettes furet</option><option value="Autre">Autre</option>',
+        '<div class="form-group">',
+          '<label>Type de nourriture <span class="req">*</span></label>',
+          '<select id="furet-alim-type' + s + '" data-mixte-target="furet-mixte-detail' + s + '" data-autre-target="furet-alim-autre-detail' + s + '">',
+            '<option value="">Choisissez...</option>',
+            '<option>Croquettes furet</option><option>Pâtée / viande crue</option>',
+            '<option value="Mixte">Mixte</option>',
+            '<option value="Autre">Autre</option>',
           '</select>',
         '</div>',
-        '<div class="cond-block" id="furet-alim-autre-detail' + s + '" style="display:none;">',
-          '<div class="form-group"><label>Précisez le type de nourriture</label><input type="text" placeholder="Ex : BARF, ration carnée..."></div>',
+        '<div class="cond-block" id="furet-mixte-detail' + s + '" style="display:none;">',
+          '<div class="cond-title">Détail alimentation mixte</div>',
+          '<div class="form-group"><label for="furet-mixte-matin' + s + '">Repas du matin <span class="req">*</span></label><input type="text" id="furet-mixte-matin' + s + '" placeholder="Ex : croquettes furet..."></div>',
+          '<div class="form-group"><label for="furet-mixte-soir' + s + '">Repas du soir <span class="req">*</span></label><input type="text" id="furet-mixte-soir' + s + '" placeholder="Ex : viande crue..."></div>',
+          '<div class="form-group"><label for="furet-mixte-autres' + s + '">Autres repas / précisions <span class="req">*</span></label><textarea id="furet-mixte-autres' + s + '" placeholder="Horaires différents, notes particulières..."></textarea></div>',
         '</div>',
-        '<div class="form-group"><label>Notes <span class="req">*</span></label><input type="text" placeholder="Quantité, horaires, préférences..."></div>',
+        '<div class="cond-block" id="furet-alim-autre-detail' + s + '" style="display:none;">',
+          '<div class="form-group"><label for="furet-alim-autre' + s + '">Précisez <span class="req">*</span></label><input type="text" id="furet-alim-autre' + s + '" placeholder="Ex : BARF, ration carnée..."></div>',
+        '</div>',
+        '<div id="furet-alim-quantite-grp' + s + '">',
+          '<div class="form-row">',
+            '<div class="form-group"><label for="furet-alim-quantite' + s + '">Quantité <span class="req">*</span></label><input type="text" id="furet-alim-quantite' + s + '" placeholder="Ex : 30g, 1 bol..."></div>',
+            '<div class="form-group"><label for="furet-alim-heure' + s + '">Heure du repas <span class="req">*</span></label><input type="text" id="furet-alim-heure' + s + '" placeholder="Ex : matin et soir..."></div>',
+          '</div>',
+        '</div>',
+        '<div class="form-group"><label for="furet-alim-consignes' + s + '">Consignes particulières</label><input type="text" id="furet-alim-consignes' + s + '" placeholder="Allergies, friandises autorisées, médicament à cacher..."></div>',
 
         '<div class="form-section-title">🐾 Comportement</div>',
         '<div class="form-group"><label>Caractère <span class="req">*</span></label>',
@@ -3224,6 +3522,14 @@
             buildPill('fur-hyper' + s, 'furet-carac' + s, 'furet-carac', '⚡ Hyperactif'),
             buildPill('fur-craintif' + s, 'furet-carac' + s, 'furet-carac', '🫣 Craintif'),
           '</div>',
+        '</div>',
+        buildYesNo('furet-agressif' + s, 'furet-agressif' + s, 'A-t-il déjà été agressif ?'),
+        '<div class="cond-block" id="furet-agr-detail' + s + '">',
+          '<div class="cond-title">Précisions</div>',
+          '<div class="form-group"><label>Contexte <span class="req">*</span></label><textarea placeholder="Situation, fréquence..."></textarea></div>',
+        '</div>',
+        '<div class="form-group"><label for="furet-autres-infos' + s + '">Autres informations</label>',
+          '<textarea id="furet-autres-infos' + s + '" placeholder="Peurs, habitudes, routine particulière..."></textarea>',
         '</div>',
 
         buildVeto(s, 'furet'),
@@ -3313,16 +3619,39 @@
         '<div class="cond-block" id="rongeur-parasites-detail' + s + '">',
           '<div class="cond-title">Précisions</div>',
           '<div class="form-group"><label>Lesquels ? <span class="req">*</span></label><input type="text" placeholder="Ex : puces, gale, acariens..."></div>',
+          buildYesNo('rongeur-parasites-traite' + s, 'rongeur-parasites-traite' + s, 'Cela a-t-il été traité ?'),
+        '</div>',
+        buildYesNo('rongeur-vers-ok' + s, 'rongeur-vers-ok' + s, 'Présence récente de vers ?'),
+        '<div class="cond-block" id="rongeur-vers-traite-detail' + s + '">',
+          buildYesNo('rongeur-vers-traite' + s, 'rongeur-vers-traite' + s, 'Cela a-t-il été traité ?'),
         '</div>',
 
         '<div class="form-section-title">🍽️ Alimentation</div>',
-        '<div class="form-group"><label>Type <span class="req">*</span></label>',
-          '<select data-autre-target="rongeur-alim-autre' + s + '"><option value="">Choisissez...</option><option>Granulés</option><option>Foin</option><option>Fruits / légumes</option><option>Mixte</option><option value="Autre">Autre</option></select>',
+        '<div class="form-group">',
+          '<label>Type de nourriture <span class="req">*</span></label>',
+          '<select id="rongeur-alim-type' + s + '" data-mixte-target="rongeur-mixte-detail' + s + '" data-autre-target="rongeur-alim-autre-detail' + s + '">',
+            '<option value="">Choisissez...</option>',
+            '<option>Granulés</option><option>Foin</option><option>Fruits / légumes</option>',
+            '<option value="Mixte">Mixte</option>',
+            '<option value="Autre">Autre</option>',
+          '</select>',
         '</div>',
-        '<div class="cond-block" id="rongeur-alim-autre' + s + '" style="display:none;">',
-          '<div class="form-group"><label>Précisez le type de nourriture <span class="req">*</span></label><input type="text" placeholder="Ex : alimentation spécifique..."></div>',
+        '<div class="cond-block" id="rongeur-mixte-detail' + s + '" style="display:none;">',
+          '<div class="cond-title">Détail alimentation mixte</div>',
+          '<div class="form-group"><label for="rongeur-mixte-matin' + s + '">Repas du matin <span class="req">*</span></label><input type="text" id="rongeur-mixte-matin' + s + '" placeholder="Ex : granulés..."></div>',
+          '<div class="form-group"><label for="rongeur-mixte-soir' + s + '">Repas du soir <span class="req">*</span></label><input type="text" id="rongeur-mixte-soir' + s + '" placeholder="Ex : fruits / légumes..."></div>',
+          '<div class="form-group"><label for="rongeur-mixte-autres' + s + '">Autres repas / précisions <span class="req">*</span></label><textarea id="rongeur-mixte-autres' + s + '" placeholder="Horaires différents, notes particulières..."></textarea></div>',
         '</div>',
-        '<div class="form-group"><label>Notes <span class="req">*</span></label><input type="text" placeholder="Quantité, horaires, restrictions..."></div>',
+        '<div class="cond-block" id="rongeur-alim-autre-detail' + s + '" style="display:none;">',
+          '<div class="form-group"><label for="rongeur-alim-autre' + s + '">Précisez <span class="req">*</span></label><input type="text" id="rongeur-alim-autre' + s + '" placeholder="Ex : alimentation spécifique..."></div>',
+        '</div>',
+        '<div id="rongeur-alim-quantite-grp' + s + '">',
+          '<div class="form-row">',
+            '<div class="form-group"><label for="rongeur-alim-quantite' + s + '">Quantité <span class="req">*</span></label><input type="text" id="rongeur-alim-quantite' + s + '" placeholder="Ex : 1 cuillère, foin à volonté..."></div>',
+            '<div class="form-group"><label for="rongeur-alim-heure' + s + '">Heure du repas <span class="req">*</span></label><input type="text" id="rongeur-alim-heure' + s + '" placeholder="Ex : matin et soir..."></div>',
+          '</div>',
+        '</div>',
+        '<div class="form-group"><label for="rongeur-alim-consignes' + s + '">Consignes particulières</label><input type="text" id="rongeur-alim-consignes' + s + '" placeholder="Aliments interdits, sensibilités, restrictions..."></div>',
 
         '<div class="form-section-title">🐭 Comportement</div>',
         '<div class="form-group"><label>Caractère <span class="req">*</span></label>',
@@ -3334,6 +3663,14 @@
             buildPill('ron-nocturne' + s, 'rongeur-carac' + s, 'rongeur-carac', '🌙 Actif nocturne'),
             buildPill('ron-stresse' + s, 'rongeur-carac' + s, 'rongeur-carac', '😰 Stressé'),
           '</div>',
+        '</div>',
+        buildYesNo('rongeur-agressif' + s, 'rongeur-agressif' + s, 'A-t-il déjà été agressif ?'),
+        '<div class="cond-block" id="rongeur-agr-detail' + s + '">',
+          '<div class="cond-title">Précisions</div>',
+          '<div class="form-group"><label>Contexte <span class="req">*</span></label><textarea placeholder="Situation, fréquence..."></textarea></div>',
+        '</div>',
+        '<div class="form-group"><label for="rongeur-autres-infos' + s + '">Autres informations</label>',
+          '<textarea id="rongeur-autres-infos' + s + '" placeholder="Peurs, habitudes, routine particulière..."></textarea>',
         '</div>',
 
         buildVeto(s, 'rongeur'),
@@ -3528,7 +3865,7 @@
     bindYesNo('lapin-antecedents-ok', 'lapin-antecedents-detail');
     bindYesNo('furet-antecedents-ok', 'furet-antecedents-detail');
 
-    /* Vaccins unifiés — Non → affiche le détail par vaccin */
+    /* Vaccins unifiés Non → affiche le détail par vaccin */
     bindYesNoInverse('chien-vaccins-ok', 'chien-vaccins-detail');
     bindYesNoInverse('chat-vaccins-ok',  'chat-vaccins-detail');
     bindYesNoInverse('furet-vaccins-ok', 'furet-vaccins-detail');
@@ -3543,17 +3880,52 @@
       bindYesNo(esp + '-vermifuge-ok', esp + '-vermifuge-detail');
       bindYesNo(esp + '-antipara-ok',  esp + '-antipara-detail');
       bindYesNo(esp + '-parasites-ok', esp + '-parasites-detail');
+      bindYesNo(esp + '-vers-ok', esp + '-vers-traite-detail');
     });
+
+    /* Puces/tiques & vers question "Cela a-t-il été traité ?" */
+    bindYesNo('chien-puces-ok', 'chien-puces-traite-detail');
+    bindYesNo('chien-vers-ok', 'chien-vers-traite-detail');
+    bindYesNo('chat-puces-ok', 'chat-puces-traite-detail');
+    bindYesNo('chat-vers-ok', 'chat-vers-traite-detail');
 
     bindYesNo('chien-agressif','chien-agr-detail');
     bindYesNo('chat-agressif', 'chat-agr-detail');
+    bindYesNo('lapin-agressif', 'lapin-agr-detail');
+    bindYesNo('furet-agressif', 'furet-agr-detail');
+    bindYesNo('rongeur-agressif', 'rongeur-agr-detail');
 
-    /* Promenade — réactivité */
+    /* Vaccins à jour → affiche la date du/des vaccin(s) */
+    bindYesNo('chien-vaccins-ok', 'chien-vaccins-date-detail');
+    bindYesNo('chat-vaccins-ok', 'chat-vaccins-date-detail');
+    bindYesNo('lapin-vaccins-ok', 'lapin-vaccins-date-detail');
+    bindYesNo('furet-vaccin-carre', 'furet-vaccin-carre-date-detail');
+    bindYesNo('chien-rage', 'chien-rage-date-detail');
+    bindYesNo('chat-rage', 'chat-rage-date-detail');
+    bindYesNo('furet-rage', 'furet-rage-date-detail');
+
+    /* Leucose féline : obligatoire uniquement si le chat a accès à l'extérieur */
+    bindYesNo('chat-exterieur', 'chat-ext-leucose-date-detail');
+    bindYesNo('chat-exterieur', 'chat-ext-leucose-question-detail');
+
+    /* Vaccins non à jour précisez : affiche la date si "Oui" pour chaque vaccin */
+    bindYesNo('chien-vaccin-carre', 'chien-vaccin-carre-date-detail');
+    bindYesNo('chien-vaccin-hepatite', 'chien-vaccin-hepatite-date-detail');
+    bindYesNo('chien-vaccin-parvo', 'chien-vaccin-parvo-date-detail');
+    bindYesNo('chien-vaccin-lepto', 'chien-vaccin-lepto-date-detail');
+    bindYesNo('chien-vaccin-toux', 'chien-vaccin-toux-date-detail');
+    bindYesNo('ch-v-coryza', 'ch-v-coryza-date-detail');
+    bindYesNo('ch-v-typhus', 'ch-v-typhus-date-detail');
+    bindYesNo('ch-v-leucose', 'ch-v-leucose-date-detail');
+    bindYesNo('lapin-vaccin-myx', 'lapin-vaccin-myx-date-detail');
+    bindYesNo('lapin-vaccin-vhd', 'lapin-vaccin-vhd-date-detail');
+
+    /* Promenade réactivité */
     bindYesNo('chien-reactif', 'chien-reactif-detail');
-    /* Promenade — alimentation conditionnelle */
+    /* Promenade alimentation conditionnelle */
     bindYesNo('chien-alim-ok', 'chien-alim-detail');
-    /* Éducation visite — "Autre" dans objectifs → bloc précisez */
-    /* Éducation promenade — "Autre" dans objectifs → bloc précisez */
+    /* Éducation visite "Autre" dans objectifs → bloc précisez */
+    /* Éducation promenade "Autre" dans objectifs → bloc précisez */
     document.getElementById('animaux-container').addEventListener('change', function (e) {
       if (!e.target || e.target.type !== 'checkbox') return;
       var id = e.target.id || '';
@@ -3593,15 +3965,15 @@
       }
     });
 
-    /* Éducation visite — comportements problématiques */
+    /* Éducation visite comportements problématiques */
     bindYesNo('chien-pb-v', 'chien-pb-v-detail');
-    /* Éducation promenade — comportements problématiques */
+    /* Éducation promenade comportements problématiques */
     bindYesNo('chien-pb-p', 'chien-pb-p-detail');
 
-    /* Éducation — comportements problématiques (ancien, conservé pour compat) */
+    /* Éducation comportements problématiques (ancien, conservé pour compat) */
     bindYesNo('chien-pb-comportement', 'chien-pb-detail');
 
-    /* Interactions — brossage et jeux (NAC qui ont encore leurs propres blocs) */
+    /* Interactions brossage et jeux (NAC qui ont encore leurs propres blocs) */
     bindYesNo('rongeur-brossage', 'rongeur-brossage-detail');
     bindYesNo('rongeur-joue', 'rongeur-joue-detail');
 
@@ -3866,6 +4238,12 @@
   document.addEventListener('change', function (e) {
     if (e.target && e.target.name === 'service') {
       selectedService = e.target.value;
+      /* Réinitialiser le nombre d'animaux à chaque changement de service */
+      animauxCount = 1;
+      var nbSelReset = document.getElementById('nb-animaux');
+      if (nbSelReset) nbSelReset.value = '1';
+      var btnAddAnimalReset = document.getElementById('btn-add-animal-promenade');
+      if (btnAddAnimalReset) btnAddAnimalReset.textContent = '+ Ajouter un second chien';
       /* Afficher/masquer le sous-choix éducation */
       var educSubchoix = document.getElementById('educ-subchoix');
       if (educSubchoix) {
@@ -3972,7 +4350,7 @@
   })();
 
   /* ════════════════════════════════════════════
-     CGP — SCROLL + BLOCAGE SUIVANT (étape 2)
+     CGP SCROLL + BLOCAGE SUIVANT (étape 2)
   ════════════════════════════════════════════ */
   (function () {
     var scrollZone = document.getElementById('cgv-scroll-zone');
@@ -4034,6 +4412,45 @@
   /* Exposition globale nécessaire pour les onclick="" inline dans le HTML généré dynamiquement */
   window.toggleUrgence2 = toggleUrgence2;
 
+  /* ════════════════════════════════════════════
+     PROMENADE AJOUT D'UN SECOND CHIEN (2 max)
+     Réutilise le mécanisme de fiches animaux de la visite
+     (animauxCount + renderAnimaux/buildFiche)
+  ════════════════════════════════════════════ */
+  function toggleSecondAnimalPromenade() {
+    var btn  = document.getElementById('btn-add-animal-promenade');
+    var hint = document.getElementById('animaux-add-hint');
+    var adding = animauxCount < 2;
+
+    if (adding) {
+      animauxCount = 2;
+      if (btn) btn.textContent = '− Retirer le second chien';
+    } else {
+      animauxCount = 1;
+      if (btn) btn.textContent = '+ Ajouter un second chien';
+    }
+    renderAnimaux();
+
+    if (adding) {
+      /* Confirmation visuelle + surbrillance vers la fiche du 2e chien (sans scroll auto) */
+      var fiche2 = document.getElementById('fiche-2');
+      if (fiche2) {
+        fiche2.classList.remove('fiche-just-added');
+        /* Force reflow pour pouvoir relancer l'animation si besoin */
+        void fiche2.offsetWidth;
+        fiche2.classList.add('fiche-just-added');
+        setTimeout(function () { fiche2.classList.remove('fiche-just-added'); }, 1600);
+      }
+      if (hint) {
+        hint.classList.add('visible');
+        setTimeout(function () { hint.classList.remove('visible'); }, 3500);
+      }
+    } else if (hint) {
+      hint.classList.remove('visible');
+    }
+  }
+  window.toggleSecondAnimalPromenade = toggleSecondAnimalPromenade;
+
 })();
 </script>
 
@@ -4067,7 +4484,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Mambo &amp; Co — Ophélie</span>
+    <span>© 2026 Mambo &amp; Co Ophélie</span>
     <div class="footer-bottom-links">
       <a href="./mentions-legales.html">Mentions légales</a>
       <a href="./cgp.html">CGP</a>
