@@ -42,10 +42,11 @@
      Libellés lisibles pour les prestations (chips)
      ───────────────────────────────────────────────────────────── */
   var PRESTATIONS = {
-    visite:    '🏠 Visite à domicile',
-    promenade: '🦮 Promenade',
-    education: '🎓 Éducation canine',
-    autre:     '💬 Autre'
+    visite:             '🏠 Visite à domicile',
+    visite_edu:         '🏠 Visite à domicile + 🎓 Option éducative',
+    promenade:          '🦮 Promenade',
+    promenade_edu:      '🦮 Promenade + 🎓 Option éducative',
+    autre:              '💬 Autre'
   };
 
   /* ─────────────────────────────────────────────────────────────
@@ -59,14 +60,42 @@
      Chips — sélection de prestation
      ───────────────────────────────────────────────────────────── */
   var selectedPrestation = '';
+  var selectedEdu = ''; // 'oui' | 'non' | ''
 
-  document.querySelectorAll('.cf-chip').forEach(function (chip) {
+  /* Chips de prestation principale */
+  document.querySelectorAll('.cf-chip[data-value]').forEach(function (chip) {
     chip.addEventListener('click', function () {
-      document.querySelectorAll('.cf-chip').forEach(function (c) {
+      document.querySelectorAll('.cf-chip[data-value]').forEach(function (c) {
         c.classList.remove('selected');
       });
       chip.classList.add('selected');
       selectedPrestation = chip.dataset.value;
+
+      /* Affiche / masque le bloc éducatif selon la prestation */
+      var eduBlock = document.getElementById('cf-edu-block');
+      if (eduBlock) {
+        if (selectedPrestation === 'visite' || selectedPrestation === 'promenade') {
+          eduBlock.style.display = 'block';
+        } else {
+          eduBlock.style.display = 'none';
+          /* Réinitialise le choix éducatif si on bascule sur "Autre" */
+          selectedEdu = '';
+          document.querySelectorAll('.cf-chip[data-edu]').forEach(function (c) {
+            c.classList.remove('selected');
+          });
+        }
+      }
+    });
+  });
+
+  /* Chips Oui / Non éducation */
+  document.querySelectorAll('.cf-chip[data-edu]').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      document.querySelectorAll('.cf-chip[data-edu]').forEach(function (c) {
+        c.classList.remove('selected');
+      });
+      chip.classList.add('selected');
+      selectedEdu = chip.dataset.edu;
     });
   });
 
@@ -193,6 +222,10 @@
     if (!email || !email.includes('@')) errors.push('⚠ Un email valide est requis.');
     if (!ville)                         errors.push('⚠ Votre ville est requise.');
     if (!selectedPrestation)            errors.push('⚠ Veuillez sélectionner une prestation.');
+    /* Valider le choix éducatif uniquement si la prestation le propose */
+    if ((selectedPrestation === 'visite' || selectedPrestation === 'promenade') && !selectedEdu) {
+      errors.push('⚠ Veuillez indiquer si vous souhaitez l\'option éducative.');
+    }
     if (!message)                       errors.push('⚠ Veuillez décrire votre besoin.');
 
     if (errors.length) {
@@ -203,13 +236,19 @@
     hideError();
     setLoading(btnSubmit, true);
 
+    /* Construire la clé de prestation (avec option éducative si applicable) */
+    var prestationKey = selectedPrestation;
+    if ((selectedPrestation === 'visite' || selectedPrestation === 'promenade') && selectedEdu === 'oui') {
+      prestationKey = selectedPrestation + '_edu';
+    }
+
     var formData = {
       nom:         nom,
       prenom:      prenom,
       tel:         tel,
       email:       email,
       ville:       ville,
-      prestation:  PRESTATIONS[selectedPrestation] || selectedPrestation,
+      prestation:  PRESTATIONS[prestationKey] || prestationKey,
       message:     message
     };
 
