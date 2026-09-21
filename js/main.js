@@ -1,3 +1,35 @@
+/* ── Smooth scroll molette ── */
+(function () {
+  var ease = 0.08; /* 0.05 = très lent, 0.12 = rapide */
+  var current = window.scrollY;
+  var target  = window.scrollY;
+  var running = false;
+
+  window.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    target += e.deltaY * 0.8;
+    target = Math.max(0, Math.min(target, document.documentElement.scrollHeight - window.innerHeight));
+    if (!running) { running = true; requestAnimationFrame(step); }
+  }, { passive: false });
+
+  function step() {
+    current += (target - current) * ease;
+    if (Math.abs(target - current) < 0.5) { current = target; running = false; }
+    window.scrollTo(0, current);
+    if (running) requestAnimationFrame(step);
+  }
+
+  /* Permet à d'autres scripts (clic sur une ancre, CTA…) de synchroniser
+     le scroll à la molette avec un saut programmé, pour éviter que la
+     molette ne "ramène" la page à l'ancienne position mémorisée. */
+  window.__smoothScrollTo = function (y) {
+    y = Math.max(0, Math.min(y, document.documentElement.scrollHeight - window.innerHeight));
+    current = window.scrollY;
+    target = y;
+    if (!running) { running = true; requestAnimationFrame(step); }
+  };
+})();
+
 /* ── Curseur ── */
 (function () {
   var cursor = document.getElementById('cursor');
@@ -22,25 +54,46 @@
   var header = document.getElementById('header');
   var toggle = document.getElementById('menuToggle');
 
+  /* ── Hero transparent : on détecte la fin du hero ── */
+  var heroSection = document.querySelector('section.hero');
+
+  /* Le header passe en état "scrolled" dès les premiers pixels de scroll
+     (au lieu d'attendre la fin du hero). Ajuster TRANSITION_OFFSET pour
+     régler la sensibilité : 0 = immédiat, 20-30 = léger délai. */
+  var TRANSITION_OFFSET = 5;
+
+  function updateHeroTransparent() {
+    if (!header || !heroSection) return;
+    var y = window.scrollY;
+    var heroBottom = heroSection.getBoundingClientRect().bottom;
+    /* Transparent uniquement tout en haut de page (et tant que le hero est visible) */
+    if (y <= TRANSITION_OFFSET && heroBottom > 80) {
+      header.classList.add('hero-transparent');
+      header.classList.remove('scrolled');
+    } else {
+      header.classList.remove('hero-transparent');
+      header.classList.add('scrolled');
+    }
+  }
+
+  /* Init immédiate */
+  updateHeroTransparent();
+
   /* ── Hide on scroll down / show on scroll up ── */
   var lastScrollY   = window.scrollY;
   var ticking       = false;
-  var THRESHOLD     = 8;
+  var THRESHOLD     = 40;
   var TOP_ZONE      = 80;
 
   function handleHeaderVisibility() {
     var currentY = window.scrollY;
     var delta    = currentY - lastScrollY;
 
+    updateHeroTransparent();
+
     if (header) {
-      if (currentY <= TOP_ZONE) {
-        header.classList.remove('header-hidden');
-      } else if (delta > THRESHOLD) {
-        header.classList.add('header-hidden');
-        header.classList.remove('menu-open');
-      } else if (delta < -THRESHOLD) {
-        header.classList.remove('header-hidden');
-      }
+      /* header toujours visible */
+      header.classList.remove('header-hidden');
     }
 
     lastScrollY = currentY;
@@ -48,7 +101,6 @@
   }
 
   window.addEventListener('scroll', function () {
-    if (header) header.classList.toggle('scrolled', window.scrollY > 40);
     if (!ticking) {
       requestAnimationFrame(handleHeaderVisibility);
       ticking = true;
@@ -90,7 +142,17 @@ document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     var target = document.querySelector(href);
     if (!target) return;
     e.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    if (typeof window.__smoothScrollTo === 'function') {
+      /* Tient compte du scroll-margin-top défini en CSS (section[id]) */
+      var cs = window.getComputedStyle(target);
+      var scrollMarginTop = parseFloat(cs.scrollMarginTop) || 0;
+      var y = target.getBoundingClientRect().top + window.scrollY - scrollMarginTop;
+      window.__smoothScrollTo(y);
+    } else {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
     var header = document.getElementById('header');
     if (header) header.classList.remove('menu-open');
   });
