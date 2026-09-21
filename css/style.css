@@ -88,7 +88,7 @@ h3 {margin-bottom: 20px;margin-top: 30px;}
   padding: 0 12px;
   text-align: center;
 }
-html { font-size: 16px; scroll-behavior: smooth; }
+html { font-size: 16px; }
 
 /* Scrollbar native cachée — remplacée par JS */
 ::-webkit-scrollbar { width: 0 !important; background: transparent !important; }
@@ -99,6 +99,7 @@ body {
   background: var(--white);
   color: var(--text);
   overflow-x: hidden;
+  overscroll-behavior-y: none;
   -webkit-font-smoothing: antialiased;
   cursor: none;
 }
@@ -214,21 +215,62 @@ body:has(button:hover) .cursor .paw-main { fill: var(--terra); }
 /* ── HEADER ── */
 #header {
   position: fixed;
-  top: 20px; left: 50%;
-  transform: translateX(-50%);
+  top: 20px;
+  left: 40px;
+  right: 40px;
   z-index: 600;
-  width: calc(100% - 80px);
-  max-width: 900px;
-  transition: transform .45s cubic-bezier(.4,0,.2,1),
+  transition: top .5s cubic-bezier(.4,0,.2,1),
+              left .5s cubic-bezier(.4,0,.2,1),
+              right .5s cubic-bezier(.4,0,.2,1),
               opacity .35s ease,
-              width .4s ease,
-              top .4s ease;
+              transform .45s cubic-bezier(.4,0,.2,1);
 }
 
-#header.header-hidden {
-  transform: translateX(-50%) translateY(calc(-100% - 32px));
-}
 
+
+/* ── État transparent : sur le hero uniquement ── */
+#header.hero-transparent {
+  top: 20px;
+}
+#header.hero-transparent #navbar {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  border-radius: 50px;
+  padding: 11px 14px 11px 22px;
+  backdrop-filter: none;
+}
+#header.hero-transparent .nav-links a { color: var(--navy) !important; }
+#header.hero-transparent .nav-links a:hover { color: var(--blue) !important; background: rgb(28, 58, 74); }
+#header.hero-transparent .btn-nav {
+  background: var(--navy);
+  color: var(--white) !important;
+  border: 1.5px solid var(--navy);
+}
+#header.hero-transparent .btn-nav:hover { background: var(--blue); border-color: var(--blue); }
+/* Logo : couleur originale conservée sur le hero */
+#header.hero-transparent .menu-toggle {
+  border-color: transparent;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+#header.hero-transparent .menu-bar { stroke: var(--navy); }
+
+/* ── Menu ouvert : fond toujours blanc, même par-dessus le hero ── */
+#header.hero-transparent.menu-open #navbar {
+  background: var(--white);
+  border-color: rgba(26,50,73,.12);
+  box-shadow: 0 6px 32px rgba(26,50,73,.12);
+  backdrop-filter: blur(20px);
+}
+#header.hero-transparent.menu-open .menu-toggle {
+  border-color: rgba(26,50,73,.15);
+  background: none;
+}
+#header.hero-transparent.menu-open .menu-bar { stroke: #1C3A4A; }
+
+/* ── État normal scrollé ── */
 #header.scrolled { top: 12px; }
 #header.scrolled #navbar {
   padding: 10px 13px 10px 22px;
@@ -245,10 +287,11 @@ body:has(button:hover) .cursor .paw-main { fill: var(--terra); }
   border: 1px solid rgba(26,50,73,.12);
   box-shadow: 0 6px 32px rgba(26,50,73,.12);
   overflow: visible;
-  transition: padding .45s cubic-bezier(.4,0,.2,1),
-              background .3s ease,
-              box-shadow .3s ease,
-              border-radius .45s cubic-bezier(.4,0,.2,1);
+  transition: padding .5s cubic-bezier(.4,0,.2,1),
+              background .5s ease,
+              box-shadow .5s ease,
+              border-radius .5s cubic-bezier(.4,0,.2,1),
+              border-color .5s ease;
 }
 
 #header.menu-open #navbar {
@@ -282,19 +325,30 @@ body:has(button:hover) .cursor .paw-main { fill: var(--terra); }
 }
 .btn-nav:hover { background: var(--blue); transform: translateY(-1px); }
 
-/* ── Burger animé ── */
+/* ── Burger animé (3 barres → croix) ── */
 .menu-toggle {
   display: none; background: none;
-  border: 1.5px solid rgba(26,50,73,.15); border-radius: 20px;
+  border: none; border-radius: 0;
   padding: 7px; color: var(--navy);
   position: relative; z-index: 1001;
-  transition: border-color .3s, transform .45s cubic-bezier(.4,0,.2,1);
+  transition: transform .45s cubic-bezier(.4,0,.2,1);
 }
-.menu-toggle:hover { background: var(--blue-pale); border-color: rgba(26,50,73,.3); }
-.menu-icon { width: 20px; height: 20px; transition: transform .3s; }
-.menu-toggle.open .menu-icon { transform: rotate(-45deg); }
-.menu-path { stroke-dasharray: 12 63; transition: stroke-dasharray .3s, stroke-dashoffset .3s; }
-.menu-toggle.open .menu-path { stroke-dasharray: 20 300; stroke-dashoffset: -32.42px; }
+.menu-icon { width: 32px; height: 32px; display: block; object-fit: contain; }
+.menu-bar {
+  transform-origin: 12px 12px;
+  transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .25s ease;
+}
+.menu-toggle.open .menu-bar--1 { transform: translateY(6px) rotate(45deg); }
+.menu-toggle.open .menu-bar--2 { opacity: 0; }
+.menu-toggle.open .menu-bar--3 { transform: translateY(-6px) rotate(-45deg); }
+
+/* Le fond du bouton reste sombre-translucide sur le hero, mais passe au blanc
+   dès que le menu est ouvert (le header lui-même devient blanc, cf. ci-dessous) */
+#header.menu-open .menu-toggle {
+  border-color: transparent;
+  background: none;
+}
+#header.menu-open .menu-bar { stroke: #1C3A4A !important; }
 
 /* ── Dropdown ── */
 .menu-dropdown {
@@ -371,14 +425,44 @@ body:has(button:hover) .cursor .paw-main { fill: var(--terra); }
 /* ── HERO ── */
 .hero {
   position: relative;
-  min-height: 680px;
-  height: 88vh;
-  max-height: 700px;
+  min-height: 100dvh;
+  height: 100dvh;
+  max-height: none;
   background: var(--blue-pale);
   overflow: hidden;
   display: flex;
   align-items: center;
   padding: 0;
+}
+
+/* ── Photo de fond plein écran ── */
+.hero-bg-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('../img/01-images/IMG_9515.jpeg');
+  background-size: 70%;
+  background-position: 130% 30%;
+  background-repeat: no-repeat;
+}
+.hero-bg-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgb(255 255 255) 0%, rgb(255 255 255) 45%, rgba(255, 255, 255, 0.0) 70%);
+}
+
+/* Second voile, activé uniquement quand le texte passe en bas (≤900px) */
+.hero-bg-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  /* Léger voile de transition en bas — la lisibilité du texte est
+     assurée par le fond propre de .hero-left, pas par ce voile */
+  background: linear-gradient(to top, rgb(255 255 255 / 55%) 0%, rgba(255,255,255,0) 40%);
+  transition: opacity .2s;
 }
 
 .hero-deco-paws { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
@@ -393,43 +477,54 @@ body:has(button:hover) .cursor .paw-main { fill: var(--terra); }
 
 .hero-inner {
   position: relative; z-index: 2;
-  width: 100%; max-width: 1100px;
+  width: 100%;
+  height: 100%;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 5%;
+  padding: 40px 5% 0 0%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  justify-content: flex-start;
 }
 
 .hero-left {
   position: relative; z-index: 3;
-  flex: 1;
-  display: flex; flex-direction: column;
-  justify-content: center; gap: 30px;
-  animation: fadeUp .8s ease both;
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 640px;
+  animation: fadeUp .9s ease both;
 }
 
 .hero-title {
   font-family: 'Jua', sans-serif;
-  font-size: clamp(2.5rem, 3.8vw, 4.5rem);
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
   color: var(--navy);
-  line-height: 1.2;
+  line-height: 1.1;
+  text-shadow: none;
+  margin-top: 4px;
+  margin-bottom: 20px;
 }
 .hero-slogan {
   font-family: 'Dancing Script', cursive;
-  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
   color: var(--terra);
   font-style: normal;
+  text-shadow: none;
+  letter-spacing: .01em;
+  margin-bottom: 0;
 }
 .hero-title .heart { color: var(--terra); font-style: normal; font-size: .85em; }
-.hero-title .accent { color: var(--blue); }
+.hero-title .accent { color: #5AAFD4; }
 
 .hero-desc {
-  font-size: clamp(.82rem, 1.1vw, .95rem);
-  color: var(--text-muted);
-  line-height: 1.7;
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  color: var(--navy);
+  line-height: 1.65;
+  text-shadow: none;
+  max-width: 460px;
+  font-weight: 600;
+  margin-bottom: 24px;
 }
 
 .hero-services-row {
@@ -573,14 +668,15 @@ position: absolute;
 
 .btn-primary {
   display: inline-flex; align-items: center; gap: 10px;
-  background: var(--navy); color: var(--white);
-  padding: 15px 30px; border-radius: 50px;
-  font-weight: 600; font-size: .93rem; letter-spacing: .03em;
-  transition: all .2s; align-self: flex-start;
+  background: var(--blue); color: var(--white);
+  padding: 16px 34px; border-radius: 50px;
+  font-weight: 700; font-size: 1rem; letter-spacing: .03em;
+  transition: all .25s; align-self: flex-start;
   position: relative; overflow: hidden;
 }
 .btn-primary:hover {
-  background: var(--blue); transform: translateY(-3px);
+  background: #3e9dc8;
+  transform: translateY(-3px);
 }
 
 /* ══════════════════════════════════════
@@ -750,6 +846,14 @@ section { padding: 72px 5%; }
 #about .about-tagline { color: var(--terra); }
 #about .btn-primary { background: var(--blue); color: var(--white); }
 #about .btn-primary:hover { background: var(--white); color: var(--navy); }
+/* Patte du CTA : blanche par défaut, navy au survol (le bouton passe en blanc) */
+#about .btn-primary .btn-paw-icon-blue {
+  filter: brightness(0) invert(1);
+  transition: filter .25s;
+}
+#about .btn-primary:hover .btn-paw-icon-blue {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(17%) saturate(1577%) hue-rotate(157deg) brightness(99%) contrast(90%);
+}
 #about .value-item p { color: rgba(255,255,255,.8); }
 #about .vi-1, #about .vi-2, #about .vi-3,
 #about .vi-4, #about .vi-5, #about .vi-6 { background: rgba(255,255,255,.08); }
@@ -777,15 +881,7 @@ section { padding: 72px 5%; }
   width: 100%;
   position: relative;
 }
-.about-photo-placeholder::before {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  background: linear-gradient(145deg, #4a8a9a 0%, #2d5a70 40%, #1a3249 100%);
-  border-radius: 15px;
-  transform: rotate(1.5deg);
-  z-index: 0;
-}
+
 .about-photo-placeholder .polaroid-frame {
   position: relative;
   z-index: 1;
@@ -861,9 +957,18 @@ section { padding: 72px 5%; }
   display: flex; flex-direction: column;
 }
 
-.histoire-header { text-align: center; }
+.histoire-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+.histoire-header .section-label,
+.histoire-header .section-title { margin-bottom: 0; }
 
-.about-histoire { display: flex; flex-direction: column; gap: 40px; }
+.about-histoire { display: flex; flex-direction: column; gap: 56px; }
 
 .about-histoire-row {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -875,8 +980,9 @@ section { padding: 72px 5%; }
   aspect-ratio: 3/4; overflow: visible;
   display: flex; align-items: center; justify-content: center;
 }
-.about-histoire-photo {
+.polaroid-frame--histoire .about-histoire-photo {
   width: 100%;
+  height: auto;
   object-fit: cover; object-position: center top;
   display: block;
 }
@@ -886,13 +992,14 @@ section { padding: 72px 5%; }
   aspect-ratio: 3/4; overflow: visible;
   display: flex; align-items: center; justify-content: center;
 }
-.about-histoire-photo2 {
-  width: 100%; height: 100%;
+.polaroid-frame--histoire .about-histoire-photo2 {
+  width: 100%; height: auto;
   object-fit: cover; object-position: center top;
   display: block;
 }
 
-.about-histoire-text { display: flex; flex-direction: column; gap: 14px; }
+.about-histoire-text { display: flex; flex-direction: column; gap: 16px; }
+.about-histoire-text .section-title { margin-bottom: 0; }
 .about-animal-text { font-size: .92rem; line-height: 1.75; color: var(--text-muted); }
 .about-animal-tribute {
   font-family: 'Dancing Script', cursive; color: var(--terra); font-size: clamp(1.1rem, 1.8vw, 1.35rem); display: block;
@@ -1247,37 +1354,81 @@ footer ul li a:hover { color: var(--navy); }
   .footer-inner .footer-logo-wrap { grid-column: 1 / -1; }
 }
 
-/* ── Tablette portrait (≤ 900px) ── */
-@media (max-width: 900px) {
+/* ── Tablette portrait (≤ 900px, ou tout écran ≤1024px en orientation portrait
+      comme l'iPad Pro 12.9" qui fait 1024px de large) ── */
+@media (max-width: 900px), (max-width: 1024px) and (min-height: 850px) {
   /* ── Header ── */
-  #header { max-width: calc(100% - 32px); top: 12px; }
+  #header { left: 16px; right: 16px; max-width: none; width: auto; top: 12px; }
+  #header.hero-transparent { top: 12px; }
   .nav-links { display: none; }
   .nav-cta   { display: none; }
   .menu-toggle { display: flex; }
-  /* Logo à gauche, patte à droite */
-  #navbar {
-    grid-template-columns: 1fr 1fr;
-    justify-items: end;
-  }
-  .nav-logo { justify-self: start; }
-  .menu-toggle { justify-self: end; }
+  #navbar { width: 100%; justify-content: space-between; }
 
   /* ── Hero ── */
-  .hero { height: auto; min-height: auto; max-height: 100vh;
-        padding: 13vh 0 7vh }
-  .hero-inner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0 6% 40px;
-    gap: 32px;
+  .hero { height: 100dvh; min-height: 580px; max-height: none; padding: 0; background: var(--navy); }
+
+  /* Photo portrait plein écran : le texte vient se poser dans le ciel */
+  .hero-bg-photo {
+    inset: 0;
+    height: auto;
+    background-image: url('../img/01-images/hero_mobile.jpg');
+    background-size: cover;
+    background-position: center 45%;
   }
-  .hero-left { width: 100%; gap: 22px; align-items: center; }
-  .hero-title { font-size: clamp(2rem, 6vw, 2.8rem); }
-  .hero-services-row { justify-content: center; }
-  .btn-primary { align-self: center; }
-  .hero-photo-wrap { width: min(72vw, 340px); margin: 0 auto 48px; }
-  .hero-deco-paw--3 { display: none; }
+  /* Fondu blanc étendu : garde le texte lisible même si le bloc descend un peu plus bas */
+  .hero-bg-photo::after {
+    opacity: 1;
+    background: radial-gradient(130% 68% at 50% 2%,
+      rgba(255,255,255,.94) 0%,
+      rgba(255,255,255,.78) 42%,
+      rgba(255,255,255,0)   78%);
+  }
+  .hero-bg-photo::before { opacity: 0; }
+
+  /* Texte remonté en haut du hero, bloc plus compact pour garder de la marge
+     au-dessus des sujets sur les écrans où la barre d'adresse réduit la hauteur visible */
+  .hero-inner {
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    padding: clamp(72px, 15dvh, 120px) 6% 0;
+  }
+  .hero-left {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    gap: 14px;
+    align-items: center;
+    padding: 0 4%;
+  }
+  .hero-left::before { display: none; }
+
+  /* Petite phrase slogan, en terracotta comme sur desktop */
+  .hero-slogan {
+    display: block;
+    color: var(--terra);
+    text-shadow: 0 2px 10px rgba(255,255,255,.6);
+    margin-top: 8px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    color: var(--navy);
+    text-shadow: none;
+  }
+  .hero-desc {
+    max-width: 360px;
+    color: var(--navy);
+    text-shadow: none;
+    font-weight: 600;
+  }
+  .btn-primary {
+    align-self: center;
+    width: fit-content;
+    margin: 0 auto;
+    box-shadow: 0 12px 32px rgba(20,40,55,.18);
+  }
 
   /* ── Sections : réduire les padding-bottom avec vagues ── */
   #about    { padding-bottom: 120px !important; }
@@ -1299,8 +1450,8 @@ footer ul li a:hover { color: var(--navy); }
   #about .btn-primary { align-self: center; }
 
   /* ── Histoire ── */
-  .about-histoire-row { grid-template-columns: 1fr; gap: 28px; }
-  .histoire-header { text-align: center; }
+  .about-histoire-row { grid-template-columns: 1fr; gap: 32px; }
+  .histoire-header { text-align: center; margin-bottom: 40px; }
   .about-histoire-text { text-align: center; align-items: center; }
 
   /* ── Tarifs ── */
@@ -1353,23 +1504,19 @@ footer ul li a:hover { color: var(--navy); }
   section { padding: 64px 5%; }
 
   /* ── Header ── */
-  #header { width:90%; top: 10px; }
+  #header { left: 5%; right: 5%; width: auto; top: 10px; }
+  #header.hero-transparent { top: 10px; }
   .nav-logo-img { height: 40px; }
 
   /* ── Hero ── */
-  .hero {         padding: 13vh 0 8vh;
-        max-height: 891px; }
-  .hero-inner { padding: 0 5% 28px; gap: 20px; align-items: center; text-align: center; }
-  .hero-left { gap: 16px; align-items: center; }
-  .hero-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
-  .hero-slogan { font-size: clamp(.9rem, 4vw, 1.1rem); }
-  .hero-services-row { gap: 10px; justify-content: center; }
-  .hero-service-item { font-size: .76rem; }
-  .hero-service-icon { width: 32px; height: 32px; font-size: .9rem; }
-  .hero-photo-wrap { width: min(72vw, 300px); margin-bottom: 28px; }
-  .btn-primary { padding: 13px 22px; font-size: .88rem; align-self: stretch; text-align: center; justify-content: center; }
-  .hero-deco-lines{top: 3%;
-    right: 8%;}
+  .hero { height: 100dvh; min-height: 560px; max-height: none; padding: 0; }
+  .hero-bg-photo { background-position: center 30%; }
+  .hero-inner { padding: clamp(48px, 10dvh, 88px) 5% 0; align-items: flex-start; justify-content: center; text-align: center; }
+  .hero-left { gap: 8px; align-items: center; max-width: 100%; padding: 0 2%; }
+  .hero-title { font-size: clamp(2.2rem, 9vw, 2.75rem); line-height: 1.1; margin-bottom: 10px; }
+  .hero-slogan { font-size: clamp(.85rem, 3.5vw, .95rem); margin-top: 8px; margin-bottom: 2px; }
+  .hero-desc { font-size: .85rem; max-width: 320px; margin-bottom: 16px; }
+  .btn-primary { padding: 12px 22px; font-size: .82rem; width: fit-content; align-self: center; margin: 4px auto 0; text-align: center; justify-content: center; }
 
   /* ── Sections : padding-bottom réduit (vagues plus petites sur mobile) ── */
   #about    { padding-bottom: 100px !important; }
@@ -1390,8 +1537,9 @@ footer ul li a:hover { color: var(--navy); }
   .about-badge-text  { font-size: .72rem; }
 
   /* ── Histoire ── */
-  .about-histoire { gap: 32px; }
-  .about-histoire-row { gap: 16px; grid-template-columns: 1fr; }
+  .about-histoire { gap: 40px; }
+  .about-histoire-row { gap: 24px; grid-template-columns: 1fr; }
+  .histoire-header { margin-bottom: 32px; }
   /* Photo pleine largeur sur mobile */
   .about-histoire-photo-wrap,
   .about-histoire-photo-wrap2 { width: 100%; }
@@ -1443,10 +1591,10 @@ footer ul li a:hover { color: var(--navy); }
 @media (max-width: 380px) {
   #navbar { padding: 8px 12px; }
   .nav-logo-img { height: 36px; }
-  .hero-title  { font-size: 1.65rem; }
+  .hero-title  { font-size: 1.9rem; margin-bottom: 8px; }
+  .hero-desc   { max-width: 100%; }
   .section-title { font-size: 1.5rem; }
   .about-values-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero-photo-wrap { width: 80vw; }
 }
 
 
@@ -1582,7 +1730,7 @@ footer ul li a:hover { color: var(--navy); }
 }
 
 /* ── Responsive polaroïd & cœurs ── */
-@media (max-width: 900px) {
+@media (max-width: 900px), (max-width: 1024px) and (min-height: 850px) {
   /* Qui suis-je : centrer le bloc photo */
   .about-photo-bg {
     display: flex;
@@ -1609,9 +1757,9 @@ footer ul li a:hover { color: var(--navy); }
     transform: translateX(50%) rotate(0deg) scale(1.02);
   }
 
-  /* Histoire : limiter la hauteur des photos polaroïd */
-  .polaroid-frame--histoire {
-    max-width: 280px;
+  /* Histoire : même taille de carte que Qui suis-je */
+  .polaroid-frame.polaroid-frame--histoire {
+    max-width: 340px;
     margin: 0 auto;
   }
 
@@ -1647,9 +1795,9 @@ footer ul li a:hover { color: var(--navy); }
     transform: translateX(50%) rotate(0deg) scale(1.02);
   }
 
-  /* Histoire : cadre plus petit */
-  .polaroid-frame--histoire {
-    max-width: 220px;
+  /* Histoire : même taille de carte que Qui suis-je */
+  .polaroid-frame.polaroid-frame--histoire {
+    max-width: 260px;
   }
 
   /* Cœur : encore plus petit sur mobile */
@@ -1671,9 +1819,11 @@ footer ul li a:hover { color: var(--navy); }
     width: 200px;
     max-width: 70vw;
   }
-  .polaroid-frame--histoire {
-    max-width: 180px;
+
+  .polaroid-frame.polaroid-frame--histoire {
+    max-width: 230px;
   }
+
   .polaroid-heart {
     width: 44px;
     height: 40px;
@@ -1706,9 +1856,12 @@ footer ul li a:hover { color: var(--navy); }
 
 /* ── ABOUT ── */
 .dalma-about-tr {
-  width: 1000px; top: -80px; left: -60px;
-  opacity: .09; transform: rotate(-10deg);
-      fill: var(--white);
+    width: 1000px;
+    top: -105px;
+    left: -130px;
+    opacity: .09;
+    transform: rotate(-10deg);
+    fill: var(--white);
 
 }
 /* ─────────── PARCOURS (fond blanc) ─────────── */
@@ -1741,11 +1894,12 @@ footer ul li a:hover { color: var(--navy); }
 
 /* Correction : rendre l'existant tl visible en blanc */
 .dalma-process-tl {
-top: -100px;
-    left: -30px;
+    top: -101px;
+    left: -75px;
     width: 894px;
-    opacity: .09; transform: rotate(-10deg);
-      fill: var(--white);
+    opacity: .09;
+    transform: rotate(-10deg);
+    fill: var(--white);
 }
 
 /* ─────────── TARIFS (fond bleu pale #E6F1FB) ─────────── */
@@ -1772,12 +1926,13 @@ top: -100px;
 #faq { position: relative; overflow: hidden; }
 
 .dalma-faq-tl {
-  top: -20px; left: -50px;
+  top: -20px; left: -100px;
   width: 1000px;
 }
 .dalma-faq-bl {
-  bottom: 60px; left: -30px;
-  width: 1000px;
+    bottom: 60px;
+    left: 45px;
+    width: 1000px;
 }
 .dalma-faq-tr {
   top: -10px; right: -50px;
@@ -1969,7 +2124,7 @@ top: -100px;
 }
 
 /* ── Responsive ── */
-@media (max-width: 900px) {
+@media (max-width: 900px), (max-width: 1024px) and (min-height: 850px) {
   #parcours { padding: 70px 5% 80px; }
   .parcours-header { padding-bottom: 36px; text-align: center; }
   .parcours-hint { display: none; }
@@ -2235,9 +2390,10 @@ top: -100px;
   margin-bottom: 16px;
 }
 .contact-submit {
-  width: 100%;
-  justify-content: center;
-  font-size: 1rem;
+     border: none;
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
 }
 .contact-form-title {
   font-family: var(--font-title);
@@ -2362,7 +2518,7 @@ top: -100px;
 .contact-success p { font-size: .92rem; color: var(--text-muted); line-height: 1.6; }
 
 /* ── Responsive ── */
-@media (max-width: 900px) {
+@media (max-width: 900px), (max-width: 1024px) and (min-height: 850px) {
   #cta { padding: 60px 5% 0; }
   .contact-section-inner {
     grid-template-columns: 1fr;
@@ -2370,4 +2526,88 @@ top: -100px;
   }
   .contact-form-wrap { padding: 28px 20px; }
   .contact-form-row { grid-template-columns: 1fr; }
+}
+
+/* ── iPad Pro 11" & 12.9" en portrait ──
+   On cible ici les caractéristiques physiques de l'écran (device-width),
+   pas la taille de la fenêtre : ça fonctionne même si Safari charge la
+   page en mode "Afficher la version ordinateur" (fréquent par défaut sur iPad),
+   ce qui rendait les media queries basées sur width/min-height peu fiables. */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+
+  #header { left: 16px !important; right: 16px !important; max-width: none !important; width: auto !important; top: 12px !important; }
+  #header.hero-transparent { top: 12px !important; }
+  .nav-links { display: none !important; }
+  .nav-cta   { display: none !important; }
+  .menu-toggle { display: flex !important; }
+  #navbar { width: 100% !important; justify-content: space-between !important; }
+
+  .hero { height: 100dvh !important; min-height: 580px !important; max-height: none !important; padding: 0 !important; background: var(--navy) !important; }
+
+  .hero-bg-photo {
+    inset: 0 !important;
+    height: auto !important;
+    background-image: url('../img/01-images/hero_mobile.jpg') !important;
+    background-size: cover !important;
+    background-position: center 45% !important;
+  }
+  .hero-bg-photo::after {
+    opacity: 1 !important;
+    background: radial-gradient(130% 68% at 50% 2%,
+      rgba(255,255,255,.94) 0%,
+      rgba(255,255,255,.78) 42%,
+      rgba(255,255,255,0)   78%) !important;
+  }
+  .hero-bg-photo::before { opacity: 0 !important; }
+
+  .hero-inner {
+    align-items: flex-start !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: clamp(72px, 15dvh, 120px) 6% 0 !important;
+  }
+  .hero-left {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 14px !important;
+    align-items: center !important;
+    padding: 0 4% !important;
+  }
+  .hero-left::before { display: none !important; }
+
+  .hero-slogan {
+    display: block !important;
+    color: var(--terra) !important;
+    text-shadow: 0 2px 10px rgba(255,255,255,.6) !important;
+    margin-top: 8px !important;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 2.8rem) !important;
+    color: var(--navy) !important;
+    text-shadow: none !important;
+  }
+  .hero-desc {
+    max-width: 360px !important;
+    color: var(--navy) !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+  }
+  .btn-primary {
+    align-self: center !important;
+    width: fit-content !important;
+    margin: 0 auto !important;
+    box-shadow: 0 12px 32px rgba(20,40,55,.18) !important;
+  }
+
+  .about-presentation { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .tarifs-grid { grid-template-columns: 1fr 1fr !important; }
+  .avis-grid { grid-template-columns: 1fr 1fr !important; }
+  .process-steps { grid-template-columns: 1fr 1fr !important; }
+  .contact-section-inner { grid-template-columns: 1fr !important; gap: 80px !important; }
+  .footer-inner { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
 }
