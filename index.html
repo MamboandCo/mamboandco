@@ -120,8 +120,38 @@
       line-height: 1.4;
     }
   </style>
+  <script>document.documentElement.classList.add('is-loading');</script>
+  <noscript><style>#loader{display:none!important}html.is-loading,html.is-loading body{overflow:auto!important}</style></noscript>
 </head>
 <body>
+
+<!-- ── LOADER ─────────────────────────────────────────── -->
+<div id="loader" role="status" aria-live="polite" aria-label="Chargement en cours">
+  <div class="loader-inner">
+    <img src="./img/00_site_content/Mambo & Co logo_1.svg" alt="Mambo &amp; Co" class="loader-logo" fetchpriority="high">
+    <div class="loader-bar" aria-hidden="true"><span></span></div>
+  </div>
+</div>
+<script>
+(function () {
+  var loader = document.getElementById('loader');
+  if (!loader) return;
+  var start = Date.now(), MIN = 1800, MAX = 8000, done = false;
+  function hide() {
+    if (done) return;
+    done = true;
+    var wait = Math.max(0, MIN - (Date.now() - start));
+    setTimeout(function () {
+      loader.classList.add('hidden');
+      document.documentElement.classList.remove('is-loading');
+      setTimeout(function () { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 1100);
+    }, wait);
+  }
+  if (document.readyState === 'complete') hide();
+  else window.addEventListener('load', hide);
+  setTimeout(hide, MAX); /* sécurité : ne jamais bloquer le site */
+})();
+</script>
 
 <!-- ── SVG DEFS : pattern taches dalmatien ── -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
