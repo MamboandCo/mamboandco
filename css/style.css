@@ -440,7 +440,7 @@ body:has(button:hover) .cursor .paw-main { fill: var(--terra); }
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url('../img/01-images/IMG_9515.jpeg');
+  background-image: url('../img/01-images/IMG_9515.webp');
   background-size: 70%;
   background-position: 130% 30%;
   background-repeat: no-repeat;
@@ -2551,7 +2551,7 @@ footer ul li a:hover { color: var(--navy); }
   .hero-bg-photo {
     inset: 0 !important;
     height: auto !important;
-    background-image: url('../img/01-images/hero_mobile.jpg') !important;
+    background-image: url('../img/01-images/hero_mobile.webp') !important;
     background-size: cover !important;
     background-position: center 45% !important;
   }
